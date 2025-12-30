@@ -1,0 +1,99 @@
+.expertise {
+  position: relative;
+  background-color: #000000;
+  padding: 120px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 60px;
+  width: 532px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 863px 422px;
+  gap: 20px;
+  width: 100%;
+  max-width: 1326px;
+}
+
+.cardLarge {
+  background-color: #171717;
+  border-radius: 20px;
+  padding: 40px;
+  height: 557px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 20px;
+}
+
+.cardsRight {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.cardSmall {
+  background-color: #171717;
+  border-radius: 20px;
+  padding: 40px;
+  height: 268px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 20px;
+}
+
+.cardTitle {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.cardDescription {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  color: #ffffff;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.exploreButton {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  padding: 10px;
+  height: 36px;
+  width: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.exploreButton:hover {
+  background-color: transparent;
+  color: #ffffff;
+}

@@ -1,0 +1,378 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+/* Navigation */
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36px 351px 0;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.navLinks {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.navLink {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: normal;
+  transition: opacity 0.2s;
+}
+
+.navLink:hover {
+  opacity: 0.8;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.languageSwitcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.languageActive {
+  font-weight: normal;
+}
+
+.languageInactive {
+  font-weight: normal;
+  opacity: 0.3;
+}
+
+.discussButton {
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  padding: 10px 25px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+}
+
+.discussButtonText {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Hero Content */
+.heroContent {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 0;
+}
+
+.heroTextBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 24px;
+  z-index: 1;
+}
+
+.heading {
+  color: #ffffff;
+  font-size: 60px;
+  line-height: 1.1;
+  text-align: center;
+  max-width: 863px;
+  margin-bottom: 0;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+}
+
+.subtitle {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  max-width: 501px;
+  margin-bottom: 0;
+}
+
+.ctaButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(5.2px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ffffff29;
+  border-radius: 40px;
+  padding: 12px;
+}
+
+.ctaButtonPrimary {
+  background-color: var(--color-primary, #00df82);
+  color: #030f0f;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 10px;
+  height: 40px;
+  width: 148px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.ctaButtonPrimary:hover {
+  background-color: #00c973;
+}
+
+.ctaButtonSecondary {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 10px;
+  height: 40px;
+  width: 148px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.ctaButtonSecondary:hover {
+  opacity: 0.8;
+}
+
+.ctaButtonSecondary svg {
+  margin-top: 3px;
+}
+.arrowIcon {
+  width: 20px;
+  height: 20px;
+  transform: rotate(90deg);
+}
+
+/* Hero Image */
+.heroImageContainer {
+  position: relative;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -301.5px;
+  width: 1085px;
+  height: 603px;
+  z-index: 20;
+}
+
+.heroImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+/* .heroImageWrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+} */
+
+.heroImage {
+  /* width: 100%; */
+  /* height: 100%; */
+  object-fit: contain;
+  object-position: center;
+}
+
+.blurOverlay {
+  position: absolute;
+  bottom: 204px;
+  left: 0;
+  right: 0;
+  height: 128px;
+  background-color: #000000;
+  filter: blur(25.8px);
+  pointer-events: none;
+}
+
+/* Decorative Background Elements */
+.decorativeBackground {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.radialGradient {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  z-index: 0;
+}
+
+.radialGradientInner {
+  /* position: absolute; */
+  inset: -50%;
+  opacity: 0.2;
+}
+
+.radialGradientCircle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #2ac293 0%, #00df82 100%);
+  filter: blur(100px);
+  width: 600px;
+  height: 600px;
+}
+
+.decorativeVectors {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.vector1,
+.vector2,
+.vector3 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  /* opacity: 0.1; */
+}
+
+.vector1 {
+  bottom: 130.56px;
+}
+
+.vector2 {
+  bottom: 45.56px;
+}
+
+.vector3 {
+  bottom: 59px;
+}
+
+.vectorSvg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Icon circles on vectors */
+.iconCircle {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background-color: #a1a1aa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* Icon positions - Left side */
+.iconWhatsapp {
+  position: absolute;
+  bottom: 231px;
+  left: 129px;
+}
+
+.iconNotion {
+  position: absolute;
+  bottom: 38px;
+  left: 272px;
+}
+
+.iconGoogle {
+  position: absolute;
+  bottom: 205px;
+  left: 359px;
+}
+
+/* Icon positions - Right side */
+.iconN8N {
+  position: absolute;
+  bottom: 236px;
+  right: 290.25px;
+}
+
+.iconFigma {
+  position: absolute;
+  bottom: 51px;
+  right: 368.25px;
+}
+
+.iconTelegram {
+  position: absolute;
+  bottom: 35px;
+  right: 277px;
+}

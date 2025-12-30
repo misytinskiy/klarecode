@@ -1,0 +1,218 @@
+.selectedWork {
+  position: relative;
+  background-color: #000000;
+  padding: 120px 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.title {
+  font-family: "Inter", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin: 0 0 100px;
+  width: 532px;
+}
+
+.cardContainer {
+  position: relative;
+  width: 1305px;
+  height: 557px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Background layers for depth effect */
+.cardLayer1,
+.cardLayer2,
+.cardLayer3 {
+  position: absolute;
+
+  border-radius: 10px;
+  background-color: #0b0d0d;
+  box-shadow: inset 0px 0px 28.3px 13px rgba(42, 194, 147, 0.04);
+  pointer-events: none;
+}
+
+.cardLayer1 {
+  width: 1305px;
+  height: 557px;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  border: 1px solid #2ac293;
+}
+
+.cardLayer2 {
+  width: 1247px;
+  height: 541px;
+  /* left: -29px; */
+  top: -28px;
+  z-index: 2;
+  background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    linear-gradient(90deg, rgb(11, 13, 13) 0%, rgb(11, 13, 13) 100%);
+  border: 1px solid #2ac2934d;
+}
+
+.cardLayer3 {
+  width: 1189px;
+  height: 541px;
+  /* left: -58px; */
+  top: -56px;
+  z-index: 2;
+  border: 1px solid #2ac2934d;
+}
+
+.mainCard {
+  position: absolute;
+  width: 1303px;
+  height: 555px;
+  left: 1px;
+  top: 1px;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.imageWrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageGradient {
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 46.355%,
+    rgba(0, 0, 0, 0.92) 71.273%
+  ); */
+  pointer-events: none;
+}
+
+.cardContent {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 25px 25px;
+  z-index: 5;
+}
+
+.cardContentLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  padding: 10px;
+  height: 32px;
+  width: 76px;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.cardTitle {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0;
+}
+
+.cardDescription {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  color: #ffffff;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.viewButton {
+  background: linear-gradient(to right, #00df82, #00ff95);
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
+  height: 40px;
+  width: 148px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #030f0f;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.viewButton:hover {
+  opacity: 0.9;
+}
+
+/* Decorative circles */
+.decorativeCircle1,
+.decorativeCircle2 {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(42, 194, 147, 0.1) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decorativeCircle1 {
+  right: -193px;
+  top: calc(50% - 194px);
+  transform: translateY(-50%);
+}
+
+.decorativeCircle2 {
+  left: -62px;
+  top: calc(50% + 106px);
+  transform: translateY(-50%);
+}
