@@ -17,7 +17,7 @@
   text-align: center;
   color: #ffffff;
   text-transform: capitalize;
-  margin: 0 0 100px;
+  margin: 0 0 158px;
   width: 532px;
 }
 
@@ -34,11 +34,24 @@
 .cardLayer2,
 .cardLayer3 {
   position: absolute;
-
   border-radius: 10px;
-  background-color: #0b0d0d;
+  background-color: transparent;
   box-shadow: inset 0px 0px 28.3px 13px rgba(42, 194, 147, 0.04);
   pointer-events: none;
+  overflow: hidden;
+}
+
+.cardLayer1 > span,
+.cardLayer2 > span,
+.cardLayer3 > span {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.layerImage {
+  object-fit: cover;
+  object-position: center;
 }
 
 .cardLayer1 {
@@ -50,28 +63,44 @@
   border: 1px solid #2ac293;
 }
 
+.cardLayer1 > span {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .cardLayer2 {
   width: 1247px;
   height: 541px;
   /* left: -29px; */
-  top: -28px;
+  top: -44px;
   z-index: 2;
-  background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.2) 0%,
-      rgba(0, 0, 0, 0.2) 100%
-    ),
-    linear-gradient(90deg, rgb(11, 13, 13) 0%, rgb(11, 13, 13) 100%);
+  background: transparent;
   border: 1px solid #2ac2934d;
+}
+
+.cardLayer2 > span {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .cardLayer3 {
   width: 1189px;
   height: 541px;
   /* left: -58px; */
-  top: -56px;
+  top: -78px;
   z-index: 2;
   border: 1px solid #2ac2934d;
+}
+
+.cardLayer3 > span {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .mainCard {
@@ -126,7 +155,7 @@
 .cardContentLeft {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
   flex: 1;
 }
 
@@ -167,7 +196,7 @@
 }
 
 .viewButton {
-  background: linear-gradient(to right, #00df82, #00ff95);
+  background: #ffffff;
   border: none;
   border-radius: 50px;
   padding: 10px;

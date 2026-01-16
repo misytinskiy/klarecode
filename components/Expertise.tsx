@@ -1,40 +1,109 @@
+import Image from "next/image";
 import styles from "./Expertise.module.css";
+
+const cardImages = [
+  "/outExpertice/1.png",
+  "/outExpertice/2.png",
+  "/outExpertice/2.png",
+  "/outExpertice/1.png",
+  "/outExpertice/3.png",
+  "/outExpertice/3.png",
+];
 
 export default function Expertise() {
   return (
-    <section className={styles.expertise}>
+    <section id="services" className={styles.expertise}>
       <h2 className={styles.title}>Our Expertise</h2>
-      
+
       <div className={styles.cards}>
-        {/* Left card - AI Agents & Automation */}
-        <div className={styles.cardLarge}>
+        {/* Top row - two large cards */}
+        <div className={styles.cardTopLeft}>
+          <Image
+            src={cardImages[0]}
+            alt=""
+            fill
+            className={styles.cardBackground}
+            priority
+            unoptimized
+          />
           <h3 className={styles.cardTitle}>AI Agents & Automation</h3>
           <p className={styles.cardDescription}>
-            Custom LLM solutions & RAG systems.
+            Smart contracts & DeFi protocols.
           </p>
-          <button className={styles.exploreButton}>Explore AI</button>
+        </div>
+        <div className={styles.cardTopRight}>
+          <Image
+            src={cardImages[1]}
+            alt=""
+            fill
+            className={styles.cardBackground}
+            priority
+            unoptimized
+          />
+          <h3 className={styles.cardTitle}>Web3 Development</h3>
+          <p className={styles.cardDescription}>
+            Smart contracts & DeFi protocols.
+          </p>
         </div>
 
-        {/* Right column */}
-        <div className={styles.cardsRight}>
-          {/* Top right card - Web3 Development */}
-          <div className={styles.cardSmall}>
-            <h3 className={styles.cardTitle}>Web3 Development</h3>
-            <p className={styles.cardDescription}>
-              Smart contracts & DeFi protocols.
-            </p>
-          </div>
-
-          {/* Bottom right card - Web & Telegram Apps */}
-          <div className={styles.cardSmall}>
-            <h3 className={styles.cardTitle}>Web & Telegram Apps</h3>
-            <p className={styles.cardDescription}>
-              High-load apps & TMA.
-            </p>
-          </div>
+        {/* Bottom row - one tall card on left, three small cards on right */}
+        <div className={styles.cardBottomLeft}>
+          <Image
+            src={cardImages[2]}
+            alt=""
+            fill
+            className={styles.cardBackground}
+            priority
+            unoptimized
+          />
+          <h3 className={styles.cardTitle}>DevOps</h3>
+          <p className={styles.cardDescription}>
+            Smart contracts & DeFi protocols.
+          </p>
+        </div>
+        <div className={styles.cardBottomRight1}>
+          <Image
+            src={cardImages[3]}
+            alt=""
+            fill
+            className={styles.cardBackground}
+            priority
+            unoptimized
+          />
+          <h3 className={styles.cardTitle}>Web & Telegram Apps</h3>
+          <p className={styles.cardDescription}>
+            Smart contracts & DeFi protocols.
+          </p>
+        </div>
+        <div className={styles.cardBottomRight2}>
+          <Image
+            src={cardImages[4]}
+            alt=""
+            fill
+            className={styles.cardBackground}
+            priority
+            unoptimized
+          />
+          <h3 className={styles.cardTitle}>SC, NFT collections, Defi</h3>
+          <p className={styles.cardDescription}>
+            Smart contracts & DeFi protocols.
+          </p>
+        </div>
+        <div className={styles.cardBottomRight3}>
+          <Image
+            src={cardImages[5]}
+            alt=""
+            fill
+            className={styles.cardBackground}
+            priority
+            unoptimized
+          />
+          <h3 className={styles.cardTitle}>Design</h3>
+          <p className={styles.cardDescription}>
+            Smart contracts & DeFi protocols.
+          </p>
         </div>
       </div>
     </section>
   );
 }
-

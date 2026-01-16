@@ -1,26 +1,100 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./Hero.module.css";
+import { useContactModal } from "./ContactModalContext";
+
+const smoothScrollTo = (elementId: string) => {
+  const element = document.getElementById(elementId);
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - 100; // 100px offset for nav
+
+    const startPosition = window.pageYOffset;
+    const distance = offsetPosition - startPosition;
+    const duration = Math.min(Math.abs(distance) * 0.4, 600); // Even faster
+    let start: number | null = null;
+
+    // EaseOutCubic - very fast start, smooth end
+    const easeOutCubic = (t: number): number => {
+      return 1 - Math.pow(1 - t, 3);
+    };
+
+    const animation = (currentTime: number) => {
+      if (start === null) start = currentTime;
+      const timeElapsed = currentTime - start;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const ease = easeOutCubic(progress);
+
+      window.scrollTo({
+        top: startPosition + distance * ease,
+        behavior: "auto",
+      });
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    requestAnimationFrame(animation);
+  }
+};
 
 export default function Hero() {
+  const { openModal } = useContactModal();
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+    e.preventDefault();
+    smoothScrollTo(sectionId);
+  };
   return (
     <div className={styles.hero}>
       {/* Navigation */}
       <nav className={styles.nav}>
         {/* Logo */}
-        <h1 className={styles.logo}>Klarecode</h1>
+        <div className={styles.logoContainer}>
+          <Image
+            src="/logo.svg"
+            alt="Klarecode Logo"
+            width={26}
+            height={30}
+            className={styles.logoImage}
+            priority
+          />
+          <h1 className={styles.logo}>Klarecode</h1>
+        </div>
 
         {/* Navigation Links */}
         <div className={styles.navLinks}>
-          <a href="#services" className={styles.navLink}>
+          <a
+            href="#services"
+            className={styles.navLink}
+            onClick={(e) => handleNavClick(e, "services")}
+          >
             Services
           </a>
-          <a href="#cases" className={styles.navLink}>
+          <a
+            href="#cases"
+            className={styles.navLink}
+            onClick={(e) => handleNavClick(e, "cases")}
+          >
             Cases
           </a>
-          <a href="#process" className={styles.navLink}>
+          <a
+            href="#process"
+            className={styles.navLink}
+            onClick={(e) => handleNavClick(e, "process")}
+          >
             Process
           </a>
-          <a href="#about" className={styles.navLink}>
+          <a
+            href="#about"
+            className={styles.navLink}
+            onClick={(e) => handleNavClick(e, "about")}
+          >
             About
           </a>
         </div>
@@ -31,7 +105,7 @@ export default function Hero() {
             <span className={styles.languageActive}>EN</span>
             <span className={styles.languageInactive}>DE</span>
           </div>
-          <button className={styles.discussButton}>
+          <button className={styles.discussButton} onClick={openModal}>
             <span className={styles.discussButtonText}>Discuss</span>
           </button>
         </div>
@@ -55,7 +129,9 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className={styles.ctaButtons}>
-            <button className={styles.ctaButtonPrimary}>Discuss Project</button>
+            <button className={styles.ctaButtonPrimary} onClick={openModal}>
+              Discuss Project
+            </button>
             <button className={styles.ctaButtonSecondary}>
               View Cases
               {/* <svg
@@ -82,8 +158,8 @@ export default function Hero() {
                 <path
                   d="M15.833 8L4.16634 8M15.833 8L10.833 13M15.833 8L10.833 3"
                   stroke="white"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </button>
@@ -118,86 +194,14 @@ export default function Hero() {
 
         {/* Decorative vectors */}
         <div className={styles.decorativeVectors}>
-          <div className={styles.vector1}>
-            <img
-              src="/hero/heroIcons/Vector1.svg"
-              alt=""
-              className={styles.vectorSvg}
-            />
-          </div>
-          <div className={styles.vector2}>
-            <img
-              src="/hero/heroIcons/Vector2.svg"
-              alt=""
-              className={styles.vectorSvg}
-            />
-          </div>
-          <div className={styles.vector3}>
-            <img
-              src="/hero/heroIcons/Vector3.svg"
-              alt=""
-              className={styles.vectorSvg}
-            />
-          </div>
-
-          {/* Icons on vectors */}
-          {/* Left side icons */}
-          <div className={styles.iconWhatsapp}>
-            <div className={styles.iconCircle}>
-              <img
-                src="/hero/heroIcons/iconWhatsapp.svg"
-                alt="WhatsApp"
-                className={styles.icon}
-              />
-            </div>
-          </div>
-          <div className={styles.iconNotion}>
-            <div className={styles.iconCircle}>
-              <img
-                src="/hero/heroIcons/iconNotion.svg"
-                alt="Notion"
-                className={styles.icon}
-              />
-            </div>
-          </div>
-          <div className={styles.iconGoogle}>
-            <div className={styles.iconCircle}>
-              <img
-                src="/hero/heroIcons/iconGoogle.svg"
-                alt="Google"
-                className={styles.icon}
-              />
-            </div>
-          </div>
-
-          {/* Right side icons */}
-          <div className={styles.iconN8N}>
-            <div className={styles.iconCircle}>
-              <img
-                src="/hero/heroIcons/iconN8N.svg"
-                alt="N8N"
-                className={styles.icon}
-              />
-            </div>
-          </div>
-          <div className={styles.iconFigma}>
-            <div className={styles.iconCircle}>
-              <img
-                src="/hero/heroIcons/iconFigma.svg"
-                alt="Figma"
-                className={styles.icon}
-              />
-            </div>
-          </div>
-          <div className={styles.iconTelegram}>
-            <div className={styles.iconCircle}>
-              <img
-                src="/hero/heroIcons/iconTelegram.svg"
-                alt="Telegram"
-                className={styles.icon}
-              />
-            </div>
-          </div>
+          <Image
+            src="/hero/grouped.svg"
+            alt=""
+            width={1920}
+            height={400}
+            className={styles.decorativeGroup}
+            priority
+          />
         </div>
       </div>
     </div>

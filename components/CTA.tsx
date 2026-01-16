@@ -1,6 +1,10 @@
+"use client";
+
 import styles from "./CTA.module.css";
+import { useContactModal } from "./ContactModalContext";
 
 export default function CTA() {
+  const { openModal } = useContactModal();
   return (
     <section className={styles.cta}>
       <div className={styles.ctaSection}>
@@ -14,7 +18,12 @@ export default function CTA() {
             product for scaling.
           </p>
           <div className={styles.ctaButtons}>
-            <button className={styles.ctaButtonPrimary}>Discuss Project</button>
+            <button
+              className={styles.ctaButtonPrimary}
+              onClick={openModal}
+            >
+              Discuss Project
+            </button>
             <button className={styles.ctaButtonSecondary}>
               Schedule a Call
               <svg

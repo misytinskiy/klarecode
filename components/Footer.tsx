@@ -1,7 +1,55 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./Footer.module.css";
+import { useContactModal } from "./ContactModalContext";
+
+const smoothScrollTo = (elementId: string) => {
+  const element = document.getElementById(elementId);
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - 100;
+
+    const startPosition = window.pageYOffset;
+    const distance = offsetPosition - startPosition;
+    const duration = Math.min(Math.abs(distance) * 0.4, 600); // Even faster
+    let start: number | null = null;
+
+    // EaseOutCubic - very fast start, smooth end
+    const easeOutCubic = (t: number): number => {
+      return 1 - Math.pow(1 - t, 3);
+    };
+
+    const animation = (currentTime: number) => {
+      if (start === null) start = currentTime;
+      const timeElapsed = currentTime - start;
+      const progress = Math.min(timeElapsed / duration, 1);
+      const ease = easeOutCubic(progress);
+
+      window.scrollTo({
+        top: startPosition + distance * ease,
+        behavior: "auto",
+      });
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    };
+
+    requestAnimationFrame(animation);
+  }
+};
 
 export default function Footer() {
+  const { openModal } = useContactModal();
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+    e.preventDefault();
+    smoothScrollTo(sectionId);
+  };
   return (
     <footer className={styles.footer}>
       {/* Background grid lines */}
@@ -39,16 +87,30 @@ export default function Footer() {
             <h4 className={styles.columnTitle}>Company</h4>
             <ul className={styles.columnList}>
               <li>
-                <a href="#services">Services</a>
+                <a
+                  href="#services"
+                  onClick={(e) => handleLinkClick(e, "services")}
+                >
+                  Services
+                </a>
               </li>
               <li>
-                <a href="#cases">Case Studies</a>
+                <a href="#cases" onClick={(e) => handleLinkClick(e, "cases")}>
+                  Case Studies
+                </a>
               </li>
               <li>
-                <a href="#process">Process</a>
+                <a
+                  href="#process"
+                  onClick={(e) => handleLinkClick(e, "process")}
+                >
+                  Process
+                </a>
               </li>
               <li>
-                <a href="#about">About</a>
+                <a href="#about" onClick={(e) => handleLinkClick(e, "about")}>
+                  About
+                </a>
               </li>
             </ul>
           </div>
@@ -89,7 +151,9 @@ export default function Footer() {
       {/* Footer Bottom */}
       <div className={styles.footerBottom}>
         <div className={styles.footerBottomLeft}>
-          <button className={styles.footerButton}>Discuss Project</button>
+          <button className={styles.footerButton} onClick={openModal}>
+            Discuss Project
+          </button>
           <p className={styles.copyright}>
             © 2025 Klarecode. All rights reserved.
           </p>

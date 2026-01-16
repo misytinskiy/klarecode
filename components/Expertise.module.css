@@ -20,39 +20,194 @@
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: 863px 422px;
-  gap: 20px;
-  width: 100%;
-  max-width: 1326px;
+  position: relative;
+  width: 1326px;
+  height: 928px;
+  margin: 0 auto;
 }
 
-.cardLarge {
+/* Top row - two large cards spanning 2 columns each */
+.cardTopLeft,
+.cardTopRight,
+.cardBottomLeft,
+.cardBottomRight1,
+.cardBottomRight2,
+.cardBottomRight3 {
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardTopLeft:hover,
+.cardTopRight:hover,
+.cardBottomLeft:hover,
+.cardBottomRight1:hover,
+.cardBottomRight2:hover,
+.cardBottomRight3:hover {
+  transform: translateY(-8px) scale(1.02);
+  /* box-shadow: 0 20px 40px rgba(42, 194, 147, 0.2),
+    0 0 20px rgba(42, 194, 147, 0.1); */
+}
+
+.cardTopLeft > span,
+.cardTopRight > span,
+.cardBottomLeft > span,
+.cardBottomRight1 > span,
+.cardBottomRight2 > span,
+.cardBottomRight3 > span {
+  position: absolute !important;
+  inset: 0;
+  z-index: 0;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardTopLeft:hover > span,
+.cardTopRight:hover > span,
+.cardBottomLeft:hover > span,
+.cardBottomRight1:hover > span,
+.cardBottomRight2:hover > span,
+.cardBottomRight3:hover > span {
+  transform: scale(1.1);
+}
+
+.cardBackground {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.8;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardTopLeft:hover .cardBackground,
+.cardTopRight:hover .cardBackground,
+.cardBottomLeft:hover .cardBackground,
+.cardBottomRight1:hover .cardBackground,
+.cardBottomRight2:hover .cardBackground,
+.cardBottomRight3:hover .cardBackground {
+  opacity: 1;
+}
+
+.cardTopLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 556px;
+  height: 263px;
   background-color: #171717;
   border-radius: 20px;
   padding: 40px;
-  height: 557px;
   display: flex;
   flex-direction: column;
   justify-content: end;
   gap: 20px;
+  z-index: 1;
 }
 
-.cardsRight {
-  display: flex;
-  flex-direction: column;
-  gap: 21px;
+.cardTitle,
+.cardDescription {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.cardSmall {
+.cardTopLeft:hover .cardTitle,
+.cardTopRight:hover .cardTitle,
+.cardBottomLeft:hover .cardTitle,
+.cardBottomRight1:hover .cardTitle,
+.cardBottomRight2:hover .cardTitle,
+.cardBottomRight3:hover .cardTitle {
+  /* color: #2ac293; */
+}
+
+.cardTopLeft:hover .cardDescription,
+.cardTopRight:hover .cardDescription,
+.cardBottomLeft:hover .cardDescription,
+.cardBottomRight1:hover .cardDescription,
+.cardBottomRight2:hover .cardDescription,
+.cardBottomRight3:hover .cardDescription {
+  opacity: 0.9;
+}
+
+.cardTopRight {
+  position: absolute;
+  top: 0;
+  left: 576px; /* 556 + 20 gap */
+  width: 729px;
+  height: 263px;
   background-color: #171717;
   border-radius: 20px;
   padding: 40px;
-  height: 268px;
   display: flex;
   flex-direction: column;
   justify-content: end;
   gap: 20px;
+  z-index: 1;
+}
+
+/* Bottom row - one tall card on left, three small cards on right */
+.cardBottomLeft {
+  position: absolute;
+  top: 283px; /* 263 + 20 gap */
+  left: 0;
+  width: 311px;
+  height: 606px;
+  background-color: #171717;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 20px;
+  z-index: 1;
+}
+
+.cardBottomRight1 {
+  position: absolute;
+  top: 283px; /* 263 + 20 gap */
+  left: 331px; /* 311 + 20 gap */
+  width: 422px;
+  height: 293px;
+  background-color: #171717;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 20px;
+  z-index: 1;
+}
+
+.cardBottomRight2 {
+  position: absolute;
+  top: 596px; /* 283 + 293 + 20 gap */
+  left: 331px; /* 311 + 20 gap */
+  width: 422px;
+  height: 293px;
+  background-color: #171717;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 20px;
+  z-index: 1;
+}
+
+.cardBottomRight3 {
+  position: absolute;
+  top: 283px; /* 263 + 20 gap */
+  left: 773px; /* 331 + 422 + 20 gap */
+  width: 532px;
+  height: 606px;
+  background-color: #171717;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 20px;
+  z-index: 1;
 }
 
 .cardTitle {

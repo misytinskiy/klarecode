@@ -3,32 +3,60 @@ import styles from "./SelectedWork.module.css";
 
 export default function SelectedWork() {
   return (
-    <section className={styles.selectedWork}>
+    <section id="cases" className={styles.selectedWork}>
       <h2 className={styles.title}>Selected Work</h2>
 
       <div className={styles.cardContainer}>
         {/* Background layers for depth effect */}
-        <div className={styles.cardLayer3} />
-        <div className={styles.cardLayer2} />
-        <div className={styles.cardLayer1} />
+        <div className={styles.cardLayer3}>
+          <Image
+            src="/selectedWorks/syndicate.png"
+            alt="Syndicate"
+            fill
+            className={styles.layerImage}
+            priority
+            unoptimized
+          />
+        </div>
+        <div className={styles.cardLayer2}>
+          <Image
+            src="/selectedWorks/gamblox.png"
+            alt="Gamblox"
+            fill
+            className={styles.layerImage}
+            priority
+            unoptimized
+          />
+        </div>
+        <div className={styles.cardLayer1}>
+          <Image
+            src="/selectedWorks/traumerch.png"
+            alt="Traumerch"
+            fill
+            className={styles.layerImage}
+            priority
+            unoptimized
+          />
+        </div>
 
         {/* Main card with image */}
         <div className={styles.mainCard}>
           <div className={styles.imageWrapper}>
             <Image
-              src="/selectedWorks/selectedWork.jpeg"
-              alt="Support Agent for NeoBank"
+              src="/selectedWorks/traumerch.png"
+              alt="TRAUMERCH"
               fill
               className={styles.image}
               priority
+              unoptimized
             />
             <div className={styles.imageGradient} />
           </div>
 
           <div className={styles.cardContent}>
             <div className={styles.cardContentLeft}>
-              <div className={styles.tag}>FINTECH</div>
-              <h3 className={styles.cardTitle}>Support Agent for NeoBank</h3>
+              <div className={styles.tag}>B2B</div>
+              <h3 className={styles.cardTitle}>TRAUMERCH</h3>
               <p className={styles.cardDescription}>
                 Custom LLM solutions & RAG systems.
               </p>
@@ -44,4 +72,3 @@ export default function SelectedWork() {
     </section>
   );
 }
-

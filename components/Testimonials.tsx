@@ -1,5 +1,13 @@
 import styles from "./Testimonials.module.css";
 
+const avatars = [
+  "/trustedByFounders/AlexVolkov.jpg",
+  "/trustedByFounders/PhilippWagner.jpg",
+  "/trustedByFounders/AlexMüller.jpg",
+  "/trustedByFounders/ElenaPetrova.jpg",
+  "/trustedByFounders/LenaSchmidt.jpg",
+];
+
 const testimonials = [
   {
     quote: "Our launch of the StepApp ecosystem required robust, scalable, and secure smart contract development. Klarecodev delivered exactly that. Their deep understanding of blockchain intricacies was invaluable.",
@@ -44,7 +52,10 @@ export default function Testimonials() {
         {testimonials.map((testimonial, index) => (
           <div key={index} className={styles.card}>
             <div className={styles.cardHeader}>
-              <div className={styles.avatar} />
+              <div 
+                className={styles.avatar}
+                style={{ backgroundImage: `url(${avatars[index]})` }}
+              />
               <div className={styles.rating} />
             </div>
             <p className={styles.quote}>{testimonial.quote}</p>

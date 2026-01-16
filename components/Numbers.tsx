@@ -2,7 +2,7 @@ import styles from "./Numbers.module.css";
 
 export default function Numbers() {
   return (
-    <section className={styles.numbers}>
+    <section id="about" className={styles.numbers}>
       <h2 className={styles.title}>About us in numbers</h2>
       <p className={styles.subtitle}>
         We don't just write code. <br />
