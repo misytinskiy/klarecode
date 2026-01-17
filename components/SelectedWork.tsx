@@ -17,6 +17,16 @@ export default function SelectedWork() {
             priority
             unoptimized
           />
+          <div className={styles.cardContent}>
+            <div className={styles.cardContentLeft}>
+              <div className={styles.tag}>WEB APP</div>
+              <h3 className={styles.cardTitle}>SYNDYCAT</h3>
+              <p className={styles.cardDescription}>
+                Custom LLM solutions & RAG systems.
+              </p>
+            </div>
+            <button className={styles.viewButton}>Explore AI</button>
+          </div>
         </div>
         <div className={styles.cardLayer2}>
           <Image
@@ -27,6 +37,16 @@ export default function SelectedWork() {
             priority
             unoptimized
           />
+          <div className={styles.cardContent}>
+            <div className={styles.cardContentLeft}>
+              <div className={styles.tag}>WEB APP</div>
+              <h3 className={styles.cardTitle}>Gambox</h3>
+              <p className={styles.cardDescription}>
+                Custom LLM solutions & RAG systems.
+              </p>
+            </div>
+            <button className={styles.viewButton}>Explore AI</button>
+          </div>
         </div>
         <div className={styles.cardLayer1}>
           <Image
@@ -37,6 +57,16 @@ export default function SelectedWork() {
             priority
             unoptimized
           />
+          <div className={styles.cardContent}>
+            <div className={styles.cardContentLeft}>
+              <div className={styles.tag}>B2B</div>
+              <h3 className={styles.cardTitle}>TRAUMERCH</h3>
+              <p className={styles.cardDescription}>
+                Custom LLM solutions & RAG systems.
+              </p>
+            </div>
+            <button className={styles.viewButton}>Explore AI</button>
+          </div>
         </div>
 
         {/* Main card with image */}

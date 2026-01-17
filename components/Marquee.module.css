@@ -44,3 +44,69 @@
   }
 }
 
+/* Responsive Design */
+
+/* 1540x746 */
+@media (max-width: 1540px) {
+  .marquee {
+    height: 70px;
+  }
+
+  .marqueeText {
+    font-size: 28px;
+    padding: 8px;
+  }
+
+  .marqueeTrack {
+    gap: 8px;
+  }
+}
+
+/* 1280x631 */
+@media (max-width: 1280px) {
+  .marquee {
+    height: 60px;
+  }
+
+  .marqueeText {
+    font-size: 24px;
+    padding: 7px;
+  }
+
+  .marqueeTrack {
+    gap: 7px;
+  }
+}
+
+/* 744x1130 (Mobile Portrait) */
+@media (max-width: 744px) {
+  .marquee {
+    height: 50px;
+  }
+
+  .marqueeText {
+    font-size: 18px;
+    padding: 6px;
+  }
+
+  .marqueeTrack {
+    gap: 6px;
+  }
+}
+
+/* 480x716 (Small Mobile) */
+@media (max-width: 480px) {
+  .marquee {
+    height: 40px;
+  }
+
+  .marqueeText {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .marqueeTrack {
+    gap: 5px;
+  }
+}
+

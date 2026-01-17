@@ -111,14 +111,14 @@
     opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.cardTopLeft:hover .cardTitle,
+/* .cardTopLeft:hover .cardTitle,
 .cardTopRight:hover .cardTitle,
 .cardBottomLeft:hover .cardTitle,
 .cardBottomRight1:hover .cardTitle,
 .cardBottomRight2:hover .cardTitle,
 .cardBottomRight3:hover .cardTitle {
-  /* color: #2ac293; */
-}
+  color: #2ac293;
+} */
 
 .cardTopLeft:hover .cardDescription,
 .cardTopRight:hover .cardDescription,
@@ -230,6 +230,31 @@
   margin: 0;
 }
 
+.cardTextMobile {
+  display: none;
+}
+
+.cardTitleMobile,
+.cardDescriptionMobile {
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  margin: 0;
+}
+
+.cardTitleMobile {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.cardDescriptionMobile {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.6;
+}
+
 .exploreButton {
   background-color: #ffffff;
   border: 1px solid #ffffff;
@@ -251,4 +276,275 @@
 .exploreButton:hover {
   background-color: transparent;
   color: #ffffff;
+}
+
+/* Responsive Design */
+
+/* 1540x746 */
+@media (max-width: 1540px) {
+  .expertise {
+    padding: 100px 0;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 50px;
+    width: 470px;
+  }
+
+  .cards {
+    width: 1170px;
+    height: 820px;
+  }
+
+  .cardTopLeft {
+    width: 490px;
+    height: 232px;
+    padding: 35px;
+  }
+
+  .cardTopRight {
+    left: 510px;
+    width: 644px;
+    height: 232px;
+    padding: 35px;
+  }
+
+  .cardBottomLeft {
+    top: 252px;
+    width: 274px;
+    height: 535px;
+    padding: 35px;
+  }
+
+  .cardBottomRight1 {
+    top: 252px;
+    left: 294px;
+    width: 372px;
+    height: 258px;
+    padding: 35px;
+  }
+
+  .cardBottomRight2 {
+    top: 530px;
+    left: 294px;
+    width: 372px;
+    height: 258px;
+    padding: 35px;
+  }
+
+  .cardBottomRight3 {
+    top: 252px;
+    left: 686px;
+    width: 469px;
+    height: 535px;
+    padding: 35px;
+  }
+
+  .cardTitle {
+    font-size: 21px;
+  }
+
+  .cardDescription {
+    font-size: 12px;
+  }
+}
+
+/* 1280x631 */
+@media (max-width: 1280px) {
+  .expertise {
+    padding: 80px 0;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 40px;
+    width: 400px;
+  }
+
+  .cards {
+    width: 980px;
+    height: 690px;
+  }
+
+  .cardTopLeft {
+    width: 410px;
+    height: 195px;
+    padding: 30px;
+  }
+
+  .cardTopRight {
+    left: 430px;
+    width: 540px;
+    height: 195px;
+    padding: 30px;
+  }
+
+  .cardBottomLeft {
+    top: 215px;
+    width: 230px;
+    height: 450px;
+    padding: 30px;
+  }
+
+  .cardBottomRight1 {
+    top: 215px;
+    left: 250px;
+    width: 312px;
+    height: 217px;
+    padding: 30px;
+  }
+
+  .cardBottomRight2 {
+    top: 452px;
+    left: 250px;
+    width: 312px;
+    height: 217px;
+    padding: 30px;
+  }
+
+  .cardBottomRight3 {
+    top: 215px;
+    left: 582px;
+    width: 393px;
+    height: 450px;
+    padding: 30px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .cardDescription {
+    font-size: 11px;
+  }
+}
+
+/* 744x1130 (Mobile Portrait) - Column layout */
+@media (max-width: 744px) {
+  .expertise {
+    padding: 60px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cards {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cardTopLeft,
+  .cardTopRight,
+  .cardBottomLeft,
+  .cardBottomRight1,
+  .cardBottomRight2,
+  .cardBottomRight3 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 442px;
+    padding: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  .cardTopLeft > span,
+  .cardTopRight > span,
+  .cardBottomLeft > span,
+  .cardBottomRight1 > span,
+  .cardBottomRight2 > span,
+  .cardBottomRight3 > span {
+    position: absolute !important;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+
+  .cardDescription {
+    font-size: 13px;
+  }
+
+  .cardTextMobile {
+    display: none;
+  }
+}
+
+/* 480x716 (Small Mobile) - Column layout with text below */
+@media (max-width: 480px) {
+  .expertise {
+    padding: 50px 10px;
+    overflow: visible;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .cards {
+    gap: 0;
+    overflow: visible;
+  }
+
+  .cardTopLeft,
+  .cardTopRight,
+  .cardBottomLeft,
+  .cardBottomRight1,
+  .cardBottomRight2,
+  .cardBottomRight3 {
+    width: 100%;
+    height: 199px;
+    padding: 0;
+    border-radius: 12px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    position: relative;
+    margin-bottom: 0;
+    overflow: hidden;
+  }
+
+  .cardTitle,
+  .cardDescription {
+    display: none;
+  }
+
+  .cardTextMobile {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+
+  .cardTitleMobile {
+    font-size: 18px;
+    margin-bottom: 7px;
+  }
+
+  .cardDescriptionMobile {
+    font-size: 13px;
+  }
+
+  .cardTopLeft > span,
+  .cardTopRight > span,
+  .cardBottomLeft > span,
+  .cardBottomRight1 > span,
+  .cardBottomRight2 > span,
+  .cardBottomRight3 > span {
+    height: 199px;
+  }
 }

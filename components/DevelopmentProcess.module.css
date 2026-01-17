@@ -60,13 +60,19 @@
   z-index: 1;
 }
 
+.cardTitleWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
 .cardTitle {
   font-family: "Inter", sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 1.1;
   color: #ffffff;
-  margin: 0 0 20px 0;
+  margin: 0;
 }
 
 .cardDescription {
@@ -107,4 +113,259 @@
 .viewMoreButton:hover {
   background-color: #00e284;
   opacity: 0.9;
+}
+
+/* Responsive Design */
+
+/* 1540x746 */
+@media (max-width: 1540px) {
+  .developmentProcess {
+    padding: 90px 227px;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 55px;
+  }
+
+  .cards {
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    height: 304px;
+    padding: 15px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+    margin-bottom: 19px;
+  }
+
+  .cardDescription {
+    font-size: 12px;
+  }
+
+  .cardNumber {
+    font-size: 10px;
+  }
+
+  .viewMoreButton {
+    padding: 9px 28px;
+    font-size: 10px;
+  }
+}
+
+/* 1280x631 */
+@media (max-width: 1280px) {
+  .developmentProcess {
+    padding: 80px 120px 50px 120px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 49px;
+  }
+
+  .cards {
+    gap: 13px;
+    margin-bottom: 27px;
+  }
+
+  .card {
+    height: 270px;
+    padding: 13px;
+  }
+
+  .cardTitle {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .cardDescription {
+    font-size: 12px;
+  }
+
+  .viewMoreButton {
+    padding: 10px 24px;
+    font-size: 12px;
+  }
+}
+
+/* 744x1130 (Mobile Portrait) - 2 columns with top border */
+@media (max-width: 744px) {
+  .developmentProcess {
+    padding: 80px 30px;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 41px;
+    align-self: center;
+    font-weight: 400;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    flex: 0 0 calc(50% - 10px);
+    width: calc(50% - 10px);
+    height: auto;
+    min-height: 280px;
+    padding: 29px 0px;
+    border-left: none;
+    border-top: 1px solid #2a2a2a;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  .cardHighlighted {
+    border-left: none;
+    background: linear-gradient(#00df821a 0%, #6d6d6d00 10.62%);
+    border-top: 1px solid #00df82;
+  }
+
+  .cardHighlighted::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      rgba(42, 194, 147, 1) 0%,
+      rgba(42, 194, 147, 0.6) 50%,
+      rgba(42, 194, 147, 0.3) 100%
+    );
+    z-index: 1;
+  }
+
+  .cardTitleWrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+    margin: 0;
+    flex: 1;
+  }
+
+  .cardDescription {
+    font-size: 12px;
+    margin: 0 0 auto 0;
+    flex: 1;
+    max-width: 202px;
+  }
+
+  .cardNumber {
+    font-size: 12px;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+
+  .viewMoreButton {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+/* 480x716 (Small Mobile) - 1 column with top border */
+@media (max-width: 480px) {
+  .developmentProcess {
+    padding: 40px 16px 30px 16px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    flex: 1;
+    width: 100%;
+    min-height: 200px;
+    padding: 16px;
+    border-left: none;
+    border-top: 1px solid #2a2a2a;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .card:last-child {
+    margin-bottom: 0;
+  }
+
+  .cardHighlighted {
+    border-left: none;
+    background: linear-gradient(#00df821a 0%, #6d6d6d00 10.62%);
+    border-top: 1px solid #00df82;
+  }
+
+  .cardHighlighted::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      rgba(42, 194, 147, 1) 0%,
+      rgba(42, 194, 147, 0.6) 50%,
+      rgba(42, 194, 147, 0.3) 100%
+    );
+    z-index: 1;
+  }
+
+  .cardTitleWrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+    margin: 0;
+    flex: 1;
+  }
+
+  .cardDescription {
+    font-size: 11px;
+    margin: 0 0 auto 0;
+    flex: 1;
+  }
+
+  .cardNumber {
+    font-size: 11px;
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+
+  .viewMoreButton {
+    padding: 10px 16px;
+    font-size: 11px;
+  }
 }

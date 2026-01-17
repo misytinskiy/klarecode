@@ -31,6 +31,12 @@ export default function Expertise() {
             Smart contracts & DeFi protocols.
           </p>
         </div>
+        <div className={styles.cardTextMobile}>
+          <h3 className={styles.cardTitleMobile}>AI Agents & Automation</h3>
+          <p className={styles.cardDescriptionMobile}>
+            Smart contracts & DeFi protocols.
+          </p>
+        </div>
         <div className={styles.cardTopRight}>
           <Image
             src={cardImages[1]}
@@ -42,6 +48,12 @@ export default function Expertise() {
           />
           <h3 className={styles.cardTitle}>Web3 Development</h3>
           <p className={styles.cardDescription}>
+            Smart contracts & DeFi protocols.
+          </p>
+        </div>
+        <div className={styles.cardTextMobile}>
+          <h3 className={styles.cardTitleMobile}>Web3 Development</h3>
+          <p className={styles.cardDescriptionMobile}>
             Smart contracts & DeFi protocols.
           </p>
         </div>
@@ -61,6 +73,12 @@ export default function Expertise() {
             Smart contracts & DeFi protocols.
           </p>
         </div>
+        <div className={styles.cardTextMobile}>
+          <h3 className={styles.cardTitleMobile}>DevOps</h3>
+          <p className={styles.cardDescriptionMobile}>
+            Smart contracts & DeFi protocols.
+          </p>
+        </div>
         <div className={styles.cardBottomRight1}>
           <Image
             src={cardImages[3]}
@@ -72,6 +90,12 @@ export default function Expertise() {
           />
           <h3 className={styles.cardTitle}>Web & Telegram Apps</h3>
           <p className={styles.cardDescription}>
+            Smart contracts & DeFi protocols.
+          </p>
+        </div>
+        <div className={styles.cardTextMobile}>
+          <h3 className={styles.cardTitleMobile}>Web & Telegram Apps</h3>
+          <p className={styles.cardDescriptionMobile}>
             Smart contracts & DeFi protocols.
           </p>
         </div>
@@ -89,6 +113,12 @@ export default function Expertise() {
             Smart contracts & DeFi protocols.
           </p>
         </div>
+        <div className={styles.cardTextMobile}>
+          <h3 className={styles.cardTitleMobile}>SC, NFT collections, Defi</h3>
+          <p className={styles.cardDescriptionMobile}>
+            Smart contracts & DeFi protocols.
+          </p>
+        </div>
         <div className={styles.cardBottomRight3}>
           <Image
             src={cardImages[5]}
@@ -100,6 +130,12 @@ export default function Expertise() {
           />
           <h3 className={styles.cardTitle}>Design</h3>
           <p className={styles.cardDescription}>
+            Smart contracts & DeFi protocols.
+          </p>
+        </div>
+        <div className={styles.cardTextMobile}>
+          <h3 className={styles.cardTitleMobile}>Design</h3>
+          <p className={styles.cardDescriptionMobile}>
             Smart contracts & DeFi protocols.
           </p>
         </div>

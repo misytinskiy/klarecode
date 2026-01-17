@@ -98,6 +98,41 @@
   font-weight: bold;
 }
 
+.burgerButton {
+  background-color: #00df82;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  padding: 11px 10px;
+  z-index: 100;
+}
+
+.burgerLine {
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.burgerButtonActive .burgerLine:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burgerButtonActive .burgerLine:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.burgerButtonActive .burgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 /* Hero Content */
 .heroContent {
   position: relative;
@@ -309,4 +344,489 @@
   height: auto;
   object-fit: cover;
   object-position: bottom;
+}
+
+/* Responsive Design */
+
+/* 1540x746 */
+@media (max-width: 1540px) {
+  .nav {
+    padding: 36px 200px 0;
+  }
+
+  .navRight {
+    gap: 36px;
+  }
+
+  .logoImage {
+    width: 14px;
+    height: 16px;
+  }
+
+  .logo {
+    font-size: 12px;
+  }
+
+  .heading {
+    font-size: 48px;
+    max-width: 750px;
+    letter-spacing: 0;
+    line-height: 110%;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    max-width: 450px;
+  }
+
+  .heroImageContainer {
+    width: 820px;
+    height: 456px;
+    margin-bottom: -235px;
+  }
+
+  .decorativeVectors {
+    bottom: 17px;
+  }
+
+  .blurOverlay {
+    height: 105px;
+    bottom: 192px;
+  }
+
+  .radialGradient {
+    width: 500px;
+    height: 500px;
+  }
+
+  .radialGradientCircle {
+    width: 500px;
+    height: 500px;
+  }
+
+  .navLink {
+    font-size: 10px;
+  }
+
+  .navLinks {
+    gap: 39px;
+  }
+
+  .languageSwitcher {
+    font-size: 10px;
+    gap: 6px;
+  }
+
+  .discussButton {
+    height: 29px;
+    padding: 8.5px 22px;
+  }
+
+  .discussButtonText {
+    font-size: 10px;
+  }
+
+  .heroTextBlock {
+    gap: 19px;
+  }
+
+  .ctaButtons {
+    padding: 9.5px;
+    gap: 6.5px;
+  }
+
+  .ctaButtonPrimary {
+    width: 117px;
+    height: 32px;
+    font-size: 10px;
+  }
+
+  .ctaButtonSecondary {
+    width: 117px;
+    height: 32px;
+    font-size: 10px;
+  }
+}
+
+/* 1280x631 */
+@media (max-width: 1280px) {
+  .nav {
+    padding: 32px 120px 0;
+  }
+
+  .logoContainer {
+    gap: 7px;
+  }
+
+  .logoImage {
+    width: 12px;
+    height: 13px;
+  }
+
+  .logo {
+    font-size: 10px;
+  }
+
+  .navLinks {
+    gap: 33px;
+  }
+
+  .navLink {
+    font-size: 8px;
+  }
+
+  .navRight {
+    gap: 32px;
+  }
+
+  .discussButton {
+    padding: 7.5px 19px;
+    height: 29px;
+  }
+
+  .discussButtonText {
+    font-size: 8px;
+  }
+
+  .heroContent {
+    padding-top: 100px;
+  }
+
+  .heroTextBlock {
+    gap: 16px;
+  }
+
+  .heading {
+    font-size: 36px;
+    max-width: 650px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    max-width: 388px;
+  }
+
+  .ctaButtons {
+    padding: 8.5px;
+    gap: 5px;
+  }
+
+  .ctaButtonPrimary,
+  .ctaButtonSecondary {
+    width: 99px;
+    height: 27px;
+    padding: 8px;
+    font-size: 8px;
+  }
+
+  .ctaButtonSecondary svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .heroImageContainer {
+    width: 729px;
+    height: 405px;
+    margin-bottom: -208px;
+  }
+
+  .blurOverlay {
+    bottom: 170px;
+    height: 100px;
+  }
+
+  .radialGradient {
+    width: 450px;
+    height: 450px;
+  }
+
+  .radialGradientCircle {
+    width: 450px;
+    height: 450px;
+  }
+
+  .languageSwitcher {
+    font-size: 8px;
+    gap: 5px;
+  }
+}
+
+/* 744x1130 (Mobile Portrait) */
+@media (max-width: 744px) {
+  .nav {
+    padding: 41px 30px 0;
+    flex-wrap: nowrap;
+  }
+
+  .logoContainer {
+    gap: 12px;
+  }
+
+  .logoImage {
+    width: 32px;
+    height: 38px;
+  }
+
+  .logo {
+    font-size: 27px;
+    font-weight: 900;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 99;
+    padding: 80px 20px;
+  }
+
+  .navLinksOpen {
+    transform: translateX(0);
+  }
+
+  .navLink {
+    font-size: 18px;
+    color: #ffffff;
+  }
+
+  .navRight {
+    gap: 16px;
+  }
+
+  .languageSwitcher {
+    font-size: 11px;
+  }
+
+  .discussButton {
+    display: none;
+  }
+
+  .burgerButton {
+    display: flex;
+  }
+
+  .heroContent {
+    padding-top: 100px;
+    padding-bottom: 0;
+    height: calc(100vh - 100px);
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .heroTextBlock {
+    gap: 24px;
+    padding: 0 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heading {
+    font-size: 48px;
+    max-width: 100%;
+    line-height: 1.1;
+    font-weight: 400;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    max-width: 586px;
+  }
+
+  .ctaButtons {
+    flex-direction: row;
+    width: 331px;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .ctaButtonPrimary,
+  .ctaButtonSecondary {
+    flex: 1;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .heroImageContainer {
+    width: 620px;
+    height: 344px;
+    margin: 0;
+    margin-top: auto;
+    padding: 0 20px;
+    align-self: center;
+    flex-shrink: 0;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .blurOverlay {
+    bottom: 0;
+    height: 65px;
+  }
+
+  .radialGradient {
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .radialGradientInner {
+    opacity: 0.4;
+  }
+
+  .radialGradientCircle {
+    width: 500px;
+    height: 500px;
+  }
+  .decorativeVectors {
+    bottom: 20px;
+    width: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .decorativeGroup {
+    width: 100%;
+    height: auto;
+    transform: scale(2);
+  }
+}
+
+/* 480x716 (Small Mobile) */
+@media (max-width: 480px) {
+  .nav {
+    padding: 20px 16px 0;
+  }
+
+  .logoContainer {
+    gap: 10px;
+  }
+
+  .logoImage {
+    width: 16px;
+    height: 19px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .navLinks {
+    gap: 16px;
+    margin-top: 12px;
+  }
+
+  .navLink {
+    font-size: 11px;
+  }
+
+  .navRight {
+    gap: 24px;
+  }
+
+  .languageSwitcher {
+    font-size: 10px;
+    gap: 8px;
+  }
+
+  .discussButton {
+    padding: 5px 12px;
+    height: 26px;
+  }
+
+  .discussButtonText {
+    font-size: 11px;
+  }
+
+  .heroContent {
+    padding-top: 46px;
+    padding-bottom: 0;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .heroTextBlock {
+    gap: 24px;
+    padding: 0 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heading {
+    font-size: 24px;
+    max-width: 300px;
+    line-height: 1.15;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    max-width: 300px;
+  }
+
+  .ctaButtons {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .ctaButtonPrimary,
+  .ctaButtonSecondary {
+    height: 38px;
+    font-size: 11px;
+  }
+
+  .heroImageWrapper {
+    height: 359px;
+  }
+
+  .heroImageContainer {
+    max-width: 100%;
+    padding: 0 16px;
+    margin: 0;
+    margin-top: auto;
+    align-self: center;
+    flex-shrink: 0;
+    height: 166px;
+    border-radius: 0;
+  }
+
+  .blurOverlay {
+    height: 190px;
+    bottom: 36px;
+  }
+
+  .radialGradient {
+    width: 280px;
+    height: 280px;
+    top: 30%;
+  }
+
+  .radialGradientCircle {
+    width: 280px;
+    height: 280px;
+  }
+
+  .decorativeVectors {
+    bottom: 10px;
+  }
 }

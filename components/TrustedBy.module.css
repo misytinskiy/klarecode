@@ -79,3 +79,89 @@
 .logoImage4 {
   height: 10px;
 }
+
+/* Responsive Design */
+
+/* 1540x746 */
+@media (max-width: 1540px) {
+  .trustedBy {
+    padding: 50px 0 50px;
+  }
+
+  .header {
+    margin-bottom: 20px;
+  }
+
+  .line,
+  .lineReversed {
+    width: 180px;
+  }
+
+  .logos {
+    gap: 25px;
+  }
+
+  .logoPlaceholder {
+    width: 89px;
+    height: 38px;
+  }
+}
+
+/* 1280x631 */
+@media (max-width: 1280px) {
+  .trustedBy {
+    padding: 50px 0 40px;
+  }
+
+  .line,
+  .lineReversed {
+    width: 150px;
+  }
+
+  .label {
+    font-size: 9px;
+  }
+
+  .logos {
+    gap: 21.5px;
+  }
+
+  .header {
+    margin-bottom: 18px;
+  }
+
+  .logoPlaceholder {
+    width: 76px;
+    height: 32px;
+  }
+
+  .logoImage1 {
+    height: 20px;
+  }
+
+  .logoImage2 {
+    height: 28px;
+  }
+
+  .logoImage3 {
+    height: 8px;
+  }
+
+  .logoImage4 {
+    height: 8px;
+  }
+}
+
+/* 744x1130 (Mobile Portrait) - Hide */
+@media (max-width: 744px) {
+  .trustedBy {
+    display: none;
+  }
+}
+
+/* 480x716 (Small Mobile) - Hide */
+@media (max-width: 480px) {
+  .trustedBy {
+    display: none;
+  }
+}

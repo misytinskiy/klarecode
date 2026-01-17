@@ -61,9 +61,11 @@ export default function DevelopmentProcess() {
                 cursor: "pointer",
               }}
             >
-              <h3 className={styles.cardTitle}>{step.title}</h3>
+              <div className={styles.cardTitleWrapper}>
+                <h3 className={styles.cardTitle}>{step.title}</h3>
+                <div className={styles.cardNumber}>{step.number}</div>
+              </div>
               <p className={styles.cardDescription}>{step.description}</p>
-              <div className={styles.cardNumber}>{step.number}</div>
             </motion.div>
           );
         })}

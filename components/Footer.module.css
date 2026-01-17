@@ -201,3 +201,339 @@
 .footerLinks a:hover {
   color: #ffffff;
 }
+
+/* Responsive Design */
+
+/* 1540x746 */
+@media (max-width: 1540px) {
+  .footer {
+    padding: 80px 250px 120px;
+  }
+
+  .footerContent {
+    margin-bottom: 32px;
+  }
+
+  .logoSection {
+    gap: 12px;
+  }
+
+  .logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logoText {
+    font-size: 13px;
+  }
+
+  .footerButton {
+    height: 34px;
+    width: 160px;
+    font-size: 13px;
+    padding: 9px;
+  }
+
+  .footerColumns {
+    gap: 32px;
+  }
+
+  .columnTitle {
+    font-size: 18px;
+  }
+
+  .columnList {
+    gap: 5px;
+  }
+
+  .columnList li,
+  .columnList a {
+    font-size: 13px;
+  }
+
+  .supportText {
+    font-size: 13px;
+    width: 180px;
+  }
+
+  .footerBottomLeft {
+    gap: 22px;
+  }
+
+  .copyright {
+    font-size: 13px;
+  }
+
+  .footerLinks {
+    gap: 120px;
+    margin-right: 80px;
+  }
+
+  .footerLinks a {
+    font-size: 13px;
+  }
+}
+
+/* 1280x631 */
+@media (max-width: 1280px) {
+  .footer {
+    padding: 70px 200px 100px;
+  }
+
+  .footerContent {
+    margin-bottom: 28px;
+  }
+
+  .logoSection {
+    gap: 11px;
+  }
+
+  .logo {
+    width: 26px;
+    height: 26px;
+  }
+
+  .logoText {
+    font-size: 12px;
+  }
+
+  .footerButton {
+    height: 32px;
+    width: 150px;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .footerColumns {
+    gap: 28px;
+  }
+
+  .columnTitle {
+    font-size: 16px;
+  }
+
+  .columnList {
+    gap: 4px;
+  }
+
+  .columnList li,
+  .columnList a {
+    font-size: 12px;
+  }
+
+  .supportText {
+    font-size: 12px;
+    width: 160px;
+  }
+
+  .footerBottomLeft {
+    gap: 20px;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+
+  .footerLinks {
+    gap: 100px;
+    margin-right: 60px;
+  }
+
+  .footerLinks a {
+    font-size: 12px;
+  }
+}
+
+/* 744x1130 (Mobile Portrait) */
+@media (max-width: 744px) {
+  .footer {
+    padding: 50px 20px 70px;
+  }
+
+  .gridLines {
+    display: none; /* Hide grid lines on mobile */
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footerLeft {
+    width: 100%;
+  }
+
+  .logoSection {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logoText {
+    font-size: 14px;
+  }
+
+  .footerButton {
+    height: 36px;
+    width: 171px;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .footerColumns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+  }
+
+  .footerColumn {
+    gap: 16px;
+  }
+
+  .columnTitle {
+    font-size: 18px;
+  }
+
+  .columnList {
+    gap: 6px;
+  }
+
+  .columnList li,
+  .columnList a {
+    font-size: 13px;
+  }
+
+  .supportText {
+    font-size: 13px;
+    width: 100%;
+    max-width: 203px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .footerBottomLeft {
+    gap: 20px;
+    width: 100%;
+  }
+
+  .copyright {
+    font-size: 13px;
+  }
+
+  .footerLinks {
+    gap: 30px;
+    margin-right: 0;
+    align-self: flex-start;
+  }
+
+  .footerLinks a {
+    font-size: 13px;
+  }
+}
+
+/* 480x716 (Small Mobile) */
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 16px 50px;
+  }
+
+  .gridLines {
+    display: none;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footerLeft {
+    width: 100%;
+  }
+
+  .logoSection {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .logoText {
+    font-size: 12px;
+  }
+
+  .footerButton {
+    height: 36px;
+    width: 100%;
+    max-width: 171px;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .footerColumns {
+    grid-template-columns: 1fr; /* Single column on small mobile */
+    gap: 24px;
+    width: 100%;
+  }
+
+  .footerColumn {
+    gap: 12px;
+  }
+
+  .columnTitle {
+    font-size: 16px;
+  }
+
+  .columnList {
+    gap: 5px;
+  }
+
+  .columnList li,
+  .columnList a {
+    font-size: 12px;
+  }
+
+  .supportText {
+    font-size: 12px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .footerBottomLeft {
+    gap: 16px;
+    width: 100%;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+    gap: 12px;
+    margin-right: 0;
+    align-self: flex-start;
+  }
+
+  .footerLinks a {
+    font-size: 12px;
+  }
+}

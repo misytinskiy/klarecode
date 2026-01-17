@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import styles from "./Hero.module.css";
 import { useContactModal } from "./ContactModalContext";
@@ -42,6 +43,7 @@ const smoothScrollTo = (elementId: string) => {
 
 export default function Hero() {
   const { openModal } = useContactModal();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -49,6 +51,7 @@ export default function Hero() {
   ) => {
     e.preventDefault();
     smoothScrollTo(sectionId);
+    setIsMenuOpen(false);
   };
   return (
     <div className={styles.hero}>
@@ -68,7 +71,11 @@ export default function Hero() {
         </div>
 
         {/* Navigation Links */}
-        <div className={styles.navLinks}>
+        <div
+          className={`${styles.navLinks} ${
+            isMenuOpen ? styles.navLinksOpen : ""
+          }`}
+        >
           <a
             href="#services"
             className={styles.navLink}
@@ -107,6 +114,17 @@ export default function Hero() {
           </div>
           <button className={styles.discussButton} onClick={openModal}>
             <span className={styles.discussButtonText}>Discuss</span>
+          </button>
+          <button
+            className={`${styles.burgerButton} ${
+              isMenuOpen ? styles.burgerButtonActive : ""
+            }`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Menu"
+          >
+            <span className={styles.burgerLine}></span>
+            <span className={styles.burgerLine}></span>
+            <span className={styles.burgerLine}></span>
           </button>
         </div>
       </nav>
@@ -170,7 +188,7 @@ export default function Hero() {
         <div className={styles.heroImageContainer}>
           <div className={styles.heroImageWrapper}>
             <Image
-              src="/heroImg.jpg"
+              src="/heroImg.png"
               alt="Dashboard Preview"
               width={1085}
               height={603}

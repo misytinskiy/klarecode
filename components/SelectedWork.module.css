@@ -143,7 +143,7 @@
 }
 
 .cardContent {
-  position: relative;
+  /* position: relative; */
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -244,4 +244,316 @@
   left: -62px;
   top: calc(50% + 106px);
   transform: translateY(-50%);
+}
+
+/* Responsive Design */
+
+/* 1540x746 */
+@media (max-width: 1540px) {
+  .selectedWork {
+    padding: 90px 228px;
+  }
+
+  .title {
+    font-size: 32px;
+    width: 480px;
+    margin-bottom: 88px;
+  }
+
+  .tag {
+    width: 57px;
+    height: 24px;
+    font-size: 8px;
+    margin-bottom: 0;
+  }
+
+  .cardContainer {
+    width: 1150px;
+    height: 491px;
+  }
+
+  .cardContentLeft {
+    gap: 10px;
+  }
+
+  .cardLayer1 {
+    width: 1150px;
+    height: 491px;
+  }
+
+  .cardLayer2 {
+    width: 1100px;
+    height: 477px;
+    top: -39px;
+  }
+
+  .cardLayer3 {
+    width: 1050px;
+    height: 477px;
+    top: -69px;
+  }
+
+  .mainCard {
+    width: 1148px;
+    height: 489px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .cardDescription {
+    font-size: 12px;
+  }
+
+  .viewButton {
+    width: 111px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .decorativeCircle1,
+  .decorativeCircle2 {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* 1280x631 */
+@media (max-width: 1280px) {
+  .selectedWork {
+    padding: 80px 203px;
+  }
+
+  .title {
+    font-size: 28px;
+    width: 420px;
+    margin-bottom: 78px;
+  }
+
+  .cardContainer {
+    width: 960px;
+    height: 410px;
+  }
+
+  .cardLayer1 {
+    width: 960px;
+    height: 410px;
+  }
+
+  .cardLayer2 {
+    width: 918px;
+    height: 398px;
+    top: -26px;
+  }
+
+  .cardLayer3 {
+    width: 876px;
+    height: 398px;
+    top: -47px;
+  }
+
+  .mainCard {
+    width: 958px;
+    height: 408px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .cardDescription {
+    font-size: 10px;
+  }
+
+  .cardContentLeft {
+    gap: 8px;
+  }
+
+  .tag {
+    width: 51px;
+    height: 21px;
+    font-size: 7px;
+  }
+
+  .viewButton {
+    width: 99px;
+    height: 27px;
+    font-size: 9px;
+  }
+
+  .decorativeCircle1,
+  .decorativeCircle2 {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* 744x1130 (Mobile Portrait) - Column layout */
+@media (max-width: 744px) {
+  .selectedWork {
+    padding: 60px 20px;
+    overflow: visible;
+  }
+
+  .title {
+    font-size: 24px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .tag {
+    width: 48px;
+    height: 20px;
+    font-size: 8px;
+    padding: 0;
+  }
+
+  .cardContainer {
+    position: static;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .cardLayer1,
+  .cardLayer2,
+  .cardLayer3 {
+    position: relative;
+    width: 100%;
+    height: 373px;
+    border-radius: 15px;
+    box-shadow: none;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    border: none;
+  }
+
+  .cardLayer1 {
+    order: 3;
+  }
+
+  .cardLayer2 {
+    order: 2;
+  }
+
+  .cardLayer3 {
+    order: 1;
+  }
+
+  .cardLayer1 > span,
+  .cardLayer2 > span,
+  .cardLayer3 > span {
+    position: absolute !important;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0;
+  }
+
+  .cardLayer1,
+  .cardLayer2,
+  .cardLayer3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  /* 
+  .cardLayer1::after,
+  .cardLayer2::after,
+  .cardLayer3::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 46.355%,
+      rgba(0, 0, 0, 0.92) 71.273%
+    );
+    z-index: 1;
+    pointer-events: none;
+  } */
+
+  .cardLayer1 .cardContent,
+  .cardLayer2 .cardContent,
+  .cardLayer3 .cardContent {
+    position: relative;
+    z-index: 5;
+    padding: 0 20px 20px;
+  }
+
+  .mainCard {
+    display: none;
+  }
+
+  .cardContent {
+    padding: 0 20px 20px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .cardDescription {
+    font-size: 12px;
+  }
+
+  .viewButton {
+    width: 120px;
+    height: 40px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .decorativeCircle1,
+  .decorativeCircle2 {
+    display: none;
+  }
+}
+
+/* 480x716 (Small Mobile) - Column layout */
+@media (max-width: 480px) {
+  .selectedWork {
+    padding: 10px;
+    overflow: visible;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .cardContainer {
+    gap: 16px;
+  }
+
+  .cardLayer1,
+  .cardLayer2,
+  .cardLayer3,
+  .mainCard {
+    height: 200px;
+  }
+
+  .cardContent {
+    padding: 0 16px 16px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .cardDescription {
+    font-size: 12px;
+  }
+
+  .viewButton {
+    width: 100px;
+    height: 32px;
+    font-size: 10px;
+  }
 }
