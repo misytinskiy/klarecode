@@ -257,13 +257,16 @@
 /* Hero Image */
 .heroImageContainer {
   position: absolute;
-  right: -299px;
-  width: 862px;
-  height: 735px;
   z-index: 1;
   opacity: 0.8;
   overflow: hidden;
   pointer-events: none;
+  width: 1085px;
+  height: 1016px;
+  position: absolute;
+  right: -299px;
+  top: -159px;
+  overflow: hidden;
 }
 
 .heroImage {

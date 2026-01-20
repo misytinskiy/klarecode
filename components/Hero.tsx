@@ -168,15 +168,15 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Hero Image */}
+        {/* Hero Video */}
         <div className={styles.heroImageContainer}>
-          <Image
-            src="/hero/heroImg.png"
-            alt="Hero Decorative"
-            fill
+          <video
+            src="/heroVideo.mp4"
             className={styles.heroImage}
-            priority
-            unoptimized
+            autoPlay
+            loop
+            muted
+            playsInline
           />
         </div>
       </div>

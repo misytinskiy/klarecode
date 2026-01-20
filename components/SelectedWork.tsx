@@ -5,7 +5,7 @@ export default function SelectedWork() {
   return (
     <section id="cases" className={styles.selectedWork}>
       <div className={styles.header}>
-        <h2 className={styles.title}>Selected Work</h2>
+      <h2 className={styles.title}>Selected Work</h2>
         <p className={styles.subtitle}>
           We handle the complexity so you can enjoy the clarity.
         </p>
@@ -13,7 +13,7 @@ export default function SelectedWork() {
 
       <div className={styles.imagesContainer}>
         {/* Left Image */}
-        <div className={styles.imageWrapper}>
+          <div className={styles.imageWrapper}>
           <div className={styles.imageLeft}>
             <Image
               src="/selectedWorks/traumerch.png"
@@ -29,8 +29,8 @@ export default function SelectedWork() {
             <span className={styles.imageNumber}>01.</span>
             <h3 className={styles.imageTitle}>TRAUMERCH</h3>
             <p className={styles.imageDescription}>
-              Custom LLM solutions & RAG systems.
-            </p>
+                Custom LLM solutions & RAG systems.
+              </p>
             <span className={styles.imageYear}>2025</span>
           </div>
         </div>
@@ -46,7 +46,7 @@ export default function SelectedWork() {
               priority
               unoptimized
             />
-          </div>
+            </div>
           <div className={styles.imageInfo}>
             <span className={styles.imageNumber}>02.</span>
             <h3 className={styles.imageTitle}>GAMBLOX</h3>

@@ -1,7 +1,35 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+import React from "react";
 import styles from "./AboutUs.module.css";
 
+// Функция для разбиения текста на символы с учетом переносов строк
+const splitTextIntoChars = (text: string) => {
+  const chars: (string | React.ReactElement)[] = [];
+  const lines = text.split(/\n/);
+
+  lines.forEach((line, lineIndex) => {
+    if (lineIndex > 0) {
+      chars.push(<br key={`br-${lineIndex}`} />);
+    }
+    line.split("").forEach((char) => {
+      chars.push(char);
+    });
+  });
+
+  return chars;
+};
+
+const headingText = `You focus on business growth.
+We ensure your infrastructure
+is stable, secure, and predictable
+— eliminating technical risks
+so you don't have to manage them`;
+
 export default function AboutUs() {
+  const chars = splitTextIntoChars(headingText);
+
   return (
     <section className={styles.aboutUs}>
       {/* Background Image with Gradient */}
@@ -16,16 +44,70 @@ export default function AboutUs() {
         <div className={styles.aboutUsContent}>
           {/* Main Heading */}
           <h2 className={styles.heading}>
-            <span className={styles.headingWhite}>
-              You focus on business growth. <br />
-              We ensure your infr
-            </span>
-            <span className={styles.headingGray}>
-              astructure <br />
-              is stable, secure, and predictable <br />
-              — eliminating technical risks <br />
-              so you don&apos;t have to manage them
-            </span>
+            <motion.div className={styles.headingText}>
+              {chars.map((char, index) => {
+                if (typeof char === "object") {
+                  return char;
+                }
+                const totalChars = chars.filter(
+                  (c) => typeof c === "string"
+                ).length;
+                const letterDelay = 0.04; // Задержка между буквами (в секундах)
+                const letterDuration = 0.15; // Длительность изменения цвета одной буквы
+                const pauseDuration = 1.2; // Пауза перед следующим циклом
+
+                // Время когда последняя буква становится белой
+                const lastLetterWhiteTime =
+                  (totalChars - 1) * letterDelay + letterDuration;
+
+                // Время начала изменения цвета для этой буквы (становится белой)
+                const whiteStartTime = index * letterDelay;
+                const whiteEndTime = whiteStartTime + letterDuration;
+
+                // Время начала возврата к серому для этой буквы (последовательно с первой)
+                const grayStartTime = lastLetterWhiteTime + index * letterDelay;
+                const grayEndTime = grayStartTime + letterDuration;
+
+                // Общая длительность цикла
+                const cycleDuration =
+                  lastLetterWhiteTime +
+                  totalChars * letterDelay +
+                  pauseDuration;
+
+                return (
+                  <motion.span
+                    key={index}
+                    className={styles.headingChar}
+                    initial={{ color: "#818181" }}
+                    animate={{
+                      color: [
+                        "#818181", // Начало - серый
+                        "#818181", // Ожидание своей очереди стать белой
+                        "#ffffff", // Становится белым
+                        "#ffffff", // Остается белым до начала возврата
+                        "#818181", // Возвращается к серому (последовательно)
+                        "#818181", // Пауза перед следующим циклом
+                      ],
+                    }}
+                    transition={{
+                      duration: cycleDuration,
+                      times: [
+                        0,
+                        whiteStartTime / cycleDuration,
+                        whiteEndTime / cycleDuration,
+                        grayStartTime / cycleDuration,
+                        grayEndTime / cycleDuration,
+                        1,
+                      ],
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                );
+              })}
+            </motion.div>
           </h2>
 
           {/* Two Column Text */}

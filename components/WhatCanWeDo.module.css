@@ -75,6 +75,7 @@
   padding: 25px 0;
   min-height: 177px;
   padding-bottom: 0;
+  cursor: pointer;
 }
 
 .divider {
@@ -105,13 +106,18 @@
 
 .serviceNumber {
   font-family: "Inter", sans-serif;
-  font-size: 64px;
-  font-weight: 400;
   line-height: 1.1;
   color: #ffffff;
   margin-right: 0;
   width: auto;
   flex-shrink: 0;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.6;
+  padding: 10px 28px;
+  border-radius: 5000px;
+  border: 1px solid #fff;
 }
 
 .serviceTitleColumn {
@@ -125,14 +131,14 @@
 }
 
 .serviceTitle {
-  font-family: "Inter", sans-serif;
-  font-size: 64px;
   font-weight: 400;
   line-height: 1.1;
   color: #ffffff;
   margin: 0;
   text-transform: uppercase;
-  width: 532px;
+  font-family: Manrope;
+  font-size: 50px;
+  width: 486px;
 }
 
 .serviceDetails {
@@ -183,10 +189,18 @@
 }
 
 .imagePlaceholder {
+  position: relative;
   width: 422px;
   height: 492px;
-  background-color: #000ac7;
   border-radius: 0;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .arrowButton {
@@ -204,8 +218,8 @@
 }
 
 .arrowIcon {
-  width: 29px;
-  height: 29px;
+  width: 40px;
+  height: 40px;
 }
 
 .arrowButton:hover .arrowIcon {

@@ -35,12 +35,12 @@
 }
 
 .cardHighlighted {
-  border-left: 8px solid #59ff00;
+  border-left: 7px solid #59ff00;
   position: relative;
   background: linear-gradient(
     270deg,
     rgba(109, 109, 109, 0) 43.62%,
-    rgba(89, 255, 0, 0.1) 97.78%
+    rgba(0, 223, 130, 0.1) 97.78%
   );
   transition: border-left 0.3s ease, background 0.3s ease;
 }

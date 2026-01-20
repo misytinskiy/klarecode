@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import styles from "./CTASection.module.css";
 import { useContactModal } from "./ContactModalContext";
 
@@ -9,12 +8,13 @@ export default function CTASection() {
   return (
     <section className={styles.ctaSection}>
       <div className={styles.ctaBackground}>
-        <Image
-          src="/ctaImg.jpg"
-          alt="Background"
-          fill
+        <video
+          src="/ctaVideo.mp4"
           className={styles.ctaBackgroundImage}
-          unoptimized
+          autoPlay
+          loop
+          muted
+          playsInline
         />
         <div className={styles.ctaGradientOverlay} />
       </div>

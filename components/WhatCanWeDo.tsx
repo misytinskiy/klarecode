@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import styles from "./WhatCanWeDo.module.css";
 import { useContactModal } from "./ContactModalContext";
 
@@ -84,6 +85,7 @@ export default function WhatCanWeDo() {
                 }}
                 style={{ overflow: "hidden" }}
                 layout
+                onClick={() => setExpandedId(isExpanded ? 0 : service.id)}
               >
                 {/* Left Side - Number, Title, Description and Button */}
                 <div className={styles.serviceLeftWrapper}>
@@ -111,7 +113,10 @@ export default function WhatCanWeDo() {
                             </p>
                             <button
                               className={styles.discussButton}
-                              onClick={openModal}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                openModal();
+                              }}
                             >
                               Discuss Project
                             </button>
@@ -136,20 +141,27 @@ export default function WhatCanWeDo() {
                           delay: 0.1,
                           ease: [0.4, 0, 0.2, 1],
                         }}
-                      />
+                      >
+                        <Image
+                          src="/whatWeCanDo/decorativeDonut.png"
+                          alt="Decorative Donut"
+                          fill
+                          className={styles.image}
+                          unoptimized
+                        />
+                      </motion.div>
                     )}
                   </AnimatePresence>
-                  <button
+                  <div
                     className={styles.arrowButton}
-                    onClick={() => setExpandedId(isExpanded ? 0 : service.id)}
                     aria-label="Toggle service"
                   >
                     <motion.svg
-                      width="29"
-                      height="29"
-                      viewBox="0 0 29 29"
-                      fill="none"
                       xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      fill="none"
                       className={styles.arrowIcon}
                       animate={{
                         rotate: isExpanded ? -90 : 0,
@@ -160,21 +172,21 @@ export default function WhatCanWeDo() {
                       }}
                     >
                       <path
-                        d="M6.18359 6.19077L21.6516 21.6587"
-                        stroke="#2AC293"
+                        d="M12.0399 12.0477L27.5078 27.5156"
+                        stroke="#59FF00"
                         strokeWidth="2.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                       <path
-                        d="M22.0966 9.72218V22.0966H9.72218"
-                        stroke="#2AC293"
+                        d="M27.9528 15.5791V27.9534H15.5784"
+                        stroke="#59FF00"
                         strokeWidth="2.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                     </motion.svg>
-                  </button>
+                  </div>
                 </div>
               </motion.div>
 

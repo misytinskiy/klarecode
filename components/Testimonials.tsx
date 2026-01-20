@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef, useEffect } from "react";
 import styles from "./Testimonials.module.css";
 
 const avatars = [
@@ -37,6 +40,31 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const cardsElement = cardsRef.current;
+    if (!cardsElement) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      // Проверяем, можем ли скроллить горизонтально
+      const canScrollHorizontally =
+        cardsElement.scrollWidth > cardsElement.clientWidth;
+      
+      if (canScrollHorizontally) {
+        // Преобразуем вертикальный скролл в горизонтальный
+        e.preventDefault();
+        cardsElement.scrollLeft += e.deltaY;
+      }
+    };
+
+    cardsElement.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      cardsElement.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
   return (
     <section className={styles.testimonials}>
       <div className={styles.header}>
@@ -48,7 +76,7 @@ export default function Testimonials() {
         </p>
       </div>
 
-      <div className={styles.cards}>
+      <div ref={cardsRef} className={styles.cards}>
         {testimonials.map((testimonial, index) => (
           <div key={index} className={styles.card}>
             <div className={styles.cardHeader}>

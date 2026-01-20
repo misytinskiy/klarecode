@@ -84,14 +84,14 @@
   margin-top: 0;
 }
 
-.headingWhite {
-  color: #ffffff;
+.headingText {
+  display: inline-block;
   line-height: 1.1;
 }
 
-.headingGray {
-  color: #818181;
-  line-height: 1.1;
+.headingChar {
+  display: inline-block;
+  transition: color 0.3s ease;
 }
 
 .textColumns {
