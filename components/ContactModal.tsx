@@ -4,13 +4,10 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import styles from "./ContactModal.module.css";
+import { useContactModal } from "./ContactModalContext";
 
-interface ContactModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
+export default function ContactModal() {
+  const { isOpen, closeModal } = useContactModal();
   const [activeTab, setActiveTab] = useState<"message" | "call">("message");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -75,7 +72,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       {isOpen && (
         <motion.div
           className={styles.overlay}
-          onClick={onClose}
+          onClick={closeModal}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -95,7 +92,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             }}
           >
             {/* Close button */}
-            <button className={styles.closeButton} onClick={onClose}>
+            <button className={styles.closeButton} onClick={closeModal}>
               <svg
                 width="14"
                 height="14"

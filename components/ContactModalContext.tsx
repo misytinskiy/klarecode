@@ -1,7 +1,6 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
-import ContactModal from "./ContactModal";
 
 interface ContactModalContextType {
   openModal: () => void;
@@ -22,7 +21,6 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
   return (
     <ContactModalContext.Provider value={{ openModal, closeModal, isOpen }}>
       {children}
-      <ContactModal isOpen={isOpen} onClose={closeModal} />
     </ContactModalContext.Provider>
   );
 }
