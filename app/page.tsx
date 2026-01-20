@@ -1,6 +1,9 @@
 import Hero from "../components/Hero";
 import TrustedBy from "../components/TrustedBy";
-import Expertise from "../components/Expertise";
+import DecorativeBlock from "../components/DecorativeBlock";
+import AboutUs from "../components/AboutUs";
+import WhatCanWeDo from "../components/WhatCanWeDo";
+import CTASection from "../components/CTASection";
 import Numbers from "../components/Numbers";
 import SelectedWork from "../components/SelectedWork";
 import DevelopmentProcess from "../components/DevelopmentProcess";
@@ -14,12 +17,15 @@ export default function Home() {
     <>
       <Hero />
       <TrustedBy />
-      <Expertise />
+      <DecorativeBlock />
+      <AboutUs />
+      <WhatCanWeDo />
+      <CTASection />
       <Numbers />
       <SelectedWork />
       <DevelopmentProcess />
-      <Marquee />
       <Testimonials />
+      <Marquee />
       <CTA />
       <Footer />
     </>

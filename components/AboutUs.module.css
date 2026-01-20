@@ -1,0 +1,296 @@
+.aboutUs {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000000;
+  overflow: hidden;
+  padding: 120px 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.2) 9.408%,
+    rgba(0, 0, 0, 0) 45.446%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 304px;
+  flex: 1;
+  min-height: 0;
+}
+
+.tag {
+  border: 1px solid #ffffff;
+  border-radius: 50000px;
+  padding: 10px;
+  height: 32px;
+  width: 138px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  margin-bottom: 0;
+}
+
+.tagText {
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.heading {
+  font-family: "Inter", sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 863px;
+  margin-top: 0;
+}
+
+.headingWhite {
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.headingGray {
+  color: #818181;
+  line-height: 1.1;
+}
+
+.textColumns {
+  display: flex;
+  gap: 24px;
+}
+
+.textColumn {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  color: #ffffff;
+  margin: 0;
+  max-width: 412px;
+}
+
+.textColumn:last-child {
+  max-width: 423px;
+}
+
+.aboutUsContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Responsive Design */
+
+/* 1540x746 */
+@media (max-width: 1540px) {
+  .aboutUs {
+    min-height: 800px;
+  }
+
+  .backgroundImage {
+    height: 800px;
+  }
+
+  .content {
+    padding: 100px 200px;
+    min-height: 800px;
+  }
+
+  .heading {
+    font-size: 42px;
+    margin-left: calc(33.33% + 80px - 200px);
+    max-width: 720px;
+  }
+
+  .textColumns {
+    margin-top: 300px;
+    margin-left: calc(33.33% + 80px - 200px);
+    gap: 40px;
+  }
+
+  .textColumn {
+    font-size: 13px;
+    max-width: 350px;
+  }
+
+  .textColumn:last-child {
+    max-width: 360px;
+  }
+}
+
+/* 1280x631 */
+@media (max-width: 1280px) {
+  .aboutUs {
+    min-height: 700px;
+  }
+
+  .backgroundImage {
+    height: 700px;
+  }
+
+  .content {
+    padding: 80px 120px;
+    min-height: 700px;
+  }
+
+  .tag {
+    height: 28px;
+    width: 120px;
+    padding: 8px;
+  }
+
+  .tagText {
+    font-size: 11px;
+  }
+
+  .heading {
+    font-size: 36px;
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .textColumns {
+    margin-top: 250px;
+    margin-left: 0;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .textColumn {
+    font-size: 12px;
+    max-width: 100%;
+  }
+
+  .textColumn:last-child {
+    max-width: 100%;
+  }
+}
+
+/* 744x1130 (Mobile Portrait) */
+@media (max-width: 744px) {
+  .aboutUs {
+    min-height: 600px;
+  }
+
+  .backgroundImage {
+    height: 600px;
+  }
+
+  .content {
+    padding: 60px 20px;
+    min-height: 600px;
+  }
+
+  .tag {
+    height: 28px;
+    width: 110px;
+    padding: 6px 10px;
+  }
+
+  .tagText {
+    font-size: 10px;
+  }
+
+  .heading {
+    font-size: 28px;
+    margin-left: 0;
+    margin-top: 20px;
+    max-width: 100%;
+  }
+
+  .textColumns {
+    margin-top: 200px;
+    margin-left: 0;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .textColumn {
+    font-size: 12px;
+    max-width: 100%;
+  }
+}
+
+/* 480x716 (Small Mobile) */
+@media (max-width: 480px) {
+  .aboutUs {
+    min-height: 500px;
+  }
+
+  .backgroundImage {
+    height: 500px;
+  }
+
+  .content {
+    padding: 50px 16px;
+    min-height: 500px;
+  }
+
+  .tag {
+    height: 26px;
+    width: 100px;
+    padding: 5px 8px;
+  }
+
+  .tagText {
+    font-size: 9px;
+  }
+
+  .heading {
+    font-size: 24px;
+    margin-left: 0;
+    margin-top: 16px;
+  }
+
+  .textColumns {
+    margin-top: 150px;
+    margin-left: 0;
+    gap: 16px;
+  }
+
+  .textColumn {
+    font-size: 11px;
+  }
+}

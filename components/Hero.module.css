@@ -3,19 +3,17 @@
   min-height: 100vh;
   background-color: #000000;
   overflow: hidden;
+  padding: 35px 300px 75px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Navigation */
 .nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 36px 351px 0;
 }
 
 .logoContainer {
@@ -26,6 +24,8 @@
 
 .logoImage {
   flex-shrink: 0;
+  width: 94px;
+  height: 94px;
 }
 
 .logo {
@@ -38,12 +38,11 @@
 }
 
 .navLinks {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
-  align-items: center;
-  gap: 50px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-right: 10px;
 }
 
 .navLink {
@@ -59,13 +58,12 @@
 
 .navRight {
   display: flex;
-  align-items: center;
-  gap: 48px;
+  gap: 50px;
 }
 
 .languageSwitcher {
   display: flex;
-  align-items: center;
+
   gap: 8px;
   color: #ffffff;
   font-size: 12px;
@@ -82,14 +80,17 @@
 
 .discussButton {
   border: 1px solid #ffffff;
-  border-radius: 50px;
+  border-radius: 5px;
   padding: 10px 25px;
+  width: 104px;
   height: 36px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
   cursor: pointer;
+  opacity: 0.6;
 }
 
 .discussButtonText {
@@ -138,66 +139,70 @@
   position: relative;
   z-index: 10;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 100vh;
-  padding-top: 120px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
   padding-bottom: 0;
+  flex: 1;
+  min-height: 0;
+  overflow: visible;
 }
 
 .heroTextBlock {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+  z-index: 2;
+  width: 815px;
+  margin-top: 68px;
+  justify-content: space-between;
   flex: 1;
-  gap: 24px;
-  z-index: 1;
+  align-self: stretch;
 }
 
 .heading {
   color: #ffffff;
-  font-size: 60px;
+  font-size: 72px;
   line-height: 1.1;
-  text-align: center;
-  max-width: 863px;
-  margin-bottom: 0;
+  text-align: left;
+  max-width: 815px;
+  margin: 0;
   font-style: normal;
   font-weight: 400;
   line-height: 110%;
+  margin-bottom: 0;
 }
 
 .subtitle {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: normal;
-  text-align: center;
-  max-width: 501px;
-  margin-bottom: 0;
+  text-align: left;
+  max-width: 540px;
+
+  line-height: normal;
 }
 
 .ctaButtons {
   display: flex;
   align-items: center;
-  gap: 8px;
-  backdrop-filter: blur(5.2px);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid #ffffff29;
-  border-radius: 40px;
-  padding: 12px;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 0;
+  z-index: 10000;
 }
 
 .ctaButtonPrimary {
-  background-color: var(--color-primary, #00df82);
+  background-color: #59ff00;
   color: #030f0f;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
-  border-radius: 50px;
+  border-radius: 5px;
   padding: 10px;
-  height: 40px;
-  width: 148px;
+  height: 48px;
+  width: 156px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -207,23 +212,23 @@
 }
 
 .ctaButtonPrimary:hover {
-  background-color: #00c973;
+  background-color: #4de600;
 }
 
 .ctaButtonSecondary {
   color: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
-  border-radius: 50px;
+  border-radius: 5px;
   padding: 10px;
-  height: 40px;
-  width: 148px;
+  height: 48px;
+  width: 156px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
   background: transparent;
-  border: none;
+  border: 1px solid #ffffff;
   cursor: pointer;
   transition: opacity 0.2s;
 }
@@ -241,109 +246,31 @@
   transform: rotate(90deg);
 }
 
+.heroTextBlockContent {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: self-end;
+}
+
 /* Hero Image */
 .heroImageContainer {
-  position: relative;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: -301.5px;
-  width: 1085px;
-  height: 603px;
-  z-index: 20;
-}
-
-.heroImageWrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-
-  overflow: hidden;
-}
-
-/* .heroImageWrapper::after {
-  content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 15%;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    transparent 100%
-  );
-  pointer-events: none;
+  right: -299px;
+  width: 862px;
+  height: 735px;
   z-index: 1;
-} */
+  opacity: 0.8;
+  overflow: hidden;
+  pointer-events: none;
+}
 
 .heroImage {
-  /* width: 100%; */
-  /* height: 100%; */
-  object-fit: contain;
-  object-position: center;
-}
-
-.blurOverlay {
-  position: absolute;
-  bottom: 204px;
-  left: 0;
-  right: 0;
-  height: 128px;
-  background-color: #000000;
-  filter: blur(25.8px);
-  pointer-events: none;
-}
-
-/* Decorative Background Elements */
-.decorativeBackground {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.radialGradient {
-  position: absolute;
-  left: 50%;
-  top: 44%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  z-index: 0;
-}
-
-.radialGradientInner {
-  /* position: absolute; */
-  inset: -50%;
-  opacity: 0.2;
-}
-
-.radialGradientCircle {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  background: linear-gradient(180deg, #2ac293 0%, #00df82 100%);
-  filter: blur(100px);
-  width: 600px;
-  height: 600px;
-}
-
-.decorativeVectors {
-  position: absolute;
-  bottom: 34px;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
-}
-
-.decorativeGroup {
-  width: 100%;
-  height: auto;
   object-fit: cover;
-  object-position: bottom;
+  object-position: center;
 }
 
 /* Responsive Design */

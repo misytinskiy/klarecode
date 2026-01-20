@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { ContactModalProvider } from "../components/ContactModalContext";
 import ContactModal from "../components/ContactModal";
@@ -8,6 +8,12 @@ import Favicon from "../components/Favicon";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -26,11 +32,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} font-sans antialiased`}
+        className={`${inter.variable} ${manrope.variable} font-sans antialiased`}
       >
         <Favicon />
         <ContactModalProvider>
-          {children}
+        {children}
           <ContactModal />
         </ContactModalProvider>
       </body>

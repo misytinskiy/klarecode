@@ -62,52 +62,49 @@ export default function Hero() {
           <Image
             src="/logo.svg"
             alt="Klarecode Logo"
-            width={26}
-            height={30}
+            width={94}
+            height={94}
             className={styles.logoImage}
             priority
           />
-          <h1 className={styles.logo}>Klarecode</h1>
         </div>
 
-        {/* Navigation Links */}
-        <div
-          className={`${styles.navLinks} ${
-            isMenuOpen ? styles.navLinksOpen : ""
-          }`}
-        >
-          <a
-            href="#services"
-            className={styles.navLink}
-            onClick={(e) => handleNavClick(e, "services")}
-          >
-            Services
-          </a>
-          <a
-            href="#cases"
-            className={styles.navLink}
-            onClick={(e) => handleNavClick(e, "cases")}
-          >
-            Cases
-          </a>
-          <a
-            href="#process"
-            className={styles.navLink}
-            onClick={(e) => handleNavClick(e, "process")}
-          >
-            Process
-          </a>
-          <a
-            href="#about"
-            className={styles.navLink}
-            onClick={(e) => handleNavClick(e, "about")}
-          >
-            About
-          </a>
-        </div>
-
-        {/* Language Switcher & CTA */}
+        {/* Navigation Links & Language Switcher & CTA */}
         <div className={styles.navRight}>
+          <div
+            className={`${styles.navLinks} ${
+              isMenuOpen ? styles.navLinksOpen : ""
+            }`}
+          >
+            <a
+              href="#services"
+              className={styles.navLink}
+              onClick={(e) => handleNavClick(e, "services")}
+            >
+              Services
+            </a>
+            <a
+              href="#cases"
+              className={styles.navLink}
+              onClick={(e) => handleNavClick(e, "cases")}
+            >
+              Cases
+            </a>
+            <a
+              href="#process"
+              className={styles.navLink}
+              onClick={(e) => handleNavClick(e, "process")}
+            >
+              Process
+            </a>
+            <a
+              href="#about"
+              className={styles.navLink}
+              onClick={(e) => handleNavClick(e, "about")}
+            >
+              About
+            </a>
+          </div>
           <div className={styles.languageSwitcher}>
             <span className={styles.languageActive}>EN</span>
             <span className={styles.languageInactive}>DE</span>
@@ -138,87 +135,48 @@ export default function Hero() {
             Web & Decentralized Future
           </h2>
 
-          {/* Subtitle */}
-          <p className={styles.subtitle}>
-            Engineering studio by ex-Big Tech experts. We deliver scalable Web3
-            solutions, AI automation, and Telegram Mini Apps focused on your
-            business metrics.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className={styles.ctaButtons}>
-            <button className={styles.ctaButtonPrimary} onClick={openModal}>
-              Discuss Project
-            </button>
-            <button className={styles.ctaButtonSecondary}>
-              View Cases
-              {/* <svg
-                className={styles.arrowIcon}
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 19V5M12 5L5 12M12 5L19 12"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg> */}
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15.833 8L4.16634 8M15.833 8L10.833 13M15.833 8L10.833 3"
-                  stroke="white"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
+          <div className={styles.heroTextBlockContent}>
+            {/* Subtitle */}
+            <p className={styles.subtitle}>
+              Engineering studio by ex-Big Tech experts. We deliver scalable
+              Web3 solutions, AI automation, and Telegram Mini Apps focused on
+              your business metrics.
+            </p>
+            {/* CTA Buttons */}
+            <div className={styles.ctaButtons}>
+              <button className={styles.ctaButtonPrimary} onClick={openModal}>
+                Discuss Project
+              </button>
+              <button className={styles.ctaButtonSecondary}>
+                View Cases
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.833 8L4.16634 8M15.833 8L10.833 13M15.833 8L10.833 3"
+                    stroke="white"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Hero Image */}
         <div className={styles.heroImageContainer}>
-          <div className={styles.heroImageWrapper}>
-            <Image
-              src="/heroImg.png"
-              alt="Dashboard Preview"
-              width={1085}
-              height={603}
-              className={styles.heroImage}
-              priority
-            />
-            {/* Blur overlay at bottom */}
-            <div className={styles.blurOverlay} />
-          </div>
-        </div>
-      </div>
-
-      {/* Decorative Background Elements */}
-      <div className={styles.decorativeBackground}>
-        {/* Radial gradient circle */}
-        <div className={styles.radialGradient}>
-          <div className={styles.radialGradientInner}>
-            <div className={styles.radialGradientCircle} />
-          </div>
-        </div>
-
-        {/* Decorative vectors */}
-        <div className={styles.decorativeVectors}>
           <Image
-            src="/hero/grouped.svg"
-            alt=""
-            width={1920}
-            height={400}
-            className={styles.decorativeGroup}
+            src="/hero/heroImg.png"
+            alt="Hero Decorative"
+            fill
+            className={styles.heroImage}
             priority
+            unoptimized
           />
         </div>
       </div>

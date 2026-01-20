@@ -18,10 +18,7 @@ export default function CTA() {
             product for scaling.
           </p>
           <div className={styles.ctaButtons}>
-            <button
-              className={styles.ctaButtonPrimary}
-              onClick={openModal}
-            >
+            <button className={styles.ctaButtonPrimary} onClick={openModal}>
               Discuss Project
             </button>
             <button className={styles.ctaButtonSecondary}>

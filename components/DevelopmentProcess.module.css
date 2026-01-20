@@ -8,17 +8,18 @@
 
 .title {
   font-family: "Inter", sans-serif;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 400;
   line-height: 1.1;
   color: #ffffff;
   margin: 0 0 60px 0;
+  max-width: 300px;
 }
 
 .cards {
   display: flex;
   gap: 20px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   position: relative;
 }
 
@@ -34,12 +35,12 @@
 }
 
 .cardHighlighted {
-  border-left: 8px solid #00df82;
+  border-left: 8px solid #59ff00;
   position: relative;
   background: linear-gradient(
     270deg,
     rgba(109, 109, 109, 0) 43.62%,
-    rgba(0, 223, 130, 0.1) 97.78%
+    rgba(89, 255, 0, 0.1) 97.78%
   );
   transition: border-left 0.3s ease, background 0.3s ease;
 }
@@ -86,32 +87,34 @@
 }
 
 .cardNumber {
+  position: absolute;
+  bottom: 20px;
+  left: 14px;
   font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.1;
   color: #ffffff;
-  margin-top: auto;
 }
 
 .viewMoreButton {
   align-self: center;
-  background: linear-gradient(90deg, #00df82 0%, #00ff95 100%);
+  background: transparent;
 
-  border: none;
-  border-radius: 50px;
+  border: 1px solid white;
+  border-radius: 5px;
   padding: 12px 32px;
   font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #030f0f;
+  color: #ffffff;
   cursor: pointer;
   transition: background-color 0.2s, opacity 0.2s;
   width: 100%;
 }
 
 .viewMoreButton:hover {
-  background-color: #00e284;
+  /* background-color: #00e284; */
   opacity: 0.9;
 }
 
@@ -231,8 +234,11 @@
 
   .cardHighlighted {
     border-left: none;
-    background: linear-gradient(#00df821a 0%, #6d6d6d00 10.62%);
-    border-top: 1px solid #00df82;
+    background: linear-gradient(
+      rgba(89, 255, 0, 0.1) 0%,
+      rgba(109, 109, 109, 0) 10.62%
+    );
+    border-top: 1px solid #59ff00;
   }
 
   .cardHighlighted::before {
@@ -274,8 +280,8 @@
 
   .cardNumber {
     font-size: 12px;
-    margin-top: 0;
-    flex-shrink: 0;
+    bottom: 16px;
+    left: 0px;
   }
 
   .viewMoreButton {
@@ -318,8 +324,11 @@
 
   .cardHighlighted {
     border-left: none;
-    background: linear-gradient(#00df821a 0%, #6d6d6d00 10.62%);
-    border-top: 1px solid #00df82;
+    background: linear-gradient(
+      rgba(89, 255, 0, 0.1) 0%,
+      rgba(109, 109, 109, 0) 10.62%
+    );
+    border-top: 1px solid #59ff00;
   }
 
   .cardHighlighted::before {
@@ -360,8 +369,8 @@
 
   .cardNumber {
     font-size: 11px;
-    margin-top: 0;
-    flex-shrink: 0;
+    bottom: 16px;
+    left: 16px;
   }
 
   .viewMoreButton {

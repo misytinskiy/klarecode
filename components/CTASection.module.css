@@ -1,0 +1,367 @@
+.ctaSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 120px 0;
+}
+
+.ctaBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.ctaBackgroundImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.ctaGradientOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0) 45.446%
+  );
+  z-index: 1;
+}
+
+.ctaContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1905px;
+  flex: 1;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 304px;
+  z-index: 2;
+  padding: 0 302px;
+}
+
+.ctaLabel {
+  border: 1px solid #ffffff;
+  border-radius: 50000px;
+  opacity: 0.6;
+  padding: 4px 12px;
+  width: 138px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.ctaContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  max-width: 863px;
+  z-index: 1;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.ctaTitle {
+  font-family: "Inter", sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: left;
+  color: #ffffff;
+  margin: 0;
+  max-width: 564px;
+}
+
+.ctaDescription {
+  font-family: Manrope;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
+  color: #ffffff;
+  margin: 0;
+  max-width: 347px;
+}
+
+.ctaButtons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Manrope;
+}
+
+.ctaButtonPrimary {
+  background: #59ff00;
+  border: none;
+
+  padding: 10px;
+  width: 156px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: bold;
+  color: #030f0f;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  border-radius: 5px;
+}
+
+.ctaInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.ctaButtonPrimary:hover {
+  opacity: 0.9;
+}
+
+.ctaButtonSecondary {
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+  width: 156px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.ctaButtonSecondary:hover {
+  opacity: 0.8;
+}
+
+.ctaButtonSecondary svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive Design */
+
+/* 1540x746 */
+@media (max-width: 1540px) {
+  .ctaSection {
+    min-height: 800px;
+  }
+
+  .ctaContainer {
+    height: 800px;
+    padding: 0 250px;
+    gap: 250px;
+  }
+
+  .ctaContent {
+    gap: 22px;
+    max-width: 750px;
+  }
+
+  .ctaTitle {
+    font-size: 52px;
+    max-width: 550px;
+  }
+
+  .ctaDescription {
+    font-size: 13px;
+    max-width: 310px;
+  }
+
+  .ctaButtons {
+    gap: 7px;
+  }
+
+  .ctaButtonPrimary,
+  .ctaButtonSecondary {
+    height: 38px;
+    width: 140px;
+    font-size: 11px;
+    padding: 9px;
+  }
+
+  .ctaButtonSecondary svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* 1280x631 */
+@media (max-width: 1280px) {
+  .ctaSection {
+    min-height: 700px;
+  }
+
+  .ctaContainer {
+    height: 700px;
+    padding: 0 200px;
+    gap: 200px;
+  }
+
+  .ctaContent {
+    gap: 20px;
+    max-width: 650px;
+  }
+
+  .ctaTitle {
+    font-size: 44px;
+    max-width: 480px;
+  }
+
+  .ctaDescription {
+    font-size: 12px;
+    max-width: 280px;
+  }
+
+  .ctaButtons {
+    gap: 6px;
+  }
+
+  .ctaButtonPrimary,
+  .ctaButtonSecondary {
+    height: 36px;
+    width: 135px;
+    font-size: 11px;
+    padding: 8px;
+  }
+
+  .ctaButtonSecondary svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* 744x1130 (Mobile Portrait) */
+@media (max-width: 744px) {
+  .ctaSection {
+    min-height: 600px;
+  }
+
+  .ctaContainer {
+    height: 600px;
+    padding: 0 20px;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .ctaContent {
+    gap: 20px;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .ctaTitle {
+    font-size: 32px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .ctaDescription {
+    font-size: 12px;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  .ctaButtons {
+    gap: 6px;
+    width: 100%;
+    max-width: 331px;
+  }
+
+  .ctaButtonPrimary,
+  .ctaButtonSecondary {
+    height: 40px;
+    width: 148px;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .ctaButtonSecondary svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* 480x716 (Small Mobile) */
+@media (max-width: 480px) {
+  .ctaSection {
+    min-height: 500px;
+  }
+
+  .ctaContainer {
+    height: 500px;
+    padding: 0 16px;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .ctaLabel {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .ctaContent {
+    gap: 18px;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .ctaTitle {
+    font-size: 24px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .ctaDescription {
+    font-size: 11px;
+    max-width: 260px;
+    text-align: center;
+  }
+
+  .ctaButtons {
+    gap: 8px;
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .ctaButtonPrimary,
+  .ctaButtonSecondary {
+    height: 40px;
+    width: 100%;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .ctaButtonSecondary svg {
+    width: 16px;
+    height: 16px;
+  }
+}

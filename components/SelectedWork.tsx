@@ -4,77 +4,20 @@ import styles from "./SelectedWork.module.css";
 export default function SelectedWork() {
   return (
     <section id="cases" className={styles.selectedWork}>
-      <h2 className={styles.title}>Selected Work</h2>
+      <div className={styles.header}>
+        <h2 className={styles.title}>Selected Work</h2>
+        <p className={styles.subtitle}>
+          We handle the complexity so you can enjoy the clarity.
+        </p>
+      </div>
 
-      <div className={styles.cardContainer}>
-        {/* Background layers for depth effect */}
-        <div className={styles.cardLayer3}>
-          <Image
-            src="/selectedWorks/syndicate.png"
-            alt="Syndicate"
-            fill
-            className={styles.layerImage}
-            priority
-            unoptimized
-          />
-          <div className={styles.cardContent}>
-            <div className={styles.cardContentLeft}>
-              <div className={styles.tag}>WEB APP</div>
-              <h3 className={styles.cardTitle}>SYNDYCAT</h3>
-              <p className={styles.cardDescription}>
-                Custom LLM solutions & RAG systems.
-              </p>
-            </div>
-            <button className={styles.viewButton}>Explore AI</button>
-          </div>
-        </div>
-        <div className={styles.cardLayer2}>
-          <Image
-            src="/selectedWorks/gamblox.png"
-            alt="Gamblox"
-            fill
-            className={styles.layerImage}
-            priority
-            unoptimized
-          />
-          <div className={styles.cardContent}>
-            <div className={styles.cardContentLeft}>
-              <div className={styles.tag}>WEB APP</div>
-              <h3 className={styles.cardTitle}>Gambox</h3>
-              <p className={styles.cardDescription}>
-                Custom LLM solutions & RAG systems.
-              </p>
-            </div>
-            <button className={styles.viewButton}>Explore AI</button>
-          </div>
-        </div>
-        <div className={styles.cardLayer1}>
-          <Image
-            src="/selectedWorks/traumerch.png"
-            alt="Traumerch"
-            fill
-            className={styles.layerImage}
-            priority
-            unoptimized
-          />
-          <div className={styles.cardContent}>
-            <div className={styles.cardContentLeft}>
-              <div className={styles.tag}>B2B</div>
-              <h3 className={styles.cardTitle}>TRAUMERCH</h3>
-              <p className={styles.cardDescription}>
-                Custom LLM solutions & RAG systems.
-              </p>
-            </div>
-            <button className={styles.viewButton}>Explore AI</button>
-          </div>
-        </div>
-
-        {/* Main card with image */}
-        <div className={styles.mainCard}>
-          <div className={styles.imageWrapper}>
+      <div className={styles.imagesContainer}>
+        {/* Left Image */}
+        <div className={styles.imageWrapper}>
+          <div className={styles.imageLeft}>
             <Image
               src="/selectedWorks/traumerch.png"
-              alt="TRAUMERCH"
+              alt="Traumerch"
               fill
               className={styles.image}
               priority
@@ -82,23 +25,38 @@ export default function SelectedWork() {
             />
             <div className={styles.imageGradient} />
           </div>
+          <div className={styles.imageInfo}>
+            <span className={styles.imageNumber}>01.</span>
+            <h3 className={styles.imageTitle}>TRAUMERCH</h3>
+            <p className={styles.imageDescription}>
+              Custom LLM solutions & RAG systems.
+            </p>
+            <span className={styles.imageYear}>2025</span>
+          </div>
+        </div>
 
-          <div className={styles.cardContent}>
-            <div className={styles.cardContentLeft}>
-              <div className={styles.tag}>B2B</div>
-              <h3 className={styles.cardTitle}>TRAUMERCH</h3>
-              <p className={styles.cardDescription}>
-                Custom LLM solutions & RAG systems.
-              </p>
-            </div>
-            <button className={styles.viewButton}>View Case</button>
+        {/* Right Image */}
+        <div className={styles.imageWrapper}>
+          <div className={styles.imageRight}>
+            <Image
+              src="/selectedWorks/gamblox.png"
+              alt="Gamblox"
+              fill
+              className={styles.image}
+              priority
+              unoptimized
+            />
+          </div>
+          <div className={styles.imageInfo}>
+            <span className={styles.imageNumber}>02.</span>
+            <h3 className={styles.imageTitle}>GAMBLOX</h3>
+            <p className={styles.imageDescription}>
+              Custom LLM solutions & RAG systems.
+            </p>
+            <span className={styles.imageYear}>2025</span>
           </div>
         </div>
       </div>
-
-      {/* Decorative circles */}
-      <div className={styles.decorativeCircle1} />
-      <div className={styles.decorativeCircle2} />
     </section>
   );
 }

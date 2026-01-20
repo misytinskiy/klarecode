@@ -77,7 +77,6 @@ export default function Footer() {
               height={32}
               className={styles.logo}
             />
-            <h3 className={styles.logoText}>Klarecode</h3>
           </div>
         </div>
 

@@ -64,7 +64,7 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: 1px solid #2ac29382;
+  border: 1px solid #59ff004a;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(42, 194, 147, 0.1);
   cursor: pointer;
@@ -127,7 +127,7 @@
 .authorLine {
   width: 1px;
   height: 34px;
-  background-color: #2ac293;
+  background-color: #59ff00cf;
   flex-shrink: 0;
 }
 
