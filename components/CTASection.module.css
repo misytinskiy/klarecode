@@ -70,6 +70,10 @@
   flex-shrink: 0;
 }
 
+.ctaLabelMobile {
+  display: none;
+}
+
 .ctaContent {
   position: relative;
   display: flex;
@@ -321,12 +325,31 @@
     padding: 0 16px;
     flex-direction: column;
     gap: 16px;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .ctaLabel {
     font-size: 11px;
     padding: 3px 10px;
+    display: none;
+  }
+  .ctaLabelMobile {
+    display: block;
+    border: 1px solid #ffffff;
+    border-radius: 50000px;
+    opacity: 0.6;
+    padding: 3px 10px;
+    width: 138px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: #ffffff;
+    flex-shrink: 0;
+    align-self: flex-start;
   }
 
   .ctaContent {

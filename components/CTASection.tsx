@@ -21,6 +21,7 @@ export default function CTASection() {
       <div className={styles.ctaContainer}>
         <div className={styles.ctaLabel}>ACTION</div>
         <div className={styles.ctaContent}>
+          <div className={styles.ctaLabelMobile}>ACTION</div>
           <h2 className={styles.ctaTitle}>Ready to build your next product?</h2>
           <div className={styles.ctaInfo}>
             <p className={styles.ctaDescription}>
