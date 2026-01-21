@@ -282,7 +282,13 @@
     height: auto;
     min-height: 318px;
     padding: 10px;
-    border-radius: 20px;
+    border: 1px solid #59ff0030;
+    border-radius: 9px;
+    background-image: url("/cta/elipse1.svg");
+    /* background: rgba(27, 27, 27, 0.1); */
+
+    /* box-shadow: 0 0 6.498px 2.985px rgba(42, 194, 147, 0.08) inset; */
+    /* backdrop-filter: blur(1.1940189599990845px); */
   }
 
   .ctaContent {

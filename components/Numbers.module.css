@@ -399,6 +399,7 @@
 
   .card {
     height: 165px;
+    max-width: 95vw;
   }
 
   .card2 {

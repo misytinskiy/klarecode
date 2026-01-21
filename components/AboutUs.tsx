@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./AboutUs.module.css";
 
 // Функция для разбиения текста на символы с учетом переносов строк
@@ -28,6 +28,17 @@ is stable, secure, and predictable
 so you don't have to manage them`;
 
 export default function AboutUs() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   const chars = splitTextIntoChars(headingText);
 
   return (
@@ -103,7 +114,7 @@ export default function AboutUs() {
                       ease: "easeInOut",
                     }}
                   >
-                    {char === " " ? "\u00A0" : char}
+                    {char === " " ? (isMobile ? " " : "\u00A0") : char}
                   </motion.span>
                 );
               })}

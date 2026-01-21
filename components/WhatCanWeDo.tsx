@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import styles from "./WhatCanWeDo.module.css";
@@ -54,6 +54,16 @@ const services = [
 export default function WhatCanWeDo() {
   const { openModal } = useContactModal();
   const [expandedId, setExpandedId] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <section className={styles.whatCanWeDo}>
@@ -77,14 +87,20 @@ export default function WhatCanWeDo() {
               <motion.div
                 className={styles.serviceContent}
                 animate={{
-                  height: isExpanded ? "auto" : "177px",
+                  maxHeight: isExpanded
+                    ? isMobile
+                      ? "800px"
+                      : "900px"
+                    : isMobile
+                      ? "100px"
+                      : "177px",
                 }}
                 transition={{
                   duration: 0.4,
                   ease: [0.4, 0, 0.2, 1],
                 }}
                 style={{ overflow: "hidden" }}
-                layout
+                layout={!isMobile}
                 onClick={() => setExpandedId(isExpanded ? 0 : service.id)}
               >
                 {/* Left Side - Number, Title, Description and Button */}

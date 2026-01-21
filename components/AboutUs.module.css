@@ -90,8 +90,9 @@
 }
 
 .headingChar {
-  display: inline-block;
+  display: inline;
   transition: color 0.3s ease;
+  white-space: normal;
 }
 
 .textColumns {
@@ -240,6 +241,22 @@
     max-width: 100%;
   }
 
+  .headingText {
+    word-break: normal;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .headingChar {
+    display: inline !important;
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+
   .textColumns {
     margin-top: 200px;
     margin-left: 0;
@@ -291,8 +308,25 @@
     font-size: 30px;
     margin-left: 0;
     margin-top: 0;
-    max-width: 100%;
+    max-width: 300px;
+    width: fit-content;
     line-height: 1.2;
+  }
+
+  .headingText {
+    display: block;
+    width: fit-content;
+    max-width: 284px;
+    white-space: normal;
+    word-break: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .headingChar {
+    display: inline !important;
+    white-space: normal !important;
+    word-break: normal !important;
   }
 
   .textColumns {

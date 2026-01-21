@@ -164,6 +164,7 @@
   flex-direction: column;
   gap: 24px;
   margin-top: auto;
+  margin-bottom: 25px;
 }
 
 .serviceDescription {
@@ -413,20 +414,33 @@
   .serviceContent {
     flex-direction: column;
     padding: 20px 0;
-    min-height: auto;
+    min-height: auto !important;
+    align-items: center;
   }
 
   .serviceLeftWrapper {
     margin-left: 20px;
     width: calc(100% - 40px);
+    flex: 0 0 auto;
+    min-height: auto;
   }
 
   .serviceLeft {
     margin-bottom: 16px;
+    flex: 0 0 auto;
+    min-height: auto;
+    height: auto;
+    flex-shrink: 0;
   }
 
   .serviceNumber {
     font-size: 32px;
+  }
+
+  .serviceTitleColumn {
+    flex: 0 0 auto;
+    min-height: auto;
+    justify-content: flex-start;
   }
 
   .serviceTitleRow {
@@ -510,18 +524,25 @@
 
   .serviceContent {
     padding: 16px 0;
-    min-height: auto;
+    min-height: auto !important;
+    align-items: center;
   }
 
   .serviceLeftWrapper {
     margin-left: 0;
     width: 100%;
+    flex: 0 0 auto;
+    min-height: auto;
   }
 
   .serviceLeft {
     gap: 8px;
     flex-direction: column;
     align-items: flex-start;
+    flex: 0 0 auto;
+    min-height: auto;
+    height: auto;
+    flex-shrink: 0;
   }
 
   .serviceNumber {
@@ -536,6 +557,9 @@
 
   .serviceTitleColumn {
     width: 100%;
+    flex: 0 0 auto;
+    min-height: auto;
+    justify-content: flex-start;
   }
 
   .serviceTitleRow {
