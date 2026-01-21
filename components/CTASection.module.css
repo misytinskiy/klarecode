@@ -313,7 +313,7 @@
 /* 480x716 (Small Mobile) */
 @media (max-width: 480px) {
   .ctaSection {
-    min-height: 500px;
+    height: 100vh;
   }
 
   .ctaContainer {
@@ -338,7 +338,7 @@
   .ctaTitle {
     font-size: 24px;
     max-width: 100%;
-    text-align: center;
+    text-align: left;
   }
 
   .ctaDescription {

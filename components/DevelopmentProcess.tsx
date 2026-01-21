@@ -7,22 +7,26 @@ import styles from "./DevelopmentProcess.module.css";
 const steps = [
   {
     title: "Discovery",
-    description: "We audit your goals, define technical requirements, and build a roadmap.",
+    description:
+      "We audit your goals, define technical requirements, and build a roadmap.",
     number: "01",
   },
   {
     title: "Architecture/Design",
-    description: "Scalable system design, database structure, and high-fidelity UI/UX prototypes.",
+    description:
+      "Scalable system design, database structure, and high-fidelity UI/UX prototypes.",
     number: "02",
   },
   {
     title: "Development",
-    description: "Agile sprints with bi-weekly demos. Clean code and rigorous testing.",
+    description:
+      "Agile sprints with bi-weekly demos. Clean code and rigorous testing.",
     number: "03",
   },
   {
     title: "Launch",
-    description: "Deployment to production, final QA, and seamless onboarding for your team.",
+    description:
+      "Deployment to production, final QA, and seamless onboarding for your team.",
     number: "04",
   },
   {
@@ -38,15 +42,17 @@ export default function DevelopmentProcess() {
   return (
     <section id="process" className={styles.developmentProcess}>
       <h2 className={styles.title}>Development Process</h2>
-      
+
       <div className={styles.cards}>
         {steps.map((step, index) => {
           const isSelected = selectedIndex === index;
-          
+
           return (
             <motion.div
               key={index}
-              className={`${styles.card} ${isSelected ? styles.cardHighlighted : ""}`}
+              className={`${styles.card} ${
+                isSelected ? styles.cardHighlighted : ""
+              }`}
               onClick={() => setSelectedIndex(index)}
               whileHover={{ scale: 1.05 }}
               transition={{
@@ -63,9 +69,9 @@ export default function DevelopmentProcess() {
             >
               <div className={styles.cardTitleWrapper}>
                 <h3 className={styles.cardTitle}>{step.title}</h3>
+                <div className={styles.cardNumber}>{step.number}</div>
               </div>
               <p className={styles.cardDescription}>{step.description}</p>
-              <div className={styles.cardNumber}>{step.number}</div>
             </motion.div>
           );
         })}
@@ -75,4 +81,3 @@ export default function DevelopmentProcess() {
     </section>
   );
 }
-

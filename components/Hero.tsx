@@ -142,7 +142,7 @@ export default function Hero() {
               Web3 solutions, AI automation, and Telegram Mini Apps focused on
               your business metrics.
             </p>
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Desktop */}
             <div className={styles.ctaButtons}>
               <button className={styles.ctaButtonPrimary} onClick={openModal}>
                 Discuss Project
@@ -178,6 +178,30 @@ export default function Hero() {
             muted
             playsInline
           />
+        </div>
+
+        {/* CTA Buttons - Mobile (under video) */}
+        <div className={styles.ctaButtonsMobile}>
+          <button className={styles.ctaButtonPrimary} onClick={openModal}>
+            Discuss Project
+          </button>
+          <button className={styles.ctaButtonSecondary}>
+            View Cases
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.833 8L4.16634 8M15.833 8L10.833 13M15.833 8L10.833 3"
+                stroke="white"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>

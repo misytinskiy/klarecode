@@ -279,9 +279,9 @@
   }
 
   .cardNumber {
+    position: static;
     font-size: 12px;
-    bottom: 16px;
-    left: 0px;
+    flex-shrink: 0;
   }
 
   .viewMoreButton {
@@ -293,25 +293,26 @@
 /* 480x716 (Small Mobile) - 1 column with top border */
 @media (max-width: 480px) {
   .developmentProcess {
-    padding: 40px 16px 30px 16px;
+    padding: 40px 10px;
   }
 
   .title {
-    font-size: 20px;
-    margin-bottom: 24px;
+    font-size: 30px;
+    margin-bottom: 40px;
+    align-self: flex-start;
   }
 
   .cards {
     flex-direction: column;
     gap: 0;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 
   .card {
     flex: 1;
     width: 100%;
-    min-height: 200px;
-    padding: 16px;
+    min-height: 132px;
+    padding: 20px 0;
     border-left: none;
     border-top: 1px solid #2a2a2a;
     margin-right: 0;
@@ -326,7 +327,7 @@
     border-left: none;
     background: linear-gradient(
       rgba(89, 255, 0, 0.1) 0%,
-      rgba(109, 109, 109, 0) 10.62%
+      rgba(109, 109, 109, 0) 58.62%
     );
     border-top: 1px solid #59ff00;
   }
@@ -359,22 +360,29 @@
     font-size: 16px;
     margin: 0;
     flex: 1;
+    font-family: Manrope;
   }
 
   .cardDescription {
-    font-size: 11px;
+    font-size: 16px;
+    max-width: 300px;
     margin: 0 0 auto 0;
     flex: 1;
+    font-family: Manrope;
   }
 
   .cardNumber {
-    font-size: 11px;
-    bottom: 16px;
-    left: 16px;
+    position: static;
+    font-size: 16px;
+    flex-shrink: 0;
+    font-family: Manrope;
   }
 
   .viewMoreButton {
-    padding: 10px 16px;
-    font-size: 11px;
+    padding: 0;
+    height: 36px;
+    font-size: 12px;
+    font-family: Manrope;
+    font-weight: 700;
   }
 }

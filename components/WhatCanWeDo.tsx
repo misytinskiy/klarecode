@@ -94,7 +94,44 @@ export default function WhatCanWeDo() {
                       {service.number}
                     </span>
                     <div className={styles.serviceTitleColumn}>
-                      <h3 className={styles.serviceTitle}>{service.title}</h3>
+                      <div className={styles.serviceTitleRow}>
+                        <h3 className={styles.serviceTitle}>{service.title}</h3>
+                        <div
+                          className={styles.arrowButtonMobile}
+                          aria-label="Toggle service"
+                        >
+                          <motion.svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="40"
+                            height="40"
+                            viewBox="0 0 40 40"
+                            fill="none"
+                            className={styles.arrowIcon}
+                            animate={{
+                              rotate: isExpanded ? -90 : 0,
+                            }}
+                            transition={{
+                              duration: 0.4,
+                              ease: [0.4, 0, 0.2, 1],
+                            }}
+                          >
+                            <path
+                              d="M12.0399 12.0477L27.5078 27.5156"
+                              stroke="#59FF00"
+                              strokeWidth="2.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M27.9528 15.5791V27.9534H15.5784"
+                              stroke="#59FF00"
+                              strokeWidth="2.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </motion.svg>
+                        </div>
+                      </div>
                       <AnimatePresence>
                         {isExpanded && service.description && (
                           <motion.div
@@ -187,6 +224,34 @@ export default function WhatCanWeDo() {
                       />
                     </motion.svg>
                   </div>
+                  <AnimatePresence>
+                    {isExpanded && service.description && (
+                      <motion.div
+                        className={styles.serviceDetailsMobile}
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{
+                          duration: 0.3,
+                          delay: 0.1,
+                          ease: [0.4, 0, 0.2, 1],
+                        }}
+                      >
+                        <p className={styles.serviceDescription}>
+                          {service.description}
+                        </p>
+                        <button
+                          className={styles.discussButton}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openModal();
+                          }}
+                        >
+                          Discuss Project
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </motion.div>
 
@@ -194,7 +259,7 @@ export default function WhatCanWeDo() {
               <motion.div
                 className={styles.divider}
                 animate={{
-                  marginTop: isExpanded ? 60 : 0,
+                  marginTop: 0,
                 }}
                 transition={{
                   duration: 0.4,

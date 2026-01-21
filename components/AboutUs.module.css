@@ -256,41 +256,59 @@
 /* 480x716 (Small Mobile) */
 @media (max-width: 480px) {
   .aboutUs {
-    min-height: 500px;
+    padding: 40px 10px;
+    min-height: auto;
   }
 
   .backgroundImage {
-    height: 500px;
+    height: auto;
   }
 
   .content {
-    padding: 50px 16px;
-    min-height: 500px;
+    padding: 0;
+    gap: 0;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .aboutUsContent {
+    gap: 60px;
+    width: 100%;
   }
 
   .tag {
-    height: 26px;
-    width: 100px;
-    padding: 5px 8px;
+    width: 106px;
+    height: 32px;
+    padding: 4px 8px;
+    margin-bottom: 20px;
   }
 
   .tagText {
-    font-size: 9px;
+    font-size: 8px;
   }
 
   .heading {
-    font-size: 24px;
+    font-size: 30px;
     margin-left: 0;
-    margin-top: 16px;
+    margin-top: 0;
+    max-width: 100%;
+    line-height: 1.2;
   }
 
   .textColumns {
-    margin-top: 150px;
+    margin-top: 0;
     margin-left: 0;
-    gap: 16px;
+    flex-direction: column;
+    gap: 24px;
   }
 
   .textColumn {
-    font-size: 11px;
+    font-size: 12px;
+    max-width: 100%;
+    line-height: normal;
+  }
+
+  .textColumn:last-child {
+    max-width: 100%;
   }
 }

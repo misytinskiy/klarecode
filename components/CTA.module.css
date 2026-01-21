@@ -273,47 +273,50 @@
 /* 480x716 (Small Mobile) */
 @media (max-width: 480px) {
   .cta {
-    padding: 50px 16px;
+    padding: 40px 0;
   }
 
   .ctaSection {
     width: 100%;
     max-width: 100%;
     height: auto;
-    min-height: 350px;
-    padding: 30px 16px;
+    min-height: 318px;
+    padding: 10px;
     border-radius: 20px;
   }
 
   .ctaContent {
-    gap: 18px;
+    gap: 20px;
     width: 100%;
     max-width: 100%;
+    align-items: flex-start;
   }
 
   .ctaTitle {
-    font-size: 24px;
+    font-size: 30px;
     width: 100%;
-    max-width: 100%;
+    max-width: 300px;
+    text-align: left;
   }
 
   .ctaDescription {
-    font-size: 11px;
     width: 100%;
-    max-width: 260px;
+    max-width: 330px;
+    text-align: left;
+    font-size: 14px;
+    color: #8d8d8d;
   }
 
   .ctaButtons {
-    gap: 8px;
-    padding: 12px;
+    gap: 10px;
+    padding: 0;
     width: 100%;
     max-width: 100%;
-    flex-direction: column;
   }
 
   .ctaButtonPrimary,
   .ctaButtonSecondary {
-    height: 40px;
+    height: 36px;
     width: 100%;
     font-size: 12px;
     padding: 10px;

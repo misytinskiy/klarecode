@@ -59,6 +59,6 @@
 /* 480x716 (Small Mobile) */
 @media (max-width: 480px) {
   .decorativeBlock {
-    height: 400px;
+    height: 270px;
   }
 }

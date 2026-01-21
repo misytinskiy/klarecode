@@ -26,7 +26,7 @@
 }
 
 .marqueeText {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 32px;
   font-weight: 400;
   line-height: 1.1;
@@ -97,11 +97,11 @@
 /* 480x716 (Small Mobile) */
 @media (max-width: 480px) {
   .marquee {
-    height: 40px;
+    height: 55px;
   }
 
   .marqueeText {
-    font-size: 14px;
+    font-size: 24px;
     padding: 5px;
   }
 
@@ -109,4 +109,3 @@
     gap: 5px;
   }
 }
-
