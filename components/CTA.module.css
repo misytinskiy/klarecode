@@ -229,8 +229,9 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    min-height: 400px;
+    min-height: 792px;
     padding: 40px 20px;
+    background-image: url("/cta/elipse744.svg");
   }
 
   .ctaContent {

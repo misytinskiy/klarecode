@@ -209,7 +209,7 @@
   .title {
     font-size: 32px;
     margin-bottom: 41px;
-    align-self: center;
+    /* align-self: center; */
     font-weight: 400;
   }
 
@@ -217,14 +217,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   .card {
     flex: 0 0 calc(50% - 10px);
     width: calc(50% - 10px);
     height: auto;
-    min-height: 280px;
+    min-height: 162px;
     padding: 29px 0px;
     border-left: none;
     border-top: 1px solid #2a2a2a;

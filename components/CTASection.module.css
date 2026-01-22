@@ -264,52 +264,77 @@
 /* 744x1130 (Mobile Portrait) */
 @media (max-width: 744px) {
   .ctaSection {
-    min-height: 600px;
+    height: 100vh;
   }
 
   .ctaContainer {
     height: 600px;
-    padding: 0 20px;
+    padding: 0 30px;
     flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .ctaLabel {
+    font-size: 12px;
+    padding: 4px 12px;
+    display: none;
+  }
+
+  .ctaLabelMobile {
+    display: flex;
+    border: 1px solid #ffffff;
+    border-radius: 50000px;
+    opacity: 0.6;
+    padding: 4px 12px;
+    width: 150px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #ffffff;
+    flex-shrink: 0;
+    align-self: flex-start;
   }
 
   .ctaContent {
-    gap: 20px;
+    gap: 24px;
     max-width: 100%;
     align-items: center;
   }
 
   .ctaTitle {
-    font-size: 32px;
+    font-size: 36px;
     max-width: 100%;
-    text-align: center;
+    text-align: left;
   }
 
   .ctaDescription {
-    font-size: 12px;
-    max-width: 280px;
+    font-size: 14px;
+    max-width: 400px;
     text-align: center;
   }
 
   .ctaButtons {
-    gap: 6px;
+    gap: 10px;
     width: 100%;
-    max-width: 331px;
+    max-width: 100%;
+    flex-direction: column;
   }
 
   .ctaButtonPrimary,
   .ctaButtonSecondary {
-    height: 40px;
-    width: 148px;
-    font-size: 12px;
-    padding: 10px;
+    height: 44px;
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
   }
 
   .ctaButtonSecondary svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
   }
 }
 

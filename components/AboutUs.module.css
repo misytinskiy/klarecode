@@ -89,6 +89,11 @@
   line-height: 1.1;
 }
 
+.headingWord {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .headingChar {
   display: inline;
   transition: color 0.3s ease;
@@ -234,22 +239,33 @@
 /* 744x1130 (Mobile Portrait) */
 @media (max-width: 744px) {
   .aboutUs {
-    min-height: 600px;
+    padding: 60px 30px;
+    min-height: auto;
+    height: 100vh;
   }
 
   .backgroundImage {
-    height: 600px;
+    height: auto;
   }
 
   .content {
-    padding: 60px 20px;
-    min-height: 600px;
+    padding: 0;
+    gap: 0;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .aboutUsContent {
+    gap: 80px;
+    width: 100%;
+    min-height: auto;
   }
 
   .tag {
-    height: 28px;
-    width: 110px;
-    padding: 6px 10px;
+    width: 140px;
+    height: 40px;
+    padding: 6px 12px;
+    margin-bottom: 30px;
   }
 
   .tagText {
@@ -257,20 +273,22 @@
   }
 
   .heading {
-    font-size: 28px;
+    font-size: 42px;
     margin-left: 0;
-    margin-top: 20px;
-    max-width: 100%;
+    margin-top: 0;
+    max-width: 800px;
+    width: fit-content;
+    line-height: 1.2;
   }
 
   .headingText {
-    word-break: normal;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
     display: block;
     width: fit-content;
-    max-width: 100%;
+    max-width: 800px;
+    white-space: normal;
+    word-break: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .headingChar {
@@ -280,14 +298,19 @@
   }
 
   .textColumns {
-    margin-top: 200px;
+    margin-top: 0;
     margin-left: 0;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
   }
 
   .textColumn {
-    font-size: 12px;
+    font-size: 16px;
+    max-width: 100%;
+    line-height: normal;
+  }
+
+  .textColumn:last-child {
     max-width: 100%;
   }
 }

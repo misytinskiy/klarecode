@@ -4,23 +4,6 @@ import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import styles from "./AboutUs.module.css";
 
-// Функция для разбиения текста на символы с учетом переносов строк
-const splitTextIntoChars = (text: string) => {
-  const chars: (string | React.ReactElement)[] = [];
-  const lines = text.split(/\n/);
-
-  lines.forEach((line, lineIndex) => {
-    if (lineIndex > 0) {
-      chars.push(<br key={`br-${lineIndex}`} />);
-    }
-    line.split("").forEach((char) => {
-      chars.push(char);
-    });
-  });
-
-  return chars;
-};
-
 const headingText = `You focus on business growth.
 We ensure your infrastructure
 is stable, secure, and predictable
@@ -28,18 +11,112 @@ is stable, secure, and predictable
 so you don't have to manage them`;
 
 export default function AboutUs() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isNarrow, setIsNarrow] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 480);
+    const checkNarrow = () => {
+      setIsNarrow(window.innerWidth <= 744);
     };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+    checkNarrow();
+    window.addEventListener("resize", checkNarrow);
+    return () => window.removeEventListener("resize", checkNarrow);
   }, []);
 
-  const chars = splitTextIntoChars(headingText);
+  const totalChars = headingText.replace(/\n/g, "").length;
+  const letterDelay = 0.04;
+  const letterDuration = 0.15;
+  const pauseDuration = 1.2;
+  const lastLetterWhiteTime = (totalChars - 1) * letterDelay + letterDuration;
+  const cycleDuration =
+    lastLetterWhiteTime + totalChars * letterDelay + pauseDuration;
+
+  const getCharTimes = (index: number) => {
+    const whiteStartTime = index * letterDelay;
+    const whiteEndTime = whiteStartTime + letterDuration;
+    const grayStartTime = lastLetterWhiteTime + index * letterDelay;
+    const grayEndTime = grayStartTime + letterDuration;
+    return [
+      0,
+      whiteStartTime / cycleDuration,
+      whiteEndTime / cycleDuration,
+      grayStartTime / cycleDuration,
+      grayEndTime / cycleDuration,
+      1,
+    ];
+  };
+
+  const renderChar = (char: string, key: string, index: number) => {
+    return (
+      <motion.span
+        key={key}
+        className={styles.headingChar}
+        initial={{ color: "#818181" }}
+        animate={{
+          color: [
+            "#818181",
+            "#818181",
+            "#ffffff",
+            "#ffffff",
+            "#818181",
+            "#818181",
+          ],
+        }}
+        transition={{
+          duration: cycleDuration,
+          times: getCharTimes(index),
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        {char}
+      </motion.span>
+    );
+  };
+
+  const headingNodes = headingText.split(/\n/).reduce(
+    (lineAcc, line, lineIndex) => {
+      const startNodes =
+        lineIndex > 0
+          ? [...lineAcc.nodes, <br key={`br-${lineIndex}`} />]
+          : lineAcc.nodes;
+      return line.split(" ").reduce(
+        (wordAcc, word, wordIndex) => {
+          const hasSpace = wordIndex > 0;
+          const spaceNode = hasSpace
+            ? renderChar(
+                isNarrow ? " " : "\u00A0",
+                `space-${lineIndex}-${wordIndex}`,
+                wordAcc.charIndex
+              )
+            : null;
+          const charStart = wordAcc.charIndex + (hasSpace ? 1 : 0);
+          const wordNodes = word.split("").map((char, charOffset) =>
+            renderChar(
+              char,
+              `char-${lineIndex}-${wordIndex}-${charStart + charOffset}`,
+              charStart + charOffset
+            )
+          );
+          const nextCharIndex = charStart + word.length;
+          return {
+            nodes: [
+              ...wordAcc.nodes,
+              ...(spaceNode ? [spaceNode] : []),
+              <span
+                className={styles.headingWord}
+                key={`word-${lineIndex}-${wordIndex}`}
+              >
+                {wordNodes}
+              </span>,
+            ],
+            charIndex: nextCharIndex,
+          };
+        },
+        { nodes: startNodes, charIndex: lineAcc.charIndex }
+      );
+    },
+    { nodes: [] as React.ReactNode[], charIndex: 0 }
+  ).nodes;
 
   return (
     <section className={styles.aboutUs}>
@@ -56,68 +133,7 @@ export default function AboutUs() {
           {/* Main Heading */}
           <h2 className={styles.heading}>
             <motion.div className={styles.headingText}>
-              {chars.map((char, index) => {
-                if (typeof char === "object") {
-                  return char;
-                }
-                const totalChars = chars.filter(
-                  (c) => typeof c === "string"
-                ).length;
-                const letterDelay = 0.04; // Задержка между буквами (в секундах)
-                const letterDuration = 0.15; // Длительность изменения цвета одной буквы
-                const pauseDuration = 1.2; // Пауза перед следующим циклом
-
-                // Время когда последняя буква становится белой
-                const lastLetterWhiteTime =
-                  (totalChars - 1) * letterDelay + letterDuration;
-
-                // Время начала изменения цвета для этой буквы (становится белой)
-                const whiteStartTime = index * letterDelay;
-                const whiteEndTime = whiteStartTime + letterDuration;
-
-                // Время начала возврата к серому для этой буквы (последовательно с первой)
-                const grayStartTime = lastLetterWhiteTime + index * letterDelay;
-                const grayEndTime = grayStartTime + letterDuration;
-
-                // Общая длительность цикла
-                const cycleDuration =
-                  lastLetterWhiteTime +
-                  totalChars * letterDelay +
-                  pauseDuration;
-
-                return (
-                  <motion.span
-                    key={index}
-                    className={styles.headingChar}
-                    initial={{ color: "#818181" }}
-                    animate={{
-                      color: [
-                        "#818181", // Начало - серый
-                        "#818181", // Ожидание своей очереди стать белой
-                        "#ffffff", // Становится белым
-                        "#ffffff", // Остается белым до начала возврата
-                        "#818181", // Возвращается к серому (последовательно)
-                        "#818181", // Пауза перед следующим циклом
-                      ],
-                    }}
-                    transition={{
-                      duration: cycleDuration,
-                      times: [
-                        0,
-                        whiteStartTime / cycleDuration,
-                        whiteEndTime / cycleDuration,
-                        grayStartTime / cycleDuration,
-                        grayEndTime / cycleDuration,
-                        1,
-                      ],
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    {char === " " ? (isMobile ? " " : "\u00A0") : char}
-                  </motion.span>
-                );
-              })}
+              {headingNodes}
             </motion.div>
           </h2>
 

@@ -486,9 +486,13 @@
 
 /* 744x1130 (Mobile Portrait) */
 @media (max-width: 744px) {
+  .hero {
+    padding: 0;
+    min-height: 100vh;
+  }
+
   .nav {
-    padding: 41px 30px 0;
-    flex-wrap: nowrap;
+    padding: 20px 20px 0;
   }
 
   .logoContainer {
@@ -496,13 +500,12 @@
   }
 
   .logoImage {
-    width: 32px;
-    height: 38px;
+    width: 100px;
+    height: 100px;
   }
 
   .logo {
-    font-size: 27px;
-    font-weight: 900;
+    font-size: 16px;
   }
 
   .navLinks {
@@ -533,10 +536,13 @@
 
   .navRight {
     gap: 16px;
+    align-items: center;
   }
 
   .languageSwitcher {
-    font-size: 11px;
+    font-size: 12px;
+    gap: 8px;
+    display: none;
   }
 
   .discussButton {
@@ -545,12 +551,26 @@
 
   .burgerButton {
     display: flex;
+    width: 83px;
+    height: 83px;
+    padding: 26px 23px;
+  }
+
+  .burgerLine {
+    height: 4px;
+    border-radius: 0;
+  }
+
+  .burgerButtonActive .burgerLine:first-child {
+    transform: translateY(13px) rotate(45deg);
+  }
+
+  .burgerButtonActive .burgerLine:nth-child(3) {
+    transform: translateY(-14px) rotate(-45deg);
   }
 
   .heroContent {
-    padding-top: 100px;
-    padding-bottom: 0;
-    height: calc(100vh - 100px);
+    padding: 0 30px;
     justify-content: space-between;
     display: flex;
     flex-direction: column;
@@ -558,86 +578,109 @@
   }
 
   .heroTextBlock {
-    gap: 24px;
-    padding: 0 20px;
+    gap: 61px;
+    padding: 0;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .heroTextBlockContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
   }
 
   .heading {
-    font-size: 48px;
+    font-size: 58px;
     max-width: 100%;
     line-height: 1.1;
-    font-weight: 400;
+    font-family: Manrope;
   }
 
   .subtitle {
-    font-size: 20px;
-    max-width: 586px;
+    font-size: 24px;
+    max-width: 100%;
+    max-width: 700px;
+    font-family: Manrope;
   }
 
   .ctaButtons {
-    flex-direction: row;
-    width: 331px;
-    gap: 8px;
-    padding: 12px;
+    display: none;
   }
 
-  .ctaButtonPrimary,
-  .ctaButtonSecondary {
+  .ctaButtonsMobile {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    gap: 10px;
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 80px;
+  }
+
+  .ctaButtonSecondary svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .ctaButtonsMobile .ctaButtonPrimary,
+  .ctaButtonsMobile .ctaButtonSecondary {
     flex: 1;
-    height: 40px;
-    font-size: 12px;
+    height: 50px;
+    font-size: 16px;
+    padding: 24px;
+    max-width: calc(50% - 6px);
+    font-family: Manrope;
   }
 
   .heroImageContainer {
-    width: 620px;
-    height: 344px;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
     margin: 0;
     margin-top: auto;
-    padding: 0 20px;
     align-self: center;
     flex-shrink: 0;
+    height: auto;
+    min-height: 250px;
+    border-radius: 0;
+    top: auto;
+    left: 0;
   }
 
   .heroImage {
     width: 100%;
     height: auto;
+    object-fit: contain;
   }
 
   .blurOverlay {
-    bottom: 0;
-    height: 65px;
+    height: 200px;
+    bottom: 40px;
   }
 
   .radialGradient {
-    top: 34%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .radialGradientInner {
-    opacity: 0.4;
+    width: 350px;
+    height: 350px;
+    top: 30%;
   }
 
   .radialGradientCircle {
-    width: 500px;
-    height: 500px;
-  }
-  .decorativeVectors {
-    bottom: 20px;
-    width: 150%;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 350px;
+    height: 350px;
   }
 
-  .decorativeGroup {
-    width: 100%;
-    height: auto;
-    transform: scale(2);
+  .decorativeVectors {
+    bottom: 15px;
   }
 }
 
@@ -650,6 +693,19 @@
 
   .nav {
     padding: 16px 10px 0;
+  }
+
+  .burgerLine {
+    height: 2px;
+    border-radius: 0;
+  }
+
+  .burgerButtonActive .burgerLine:first-child {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .burgerButtonActive .burgerLine:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .logoContainer {
