@@ -175,12 +175,11 @@
 /* 1540x746 */
 @media (max-width: 1540px) {
   .ctaSection {
-    min-height: 800px;
+    padding: 95px 0;
   }
 
   .ctaContainer {
-    height: 800px;
-    padding: 0 250px;
+    padding: 0 238px;
     gap: 250px;
   }
 
@@ -190,12 +189,12 @@
   }
 
   .ctaTitle {
-    font-size: 52px;
-    max-width: 550px;
+    font-size: 40px;
+    max-width: 450px;
   }
 
   .ctaDescription {
-    font-size: 13px;
+    font-size: 14px;
     max-width: 310px;
   }
 
@@ -206,8 +205,8 @@
   .ctaButtonPrimary,
   .ctaButtonSecondary {
     height: 38px;
-    width: 140px;
-    font-size: 11px;
+    width: 124px;
+    font-size: 10px;
     padding: 9px;
   }
 

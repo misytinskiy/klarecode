@@ -19,7 +19,7 @@
   /* background-size: 600px 600px; */
   background-position: center;
   background-repeat: no-repeat;
-  border: 1px solid rgba(89, 255, 0, 0.46);
+  border: 1px solid #59ff0042;
   border-radius: 5px;
   backdrop-filter: blur(5.199999809265137px);
   box-shadow: 0 0 28.3px 13px rgba(89, 255, 0, 0.08) inset;
@@ -130,12 +130,13 @@
 /* 1540x746 */
 @media (max-width: 1540px) {
   .cta {
-    padding: 120px 250px;
+    padding: 90px 238px;
   }
 
   .ctaSection {
-    width: 1100px;
-    height: 600px;
+    width: 100%;
+    height: 565.018px;
+    background-image: url("/cta/elipse1540.svg");
   }
 
   .ctaContent {
@@ -144,31 +145,32 @@
   }
 
   .ctaTitle {
-    font-size: 52px;
-    width: 550px;
+    width: 650px;
+    font-size: 54px;
   }
 
   .ctaDescription {
-    font-size: 13px;
-    width: 310px;
+    width: 386px;
+    font-size: 14px;
   }
 
   .ctaButtons {
-    gap: 7px;
-    padding: 11px;
+    gap: 8px;
+    padding: 0;
   }
 
   .ctaButtonPrimary,
   .ctaButtonSecondary {
-    height: 38px;
-    width: 140px;
-    font-size: 11px;
-    padding: 9px;
+    width: 124.145px;
+    height: 38.198px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 0;
   }
 
   .ctaButtonSecondary svg {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
   }
 }
 

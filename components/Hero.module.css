@@ -284,66 +284,25 @@
 
 /* 1540x746 */
 @media (max-width: 1540px) {
-  .nav {
-    padding: 36px 200px 0;
-  }
-
-  .navRight {
-    gap: 36px;
+  .hero {
+    padding: 24px 238px 75px;
   }
 
   .logoImage {
-    width: 14px;
-    height: 16px;
+    width: 70px;
+    height: 76px;
   }
 
-  .logo {
-    font-size: 12px;
-  }
-
-  .heading {
-    font-size: 48px;
-    max-width: 750px;
-    letter-spacing: 0;
-    line-height: 110%;
-  }
-
-  .subtitle {
-    font-size: 16px;
-    max-width: 450px;
-  }
-
-  .heroImageContainer {
-    width: 820px;
-    height: 456px;
-    margin-bottom: -235px;
-  }
-
-  .decorativeVectors {
-    bottom: 17px;
-  }
-
-  .blurOverlay {
-    height: 105px;
-    bottom: 192px;
-  }
-
-  .radialGradient {
-    width: 500px;
-    height: 500px;
-  }
-
-  .radialGradientCircle {
-    width: 500px;
-    height: 500px;
+  .navLinks {
+    gap: 6px;
   }
 
   .navLink {
     font-size: 10px;
   }
 
-  .navLinks {
-    gap: 39px;
+  .navRight {
+    gap: 37.8px;
   }
 
   .languageSwitcher {
@@ -352,8 +311,11 @@
   }
 
   .discussButton {
-    height: 29px;
-    padding: 8.5px 22px;
+    width: 79px;
+    height: 27px;
+    padding: 7.56px;
+    border-width: 0.756px;
+    border-radius: 4px;
   }
 
   .discussButtonText {
@@ -361,24 +323,61 @@
   }
 
   .heroTextBlock {
-    gap: 19px;
+    width: 840px;
+    margin-top: 127px;
+    gap: 0;
+  }
+
+  .heading {
+    font-size: 54px;
+    max-width: 616px;
+    line-height: 1.1;
+    margin-bottom: 0;
+  }
+
+  .heroTextBlockContent {
+    align-items: flex-start;
+    gap: 21px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    max-width: 394px;
+    margin-bottom: 0;
   }
 
   .ctaButtons {
-    padding: 9.5px;
-    gap: 6.5px;
+    margin-top: 0;
+    gap: 7px;
   }
 
   .ctaButtonPrimary {
-    width: 117px;
-    height: 32px;
+    width: 118px;
+    height: 36px;
+    padding: 7.56px;
     font-size: 10px;
+    border-radius: 5px;
   }
 
   .ctaButtonSecondary {
-    width: 117px;
-    height: 32px;
+    width: 118px;
+    height: 36px;
+    padding: 7.56px;
     font-size: 10px;
+    border-radius: 5px;
+    gap: 3px;
+  }
+
+  .ctaButtonSecondary svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .heroImageContainer {
+    width: 791px;
+    height: 608px;
+    top: -57px;
+    left: calc(50% + 18px);
   }
 }
 

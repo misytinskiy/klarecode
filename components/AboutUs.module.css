@@ -127,37 +127,59 @@
 /* 1540x746 */
 @media (max-width: 1540px) {
   .aboutUs {
-    min-height: 800px;
-  }
-
-  .backgroundImage {
-    height: 800px;
+    padding: 91px 238px;
   }
 
   .content {
-    padding: 100px 200px;
-    min-height: 800px;
+    gap: calc(33.33% + 3px);
+    flex-direction: row;
+    align-items: flex-start;
+    position: relative;
+    justify-content: flex-start;
+  }
+
+  .tag {
+    padding: 0;
+    width: 104px;
+    height: 24px;
+    border-width: 0.756px;
+    border-radius: 37795.28px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .tagText {
+    font-size: 10px;
+  }
+
+  .aboutUsContent {
+    flex: 1;
+    position: relative;
+    min-height: 100%;
+    align-self: stretch;
   }
 
   .heading {
-    font-size: 42px;
-    margin-left: calc(33.33% + 80px - 200px);
-    max-width: 720px;
+    font-size: 36px;
+    max-width: 553px;
+    margin: 0;
+    margin-bottom: 0;
   }
 
   .textColumns {
-    margin-top: 300px;
-    margin-left: calc(33.33% + 80px - 200px);
-    gap: 40px;
+    gap: 20px;
+    flex-direction: row;
+    align-items: flex-start;
+    width: auto;
   }
 
   .textColumn {
-    font-size: 13px;
-    max-width: 350px;
+    font-size: 10px;
+    max-width: 266px;
   }
 
   .textColumn:last-child {
-    max-width: 360px;
+    max-width: 267px;
   }
 }
 

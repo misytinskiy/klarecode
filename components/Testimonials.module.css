@@ -18,7 +18,7 @@
 }
 
 .title {
-  font-family: "Inter", sans-serif;
+  font-family: Manrope;
   font-size: 40px;
   font-weight: 400;
   line-height: 1.1;
@@ -29,7 +29,7 @@
 }
 
 .subtitle {
-  font-family: "Inter", sans-serif;
+  font-family: Manrope;
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
@@ -103,7 +103,7 @@
 }
 
 .quote {
-  font-family: "Inter", sans-serif;
+  font-family: Manrope;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.3;
@@ -138,7 +138,7 @@
 }
 
 .authorName {
-  font-family: "Inter", sans-serif;
+  font-family: Manrope;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.1;
@@ -147,7 +147,7 @@
 }
 
 .authorCompany {
-  font-family: "Inter", sans-serif;
+  font-family: Manrope;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.1;
@@ -160,56 +160,60 @@
 /* 1540x746 */
 @media (max-width: 1540px) {
   .testimonials {
-    padding: 100px 0;
+    padding: 90px 0;
   }
 
   .header {
     gap: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 34px;
     width: 500px;
   }
 
   .title {
-    font-size: 36px;
+    font-size: 40px;
   }
 
   .subtitle {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .cards {
     gap: 18px;
-    padding: 12px 250px 18px;
+    padding: 12px 238px 0;
   }
 
   .card {
-    width: 300px;
-    height: 420px;
-    padding: 18px;
+    width: 265.002px;
+    height: 366.068px;
+    padding: 16px;
   }
 
   .cardHeader {
-    margin-bottom: 85px;
-    width: 264px;
+    margin-bottom: 50px;
+    width: auto;
   }
 
   .avatar {
-    width: 55px;
-    height: 55px;
+    width: 47.748px;
+    height: 47.748px;
   }
 
   .quote {
-    font-size: 13px;
-    width: 264px;
+    font-size: 12px;
+    width: auto;
   }
 
   .authorLine {
-    height: 32px;
+    height: 27px;
+  }
+
+  .author {
+    gap: 10px;
   }
 
   .authorName,
   .authorCompany {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 

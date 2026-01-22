@@ -27,7 +27,7 @@
 }
 
 .label {
-  font-family: "Inter", sans-serif;
+  font-family: Manrope;
   font-size: 12px;
   font-weight: 400;
   line-height: normal;
@@ -37,7 +37,7 @@
   margin: 0;
   border-radius: 50000px;
   border: 1px solid #fff;
-  opacity: 0.6;
+  opacity: 0.8;
   padding: 10px;
 }
 
@@ -92,7 +92,17 @@
   }
 
   .header {
-    margin-bottom: 20px;
+    margin-bottom: 42px;
+  }
+
+  .label {
+    font-size: 10px;
+    padding: 0;
+    width: 181px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .line,
@@ -101,12 +111,18 @@
   }
 
   .logos {
-    gap: 25px;
+    gap: 23px;
   }
 
   .logoPlaceholder {
-    width: 89px;
-    height: 38px;
+    height: 54px;
+  }
+
+  .logoImage2 {
+    height: 39px;
+  }
+  .logoImage3 {
+    height: 11px;
   }
 }
 

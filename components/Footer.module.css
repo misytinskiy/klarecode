@@ -207,11 +207,11 @@
 /* 1540x746 */
 @media (max-width: 1540px) {
   .footer {
-    padding: 80px 250px 120px;
+    padding: 100px 238px 120px;
   }
 
   .footerContent {
-    margin-bottom: 32px;
+    margin-bottom: 22px;
   }
 
   .logoSection {
@@ -219,8 +219,8 @@
   }
 
   .logo {
-    width: 28px;
-    height: 28px;
+    width: 119.022px;
+    height: 127.981px;
   }
 
   .logoText {
@@ -228,18 +228,19 @@
   }
 
   .footerButton {
-    height: 34px;
-    width: 160px;
-    font-size: 13px;
+    width: 136.082px;
+    height: 28.649px;
+    font-size: 10px;
     padding: 9px;
   }
 
   .footerColumns {
-    gap: 32px;
+    row-gap: 37px;
+    column-gap: 80px;
   }
 
   .columnTitle {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .columnList {
@@ -248,29 +249,33 @@
 
   .columnList li,
   .columnList a {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .supportText {
-    font-size: 13px;
+    font-size: 12px;
     width: 180px;
   }
 
   .footerBottomLeft {
-    gap: 22px;
+    gap: 28px;
+  }
+
+  .footerColumn {
+    gap: 18px;
   }
 
   .copyright {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .footerLinks {
-    gap: 120px;
-    margin-right: 80px;
+    gap: 185px;
+    margin-right: 88px;
   }
 
   .footerLinks a {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
