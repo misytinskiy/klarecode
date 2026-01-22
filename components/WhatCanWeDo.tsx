@@ -88,12 +88,8 @@ export default function WhatCanWeDo() {
                 className={styles.serviceContent}
                 animate={{
                   maxHeight: isExpanded
-                    ? isMobile
-                      ? "800px"
-                      : "900px"
-                    : isMobile
-                      ? "100px"
-                      : "177px",
+                    ? "var(--expanded-h)"
+                    : "var(--collapsed-h)",
                 }}
                 transition={{
                   duration: 0.4,
