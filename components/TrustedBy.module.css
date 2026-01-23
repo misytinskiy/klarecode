@@ -172,7 +172,7 @@
 }
 
 /* 744x1130 (Mobile Portrait) */
-@media (max-width: 744px) {
+@media (max-width: 900px) {
   .trustedBy {
     padding: 50px 0;
   }

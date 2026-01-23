@@ -201,7 +201,7 @@
 }
 
 /* 744x1130 (Mobile Portrait) - 2 columns with top border */
-@media (max-width: 744px) {
+@media (max-width: 900px) {
   .developmentProcess {
     padding: 80px 30px;
   }
