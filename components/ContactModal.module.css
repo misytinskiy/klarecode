@@ -27,7 +27,7 @@
   position: absolute;
   inset: 0;
   border-radius: 10px;
-  border: 1px solid rgba(42, 194, 147, 0.6);
+  border: 1px solid rgba(89, 255, 0, 0.6);
   pointer-events: none;
   z-index: 1;
 }
@@ -75,7 +75,7 @@
   top: -60px;
   bottom: -60px;
   width: 1px;
-  background-color: #197458;
+  background-color: #59ff00;
   transform: translateX(-50%);
 }
 
@@ -88,7 +88,7 @@
 }
 
 .leftTitle {
-  font-family: "Inter", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 32px;
   font-weight: 400;
   line-height: 1.1;
@@ -99,8 +99,8 @@
 }
 
 .leftSubtitle {
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.3;
   color: #a1a1aa;
@@ -118,7 +118,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: "Inter", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #ffffff;
@@ -135,7 +135,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: "Inter", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #ffffff;
@@ -160,7 +160,7 @@
 .tab {
   background: transparent;
   border: none;
-  font-family: "Inter", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: #a1a1aa;
@@ -171,12 +171,8 @@
   position: relative;
 }
 
-.tab:hover {
-  color: #00df82cc;
-}
-
 .tabActive {
-  color: #00df82;
+  color: #59ff00;
 }
 
 .tabActive::after {
@@ -186,7 +182,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background-color: #38ffacd1;
+  background-color: #59ff00;
 }
 
 .form {
@@ -203,8 +199,8 @@
   padding: 12.5px 12px;
   background-color: #171717;
   border: 1px solid #2a2a2a;
-  border-radius: 8px;
-  font-family: "Inter", sans-serif;
+  border-radius: 5px;
+  font-family: "Manrope", sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: #a1a1aa;
@@ -236,7 +232,7 @@
 .input:focus,
 .customSelect:focus,
 .textarea:focus {
-  border-color: #2ac293;
+  border-color: rgba(89, 255, 0, 0.6);
 }
 
 .input::placeholder,
@@ -254,7 +250,7 @@
   background-color: #171717;
   border: 1px solid #2a2a2a;
   border-radius: 8px;
-  font-family: "Inter", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: #a1a1aa;
@@ -273,7 +269,7 @@
 }
 
 .customSelect.selectOpen {
-  border-color: #2ac293;
+  border-color: rgba(89, 255, 0, 0.6);
 }
 
 .selectFilled {
@@ -309,7 +305,7 @@
   padding: 12px 16px;
   background-color: transparent;
   border: none;
-  font-family: "Inter", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: #ffffff;
@@ -324,7 +320,7 @@
 
 .dropdownOptionActive {
   background-color: rgba(42, 194, 147, 0.1);
-  color: #2ac293;
+  color: rgba(89, 255, 0, 0.6);
 }
 
 .textareaWrapper {
@@ -342,18 +338,18 @@
   position: absolute;
   bottom: 12px;
   left: 16px;
-  font-family: "Inter", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: #a1a1aa;
 }
 
 .submitButton {
-  background: linear-gradient(90deg, #00df82 0%, #00ff95 100%);
+  background: #59ff00;
   border: none;
-  border-radius: 50px;
+  border-radius: 5px;
   padding: 12px 24px;
-  font-family: "Inter", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 12px;
   font-weight: 500;
   color: #030f0f;
@@ -368,7 +364,7 @@
 }
 
 .privacyText {
-  font-family: "Inter", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 8px;
   font-weight: 400;
   color: #a1a1aa;
@@ -377,11 +373,465 @@
 }
 
 .privacyLink {
-  color: #00df82;
+  color: #59ff00;
   text-decoration: underline;
   cursor: pointer;
 }
 
 .privacyLink:hover {
   opacity: 0.8;
+}
+
+@media (max-width: 1540px) {
+  .modal {
+    width: 861.959px;
+    height: 474.633px;
+    padding: 47px;
+  }
+
+  .modalContent {
+    gap: 50px;
+  }
+
+  .modalContent::before {
+    top: -50px;
+    bottom: -50px;
+  }
+
+  .leftTitle {
+    font-size: 25px;
+    margin-bottom: 19px;
+  }
+
+  .leftSubtitle {
+    font-size: 14px;
+  }
+
+  .featuresList {
+    gap: 7px;
+    margin-top: 28px;
+  }
+
+  .featureItem {
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .featureItem img {
+    width: 13px;
+    height: 13px;
+  }
+
+  .contacts {
+    gap: 10px;
+  }
+
+  .contactItem {
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .contactItem img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .rightSection {
+    max-width: 360px;
+    gap: 28px;
+  }
+
+  .tabs {
+    gap: 28px;
+  }
+
+  .tab {
+    font-size: 14px;
+  }
+
+  .form {
+    gap: 6px;
+  }
+
+  .input,
+  .customSelect {
+    padding: 8px 9px;
+    font-size: 9px;
+    height: 28px;
+  }
+
+  .selectArrow {
+    width: 8px;
+    height: 8px;
+  }
+
+  .textarea {
+    height: 120px;
+    padding: 8px 9px;
+    font-size: 10px;
+  }
+
+  .charCount {
+    bottom: 22px;
+    left: 10px;
+    font-size: 8px;
+  }
+
+  .submitButton {
+    padding: 8px 20px;
+    font-size: 10px;
+    height: 31px;
+    margin-top: 7px;
+  }
+
+  .privacyText {
+    font-size: 8px;
+  }
+}
+
+/* 1280x631 */
+@media (max-width: 1280px) {
+  .modal {
+    width: 729.701px;
+    height: 401.806px;
+    padding: 40px;
+  }
+
+  .modalContent {
+    gap: 40px;
+  }
+
+  .modalContent::before {
+    top: -40px;
+    bottom: -40px;
+  }
+
+  .leftTitle {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .leftSubtitle {
+    font-size: 12px;
+  }
+
+  .featuresList {
+    gap: 5px;
+    margin-top: 24px;
+  }
+
+  .featureItem {
+    gap: 5px;
+    font-size: 10px;
+  }
+
+  .featureItem img {
+    width: 11px;
+    height: 11px;
+  }
+
+  .contacts {
+    gap: 8px;
+  }
+
+  .contactItem {
+    gap: 5px;
+    font-size: 10px;
+  }
+
+  .contactItem img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .rightSection {
+    max-width: 285px;
+    gap: 24px;
+  }
+
+  .tabs {
+    gap: 24px;
+  }
+
+  .tab {
+    font-size: 12px;
+  }
+
+  .form {
+    gap: 5px;
+  }
+
+  .input,
+  .customSelect {
+    padding: 7px 8px;
+    font-size: 8px;
+    height: 26px;
+  }
+
+  .selectArrow {
+    width: 7px;
+    height: 7px;
+  }
+
+  .textarea {
+    height: 100px;
+    padding: 7px 8px;
+    font-size: 8px;
+  }
+
+  .charCount {
+    bottom: 12px;
+    left: 8px;
+    font-size: 7px;
+  }
+
+  .submitButton {
+    padding: 7px 16px;
+    font-size: 8px;
+    height: 26px;
+    margin-top: 5px;
+  }
+
+  .privacyText {
+    font-size: 7px;
+  }
+}
+
+/* 744x1130 (Mobile Portrait) */
+@media (max-width: 744px) {
+  .overlay {
+    padding: 20px;
+  }
+
+  .modal {
+    width: 100%;
+    max-width: 684px;
+    height: auto;
+    min-height: 500px;
+    padding: 36px;
+  }
+
+  .modalContent {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .modalContent::before {
+    display: none;
+  }
+
+  .leftSection {
+    width: 100%;
+  }
+
+  .leftTitle {
+    font-size: 32px;
+    margin-bottom: 16px;
+    max-width: 100%;
+  }
+
+  .leftSubtitle {
+    font-size: 20px;
+  }
+
+  .featuresList {
+    gap: 5px;
+    margin-top: 24px;
+  }
+
+  .featureItem {
+    gap: 5px;
+    font-size: 12px;
+  }
+
+  .featureItem img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .contacts {
+    gap: 10px;
+    margin-top: 30px;
+    display: none;
+  }
+
+  .contactItem {
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .closeButton {
+    top: 30px;
+    right: 30px;
+  }
+
+  .contactItem img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .rightSection {
+    max-width: 100%;
+    gap: 32px;
+  }
+
+  .tabs {
+    gap: 24px;
+  }
+
+  .tab {
+    font-size: 12px;
+  }
+
+  .form {
+    gap: 5px;
+  }
+
+  .input,
+  .customSelect {
+    padding: 22px 8px;
+    font-size: 12px;
+    height: 58px;
+  }
+
+  .selectArrow {
+    width: 10px;
+    height: 10px;
+  }
+
+  .textarea {
+    height: 185px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .charCount {
+    bottom: 14px;
+    left: 12px;
+    font-size: 10px;
+  }
+
+  .submitButton {
+    padding: 12px 24px;
+    font-size: 12px;
+    height: 45px;
+    margin-top: 0;
+  }
+
+  .privacyText {
+    font-size: 12px;
+  }
+}
+
+/* 480x716 (Small Mobile) */
+@media (max-width: 480px) {
+  .overlay {
+    padding: 30px 20px;
+  }
+
+  .modal {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 20px 16px;
+  }
+
+  .closeButton {
+    top: 16px;
+    right: 16px;
+    padding: 4px;
+  }
+
+  .closeButton svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .modalContent {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .leftTitle {
+    font-size: 20px;
+    margin-bottom: 16px;
+    max-width: 191px;
+  }
+
+  .leftSubtitle {
+    font-size: 14px;
+  }
+
+  .featuresList {
+    gap: 5px;
+    margin-top: 24px;
+  }
+
+  .featureItem {
+    gap: 5px;
+    font-size: 12px;
+  }
+
+  .featureItem img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .contacts {
+    display: none;
+  }
+
+  .rightSection {
+    max-width: 100%;
+    gap: 24px;
+  }
+
+  .tabs {
+    gap: 24px;
+  }
+
+  .tab {
+    font-size: 12px;
+  }
+
+  .form {
+    gap: 5px;
+  }
+
+  .input,
+  .customSelect {
+    padding: 8px;
+    font-size: 10px;
+    height: 58px;
+  }
+
+  .selectArrow {
+    width: 8px;
+    height: 8px;
+  }
+
+  .textarea {
+    height: 185px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .charCount {
+    bottom: 10px;
+    left: 9px;
+    font-size: 10px;
+  }
+
+  .submitButton {
+    padding: 12px 24px;
+    font-size: 12px;
+    height: 45px;
+    margin-top: 0;
+  }
+
+  .privacyText {
+    font-size: 10px;
+    max-width: 199px;
+  }
 }
