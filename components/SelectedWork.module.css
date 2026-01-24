@@ -196,39 +196,40 @@
 /* 1280x631 */
 @media (max-width: 1280px) {
   .selectedWork {
-    padding: 80px 120px;
-    min-height: 650px;
+    padding: 81px 267px;
   }
 
   .header {
     width: 420px;
-    gap: 18px;
-    margin-bottom: 35px;
+    gap: 16px;
+    margin-bottom: 43px;
     left: calc(20.83% + 120px);
   }
 
   .title {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .subtitle {
     font-size: 14px;
-    width: 220px;
+    width: 181px;
   }
 
   .imagesContainer {
     max-width: 900px;
-    height: 600px;
+    gap: 20px;
   }
 
-  .imageLeft {
-    width: 450px;
-    height: 600px;
-  }
-
+  .imageLeft,
   .imageRight {
-    width: 450px;
-    height: 600px;
+    width: 28.5vw;
+    height: 560px;
+  }
+
+  .imageNumber,
+  .imageYear,
+  .imageDescription {
+    font-size: 10px;
   }
 }
 

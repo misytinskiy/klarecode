@@ -268,18 +268,17 @@
 /* 1280x631 */
 @media (max-width: 1280px) {
   .numbers {
-    padding: 80px 120px;
-    min-height: 650px;
+    padding: 81px 267px;
   }
 
   .header {
     width: 420px;
     gap: 16px;
-    margin-bottom: 50px;
+    margin-bottom: 46px;
   }
 
   .title {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .subtitle {
@@ -291,25 +290,21 @@
     width: 310px;
   }
 
-  .cardWrapper:nth-child(2) {
-    transform: rotate(3deg);
-  }
-
   .cardWrapper:nth-child(3) {
     transform: rotate(4deg);
   }
 
   .card {
-    width: 300px;
-    height: 140px;
+    width: 238px;
+    height: 133px;
   }
 
   .number {
-    font-size: 58px;
+    font-size: 52px;
   }
 
   .description {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .decorativeEllipse1,

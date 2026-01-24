@@ -167,12 +167,12 @@
 /* 1280x631 */
 @media (max-width: 1280px) {
   .developmentProcess {
-    padding: 80px 120px 50px 120px;
+    padding: 81px 267px;
   }
 
   .title {
-    font-size: 28px;
-    margin-bottom: 49px;
+    font-size: 32px;
+    margin-bottom: 44px;
   }
 
   .cards {
@@ -185,18 +185,26 @@
     padding: 13px;
   }
 
+  .cardHighlighted {
+    border-left: 3px solid #59ff00;
+  }
+
+  .cardTitleWrapper {
+    margin-bottom: 39px;
+  }
+
   .cardTitle {
     font-size: 14px;
-    margin-bottom: 16px;
   }
 
   .cardDescription {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .viewMoreButton {
-    padding: 10px 24px;
-    font-size: 12px;
+    padding: 0;
+    font-size: 10px;
+    height: 27px;
   }
 }
 

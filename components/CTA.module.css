@@ -177,12 +177,12 @@
 /* 1280x631 */
 @media (max-width: 1280px) {
   .cta {
-    padding: 100px 200px;
+    padding: 81px 267px;
   }
 
   .ctaSection {
-    width: 900px;
-    height: 520px;
+    width: 747px;
+    height: 477px;
   }
 
   .ctaContent {
@@ -191,8 +191,8 @@
   }
 
   .ctaTitle {
-    font-size: 44px;
-    width: 480px;
+    font-size: 32px;
+    width: 340px;
   }
 
   .ctaDescription {
@@ -201,21 +201,20 @@
   }
 
   .ctaButtons {
-    gap: 6px;
-    padding: 10px;
+    gap: 7px;
   }
 
   .ctaButtonPrimary,
   .ctaButtonSecondary {
-    height: 36px;
-    width: 135px;
-    font-size: 11px;
-    padding: 8px;
+    width: 105px;
+    height: 32px;
+    font-size: 10px;
+    padding: 0;
   }
 
   .ctaButtonSecondary svg {
-    width: 14px;
-    height: 14px;
+    width: 13px;
+    height: 13px;
   }
 }
 

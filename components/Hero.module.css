@@ -173,6 +173,7 @@
   font-weight: 400;
   line-height: 110%;
   margin-bottom: 0;
+  font-family: Manrope;
 }
 
 .subtitle {
@@ -383,104 +384,92 @@
 
 /* 1280x631 */
 @media (max-width: 1280px) {
-  .nav {
-    padding: 32px 120px 0;
-  }
-
-  .logoContainer {
-    gap: 7px;
+  .hero {
+    padding: 21px 257px 44px;
   }
 
   .logoImage {
-    width: 12px;
-    height: 13px;
-  }
-
-  .logo {
-    font-size: 10px;
+    width: 62px;
+    height: 68px;
   }
 
   .navLinks {
-    gap: 33px;
+    gap: 5px;
   }
 
   .navLink {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .navRight {
-    gap: 32px;
+    gap: 37px;
+  }
+
+  .languageSwitcher {
+    font-size: 10px;
+    gap: 6px;
   }
 
   .discussButton {
-    padding: 7.5px 19px;
-    height: 29px;
+    width: 70px;
+    height: 24px;
+    padding: 7.56px;
+    border-width: 0.756px;
+    border-radius: 4px;
   }
 
   .discussButtonText {
-    font-size: 8px;
-  }
-
-  .heroContent {
-    padding-top: 100px;
+    font-size: 10px;
   }
 
   .heroTextBlock {
-    gap: 16px;
+    width: 840px;
+    margin-top: 45px;
+    gap: 0;
   }
 
   .heading {
-    font-size: 36px;
-    max-width: 650px;
+    font-size: 48px;
+    max-width: 516px;
+    line-height: 1.1;
+    margin-bottom: 0;
+  }
+
+  .heroTextBlockContent {
+    align-items: flex-start;
+    gap: 21px;
   }
 
   .subtitle {
-    font-size: 12px;
-    max-width: 388px;
+    font-size: 14px;
+    max-width: 382px;
+    margin-bottom: 0;
   }
 
   .ctaButtons {
-    padding: 8.5px;
-    gap: 5px;
+    margin-top: 0;
+    gap: 6px;
   }
 
   .ctaButtonPrimary,
   .ctaButtonSecondary {
-    width: 99px;
-    height: 27px;
-    padding: 8px;
-    font-size: 8px;
+    padding: 7.56px;
+    font-size: 10px;
+    border-radius: 5px;
+    width: 105px;
+    height: 32px;
   }
 
   .ctaButtonSecondary svg {
-    width: 13px;
-    height: 13px;
+    width: 15px;
+    height: 15px;
   }
 
   .heroImageContainer {
-    width: 729px;
-    height: 405px;
-    margin-bottom: -208px;
-  }
-
-  .blurOverlay {
-    bottom: 170px;
-    height: 100px;
-  }
-
-  .radialGradient {
-    width: 450px;
-    height: 450px;
-  }
-
-  .radialGradientCircle {
-    width: 450px;
-    height: 450px;
-  }
-
-  .languageSwitcher {
-    font-size: 8px;
-    gap: 5px;
+    width: 791px;
+    height: 608px;
+    top: -57px;
+    left: calc(50% + 18px);
   }
 }
 

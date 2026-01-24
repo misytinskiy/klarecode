@@ -335,7 +335,7 @@
 /* 1280x631 */
 @media (max-width: 1280px) {
   .whatCanWeDo {
-    padding: 80px 120px;
+    padding: 81px 267px;
   }
 
   .header {
@@ -343,16 +343,21 @@
     transform: none;
     width: 100%;
     max-width: 532px;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 39px;
   }
 
   .title {
-    font-size: 36px;
+    font-size: 32px;
+    text-align: left;
   }
 
   .subtitle {
     font-size: 14px;
     width: 100%;
     max-width: 454px;
+    text-align: left;
   }
 
   .divider {
@@ -360,28 +365,33 @@
     width: 100%;
   }
 
-  .serviceLeftWrapper {
-    margin-left: 120px;
-  }
-
   .serviceLeft {
-    flex-direction: column;
-    gap: 10px;
+    gap: 75px;
   }
 
   .serviceNumber {
-    font-size: 40px;
+    font-size: 24px;
+    padding: 6px 18px;
   }
 
   .serviceTitle {
-    font-size: 40px;
+    font-size: 36px;
     margin-left: 0;
     flex: 1;
     min-width: 0;
   }
 
+  .discussButton {
+    width: 105px;
+    height: 32px;
+  }
+
   .serviceRight {
-    margin-right: 120px;
+    gap: 0;
+  }
+
+  .serviceDescription {
+    font-size: 12px;
   }
 
   .serviceDetails {
@@ -399,8 +409,13 @@
   }
 
   .arrowIcon {
-    width: 24px;
-    height: 24px;
+    width: 27px;
+    height: 27px;
+  }
+
+  .serviceContent {
+    --collapsed-h: 130px;
+    --expanded-h: 820px;
   }
 }
 
