@@ -356,7 +356,7 @@
 /* 744x1130 (Mobile Portrait) */
 @media (max-width: 900px) {
   .footer {
-    padding: 50px 20px 70px;
+    padding: 80px 30px 70px;
   }
 
   .gridLines {
@@ -365,8 +365,8 @@
 
   .footerContent {
     flex-direction: column;
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: 80px;
+    margin-bottom: 80px;
   }
 
   .footerLeft {
@@ -379,8 +379,8 @@
   }
 
   .logo {
-    width: 58px;
-    height: 58px;
+    width: 156px;
+    height: 168.764px;
   }
 
   .logoText {
@@ -388,15 +388,15 @@
   }
 
   .footerButton {
-    height: 36px;
-    width: 171px;
-    font-size: 14px;
+    font-size: 16px;
     padding: 10px;
+    width: 330px;
+    height: 83px;
   }
 
   .footerColumns {
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 44px 51px;
     width: 100%;
   }
 
@@ -405,16 +405,16 @@
   }
 
   .columnTitle {
-    font-size: 18px;
+    font-size: 24px;
   }
 
   .columnList {
-    gap: 6px;
+    gap: 9px;
   }
 
   .columnList li,
   .columnList a {
-    font-size: 13px;
+    font-size: 20px;
   }
 
   .supportText {
@@ -426,26 +426,27 @@
   .footerBottom {
     flex-direction: column;
     align-items: flex-start;
-    gap: 30px;
+    gap: 12px;
   }
 
   .footerBottomLeft {
-    gap: 20px;
+    gap: 40px;
     width: 100%;
   }
 
   .copyright {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .footerLinks {
-    gap: 30px;
+    gap: 12px;
     margin-right: 0;
     align-self: flex-start;
+    flex-direction: column;
   }
 
   .footerLinks a {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 

@@ -282,26 +282,25 @@
 /* 744x1130 (Mobile Portrait) */
 @media (max-width: 900px) {
   .testimonials {
-    padding: 60px 20px;
+    padding: 80px 30px;
   }
 
   .header {
-    gap: 16px;
-    margin-bottom: 30px;
+    gap: 20px;
+    margin-bottom: 60px;
     width: 100%;
-    max-width: 500px;
   }
 
   .title {
-    font-size: 28px;
+    font-size: 44px;
   }
 
   .subtitle {
-    font-size: 12px;
+    font-size: 24px;
   }
 
   .cards {
-    gap: 16px;
+    gap: 19px;
     padding: 10px 20px 16px;
     margin-left: -20px;
     margin-right: -20px;
@@ -309,9 +308,9 @@
   }
 
   .card {
-    width: 280px;
-    height: 380px;
-    padding: 16px;
+    width: 302.385px;
+    height: 419px;
+    padding: 17px;
   }
 
   .card:hover {
@@ -323,27 +322,27 @@
   }
 
   .cardHeader {
-    margin-bottom: 60px;
+    margin-bottom: 33px;
     width: 248px;
   }
 
   .avatar {
-    width: 50px;
-    height: 50px;
+    width: 55.595px;
+    height: 55.595px;
   }
 
   .quote {
-    font-size: 12px;
-    width: 248px;
+    font-size: 16px;
+    width: 279px;
   }
 
   .authorLine {
-    height: 28px;
+    height: 31px;
   }
 
   .authorName,
   .authorCompany {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 

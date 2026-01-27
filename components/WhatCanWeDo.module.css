@@ -422,23 +422,25 @@
 /* 744x1130 (Mobile Portrait) */
 @media (max-width: 900px) {
   .whatCanWeDo {
-    padding: 60px 20px;
+    padding: 80px 30px;
     min-height: auto;
   }
 
   .header {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     align-items: flex-start;
+    gap: 30px;
   }
 
   .title {
-    font-size: 36px;
+    font-size: 44px;
   }
 
   .subtitle {
-    font-size: 16px;
     text-align: left;
+    font-size: 24px;
+    max-width: 310px;
   }
 
   .divider {
@@ -465,14 +467,26 @@
     margin-bottom: 0;
     flex: 1;
     min-height: auto;
-    height: auto;
+    height: 100%;
     flex-shrink: 0;
-    gap: 20px;
+    gap: 12px;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .serviceNumber {
     font-size: 14px;
     padding: 4px 11px;
+  }
+
+  .serviceDetails {
+    gap: 24px;
+  }
+
+  .discussButton {
+    width: 252px;
+    height: 56px;
+    font-size: 16px;
   }
 
   .arrowIcon {
@@ -487,23 +501,35 @@
   }
 
   .serviceTitleRow {
-    display: block;
+    display: flex;
     width: 100%;
+    gap: 0;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
   }
 
   .serviceTitle {
     font-size: 28px;
-    width: 100%;
+    width: auto;
     flex: 1;
     max-width: none;
+    position: relative;
+    z-index: 2;
   }
 
   .arrowButtonMobile {
-    display: none;
+    display: flex;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 10;
   }
 
   .arrowButton {
-    display: flex;
+    display: none;
   }
 
   .serviceRight {
@@ -511,7 +537,6 @@
     width: auto;
     flex-direction: row;
     align-items: flex-start;
-    gap: 20px;
     flex-shrink: 0;
   }
 
@@ -527,23 +552,23 @@
 
   .serviceDescription {
     width: auto;
-    font-size: 14px;
+    font-size: 20px;
+    max-width: 170px;
   }
 
   .imagePlaceholder {
-    width: 305px;
-    height: 312px;
+    width: 369px;
+    height: 387px;
     order: 1;
-  }
-
-  .arrowButton {
-    order: 2;
-    align-self: flex-start;
+    position: absolute;
+    right: 0;
+    top: 10%;
+    z-index: 1;
   }
 
   .serviceContent {
-    --collapsed-h: 137px;
-    --expanded-h: 820px;
+    --collapsed-h: 112px;
+    --expanded-h: 519px;
   }
 }
 

@@ -481,7 +481,7 @@
   }
 
   .nav {
-    padding: 20px 20px 0;
+    padding: 30px 30px 0;
   }
 
   .logoContainer {
@@ -489,8 +489,8 @@
   }
 
   .logoImage {
-    width: 100px;
-    height: 100px;
+    width: 56.547px;
+    height: 56.766px;
   }
 
   .logo {
@@ -540,22 +540,22 @@
 
   .burgerButton {
     display: flex;
-    width: 83px;
-    height: 83px;
-    padding: 26px 23px;
+    width: 40px;
+    height: 40px;
+    padding: 11px;
   }
 
   .burgerLine {
-    height: 4px;
+    height: 2px;
     border-radius: 0;
   }
 
   .burgerButtonActive .burgerLine:first-child {
-    transform: translateY(13px) rotate(45deg);
+    transform: translateY(9px) rotate(45deg);
   }
 
   .burgerButtonActive .burgerLine:nth-child(3) {
-    transform: translateY(-14px) rotate(-45deg);
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .heroContent {
@@ -567,15 +567,15 @@
   }
 
   .heroTextBlock {
-    gap: 61px;
+    gap: 24px;
     padding: 0;
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: flex-start;
     width: 100%;
-    margin-top: 0;
+    margin-top: 50px;
   }
 
   .heroTextBlockContent {
@@ -590,6 +590,7 @@
     max-width: 100%;
     line-height: 1.1;
     font-family: Manrope;
+    letter-spacing: -0.02em;
   }
 
   .subtitle {
@@ -608,11 +609,13 @@
     flex-direction: row;
     width: 100%;
     max-width: 100%;
-    gap: 10px;
+    gap: 23px;
     margin-top: 0;
     justify-content: center;
     align-items: center;
-    padding-bottom: 80px;
+    z-index: 1;
+    margin-top: 0;
+    padding-bottom: 86px;
   }
 
   .ctaButtonSecondary svg {
@@ -623,7 +626,7 @@
   .ctaButtonsMobile .ctaButtonPrimary,
   .ctaButtonsMobile .ctaButtonSecondary {
     flex: 1;
-    height: 50px;
+    height: 68px;
     font-size: 16px;
     padding: 24px;
     max-width: calc(50% - 6px);
@@ -631,7 +634,7 @@
   }
 
   .heroImageContainer {
-    position: relative;
+    position: absolute;
     width: 100%;
     max-width: 100%;
     padding: 0;
@@ -642,7 +645,7 @@
     height: auto;
     min-height: 250px;
     border-radius: 0;
-    top: auto;
+    top: 248px;
     left: 0;
   }
 

@@ -86,8 +86,13 @@ export default function WhatCanWeDo() {
             <div key={service.id} className={styles.serviceItem}>
               <motion.div
                 className={styles.serviceContent}
+                initial={{
+                  height: isExpanded
+                    ? "var(--expanded-h)"
+                    : "var(--collapsed-h)",
+                }}
                 animate={{
-                  maxHeight: isExpanded
+                  height: isExpanded
                     ? "var(--expanded-h)"
                     : "var(--collapsed-h)",
                 }}
@@ -95,7 +100,7 @@ export default function WhatCanWeDo() {
                   duration: 0.4,
                   ease: [0.4, 0, 0.2, 1],
                 }}
-                style={{ overflow: "hidden" }}
+                style={{ overflow: "hidden", maxHeight: "none" }}
                 layout={!isMobile}
                 onClick={() => setExpandedId(isExpanded ? 0 : service.id)}
               >

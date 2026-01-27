@@ -221,7 +221,7 @@
 /* 744x1130 (Mobile Portrait) */
 @media (max-width: 900px) {
   .cta {
-    padding: 60px 20px;
+    padding: 80px 0;
   }
 
   .ctaSection {
@@ -234,41 +234,40 @@
   }
 
   .ctaContent {
-    gap: 20px;
+    gap: 30px;
     width: 100%;
     max-width: 100%;
   }
 
   .ctaTitle {
-    font-size: 32px;
+    font-size: 52px;
     width: 100%;
     max-width: 100%;
   }
 
   .ctaDescription {
-    font-size: 12px;
+    font-size: 24px;
     width: 100%;
-    max-width: 280px;
+    max-width: 580px;
   }
 
   .ctaButtons {
-    gap: 6px;
+    gap: 24px;
     padding: 10px;
     width: 100%;
-    max-width: 331px;
   }
 
   .ctaButtonPrimary,
   .ctaButtonSecondary {
-    height: 40px;
-    width: 148px;
-    font-size: 12px;
+    width: 330px;
+    height: 83px;
+    font-size: 16px;
     padding: 10px;
   }
 
   .ctaButtonSecondary svg {
-    width: 16px;
-    height: 16px;
+    width: 25px;
+    height: 26px;
   }
 }
 

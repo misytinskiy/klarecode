@@ -177,11 +177,11 @@
 /* 744x1130 (Mobile Portrait) */
 @media (max-width: 900px) {
   .trustedBy {
-    padding: 60px 0;
+    padding: 80px 0;
   }
 
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 44px;
   }
 
   .label {
@@ -200,7 +200,7 @@
     gap: 0;
     width: 100%;
     padding: 0 30px;
-    row-gap: 50px;
+    row-gap: 78px;
   }
 
   .logoPlaceholder {
@@ -211,11 +211,11 @@
   }
 
   .logoImage1 {
-    height: 49px;
+    height: 68px;
   }
 
   .logoImage2 {
-    height: 70px;
+    height: 119px;
   }
 
   /* .logoPlaceholder:nth-child(3) {
@@ -227,11 +227,11 @@
   } */
 
   .logoImage3 {
-    height: 22px;
+    height: 32px;
   }
 
   .logoImage4 {
-    height: 18px;
+    height: 25px;
   }
 }
 
