@@ -598,7 +598,7 @@
 }
 
 /* 744x1130 (Mobile Portrait) */
-@media (max-width: 744px) {
+@media (max-width: 900px) {
   .overlay {
     padding: 20px;
   }
@@ -635,8 +635,20 @@
   }
 
   .featuresList {
-    gap: 5px;
+    gap: 4px;
     margin-top: 24px;
+    position: relative;
+    padding-bottom: 54px;
+  }
+
+  .featuresList::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -36px;
+    right: -36px;
+    height: 1px;
+    background-color: #369a00;
   }
 
   .featureItem {
@@ -689,9 +701,13 @@
 
   .input,
   .customSelect {
-    padding: 22px 8px;
-    font-size: 12px;
+    padding: 6px 8px;
+    font-size: 10px;
     height: 58px;
+  }
+  .closeButton svg {
+    width: 10px;
+    height: 10px;
   }
 
   .selectArrow {
@@ -700,8 +716,8 @@
   }
 
   .textarea {
-    height: 185px;
-    padding: 10px 12px;
+    height: 95px;
+    padding: 6px 8px;
     font-size: 12px;
   }
 
@@ -726,7 +742,7 @@
 /* 480x716 (Small Mobile) */
 @media (max-width: 480px) {
   .overlay {
-    padding: 30px 20px;
+    padding: 30px 10px;
   }
 
   .modal {
@@ -744,13 +760,13 @@
   }
 
   .closeButton svg {
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
   }
 
   .modalContent {
     flex-direction: column;
-    gap: 24px;
+    gap: 21px;
   }
 
   .leftTitle {
@@ -764,8 +780,20 @@
   }
 
   .featuresList {
-    gap: 5px;
+    gap: 4px;
     margin-top: 24px;
+    position: relative;
+    padding-bottom: 15px;
+  }
+
+  .featuresList::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -16px;
+    right: -16px;
+    height: 1px;
+    background-color: #369a00;
   }
 
   .featureItem {
@@ -784,7 +812,7 @@
 
   .rightSection {
     max-width: 100%;
-    gap: 24px;
+    gap: 20px;
   }
 
   .tabs {
@@ -803,7 +831,7 @@
   .customSelect {
     padding: 8px;
     font-size: 10px;
-    height: 58px;
+    height: 36px;
   }
 
   .selectArrow {
@@ -812,9 +840,9 @@
   }
 
   .textarea {
-    height: 185px;
+    height: 111px;
     padding: 6px 8px;
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .charCount {
