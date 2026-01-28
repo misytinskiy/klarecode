@@ -127,8 +127,21 @@
 }
 
 .image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.imageVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 419px;
+  height: 315px;
+  /* object-fit: cover; */
+  z-index: 2;
 }
 
 /* .imageGradient {
@@ -182,6 +195,11 @@
     height: 609px;
   }
 
+  .imageVideo {
+    width: 333.44px;
+    height: 250.677px;
+  }
+
   .imageNumber,
   .imageYear,
   .imageDescription {
@@ -224,6 +242,11 @@
   .imageRight {
     width: 28.5vw;
     height: 560px;
+  }
+
+  .imageVideo {
+    width: 282px;
+    height: 212px;
   }
 
   .imageNumber,
@@ -280,6 +303,11 @@
     height: 740px;
     margin-left: calc(-50vw + 50%);
     position: relative;
+  }
+
+  .imageVideo {
+    width: 402px;
+    height: 302px;
   }
 
   .imageInfo {
@@ -349,9 +377,14 @@
   .imageLeft,
   .imageRight {
     width: 100vw;
-    height: 440px;
+    height: 640px;
     margin-left: calc(-50vw + 50%);
     position: relative;
+  }
+
+  .imageVideo {
+    width: 100%;
+    height: 165px;
   }
 
   .imageInfo {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./Hero.module.css";
 import { useContactModal } from "./ContactModalContext";
@@ -45,6 +45,28 @@ export default function Hero() {
   const { openModal } = useContactModal();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Block scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      // Save current scroll position
+      const scrollY = window.scrollY;
+      // Block scroll
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+
+      return () => {
+        // Restore scroll position when menu closes
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.width = "";
+        document.body.style.overflow = "";
+        window.scrollTo(0, scrollY);
+      };
+    }
+  }, [isMenuOpen]);
+
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     sectionId: string
@@ -55,6 +77,13 @@ export default function Hero() {
   };
   return (
     <div className={styles.hero}>
+      {/* Menu Overlay */}
+      {isMenuOpen && (
+        <div
+          className={styles.menuOverlay}
+          onClick={() => setIsMenuOpen(false)}
+        />
+      )}
       {/* Navigation */}
       <nav className={styles.nav}>
         {/* Logo */}
@@ -76,34 +105,76 @@ export default function Hero() {
               isMenuOpen ? styles.navLinksOpen : ""
             }`}
           >
-            <a
-              href="#services"
-              className={styles.navLink}
-              onClick={(e) => handleNavClick(e, "services")}
-            >
-              Services
-            </a>
-            <a
-              href="#cases"
-              className={styles.navLink}
-              onClick={(e) => handleNavClick(e, "cases")}
-            >
-              Cases
-            </a>
-            <a
-              href="#process"
-              className={styles.navLink}
-              onClick={(e) => handleNavClick(e, "process")}
-            >
-              Process
-            </a>
-            <a
-              href="#about"
-              className={styles.navLink}
-              onClick={(e) => handleNavClick(e, "about")}
-            >
-              About
-            </a>
+            <div className={styles.menuHeader}>
+              <div className={styles.menuLanguageSwitcher}>
+                <span className={styles.menuLanguageActive}>EN</span>
+                <span className={styles.menuLanguageInactive}>DE</span>
+              </div>
+            </div>
+            <div className={styles.menuContent}>
+              <div className={styles.menuLogoContainer}>
+                <Image
+                  src="/logo.svg"
+                  alt="Klarecode Logo"
+                  width={94}
+                  height={94}
+                  className={styles.menuLogoImage}
+                  priority
+                />
+              </div>
+              <div className={styles.menuLinks}>
+                <a
+                  href="#services"
+                  className={styles.navLink}
+                  onClick={(e) => handleNavClick(e, "services")}
+                >
+                  Services
+                </a>
+                <a
+                  href="#cases"
+                  className={styles.navLink}
+                  onClick={(e) => handleNavClick(e, "cases")}
+                >
+                  Cases
+                </a>
+                <a
+                  href="#process"
+                  className={styles.navLink}
+                  onClick={(e) => handleNavClick(e, "process")}
+                >
+                  Process
+                </a>
+                <a
+                  href="#about"
+                  className={styles.navLink}
+                  onClick={(e) => handleNavClick(e, "about")}
+                >
+                  About
+                </a>
+              </div>
+            </div>
+            <div className={styles.menuFooter}>
+              <button
+                className={styles.menuDiscussButton}
+                onClick={() => {
+                  openModal();
+                  setIsMenuOpen(false);
+                }}
+              >
+                <span className={styles.menuDiscussButtonText}>Discuss</span>
+              </button>
+              <div className={styles.menuFooterText}>
+                <p className={styles.menuCopyright}>
+                  © 2025 Klarecode. All rights reserved.
+                </p>
+                <a href="#" className={styles.menuFooterLink}>
+                  Privacy Policy
+                </a>
+                <a href="#" className={styles.menuFooterLink}>
+                  Terms of Service
+                </a>
+              </div>
+            </div>
           </div>
           <div className={styles.languageSwitcher}>
             <span className={styles.languageActive}>EN</span>

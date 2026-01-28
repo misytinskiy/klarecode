@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import styles from "./WhatCanWeDo.module.css";
 import { useContactModal } from "./ContactModalContext";
 
@@ -181,7 +180,7 @@ export default function WhatCanWeDo() {
                   </div>
                 </div>
 
-                {/* Right Side - Image Placeholder and Arrow */}
+                {/* Right Side - Video Placeholder and Arrow */}
                 <div className={styles.serviceRight}>
                   <AnimatePresence>
                     {isExpanded && (
@@ -196,12 +195,13 @@ export default function WhatCanWeDo() {
                           ease: [0.4, 0, 0.2, 1],
                         }}
                       >
-                        <Image
-                          src="/whatWeCanDo/decorativeDonut.png"
-                          alt="Decorative Donut"
-                          fill
+                        <video
+                          src={`/whatCanWeDo/${service.id}.mp4`}
                           className={styles.image}
-                          unoptimized
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
                         />
                       </motion.div>
                     )}

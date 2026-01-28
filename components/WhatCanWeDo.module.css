@@ -74,7 +74,7 @@
   justify-content: space-between;
   padding: 25px 0 25px 0;
   --collapsed-h: 166px;
-  --expanded-h: 900px;
+  --expanded-h: 576px;
   min-height: var(--collapsed-h);
   padding-bottom: 0;
   cursor: pointer;
@@ -225,7 +225,7 @@
 .image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  /* object-fit: cover; */
   object-position: center;
 }
 
@@ -328,7 +328,7 @@
 
   .serviceContent {
     --collapsed-h: 137px;
-    --expanded-h: 820px;
+    --expanded-h: 458px;
   }
 }
 
@@ -415,7 +415,7 @@
 
   .serviceContent {
     --collapsed-h: 130px;
-    --expanded-h: 820px;
+    --expanded-h: 381px;
   }
 }
 
@@ -481,6 +481,7 @@
 
   .serviceDetails {
     gap: 24px;
+    z-index: 400;
   }
 
   .discussButton {
@@ -604,7 +605,7 @@
     min-height: auto !important;
     align-items: center;
     --collapsed-h: 100px;
-    --expanded-h: 800px;
+    --expanded-h: 455px;
   }
 
   .serviceLeftWrapper {
@@ -685,6 +686,7 @@
     flex-direction: column;
     gap: 24px;
     width: 100%;
+    z-index: 143;
   }
 
   .serviceDescription {
@@ -696,6 +698,7 @@
     width: 100%;
     height: 250px;
     order: -1;
+    position: relative;
   }
 
   .discussButton {

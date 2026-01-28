@@ -24,6 +24,14 @@ export default function SelectedWork() {
               unoptimized
             />
             <div className={styles.imageGradient} />
+            <video
+              src="/selectedWorks/traumerch.mp4"
+              className={styles.imageVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
           </div>
           <div className={styles.imageInfo}>
             <span className={styles.imageNumber}>01.</span>
@@ -38,13 +46,13 @@ export default function SelectedWork() {
         {/* Right Image */}
         <div className={styles.imageWrapper}>
           <div className={styles.imageRight}>
-            <Image
-              src="/selectedWorks/gamblox.png"
-              alt="Gamblox"
-              fill
+            <video
+              src="/selectedWorks/gamlox.mp4"
               className={styles.image}
-              priority
-              unoptimized
+              autoPlay
+              loop
+              muted
+              playsInline
             />
             </div>
           <div className={styles.imageInfo}>

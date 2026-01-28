@@ -3,10 +3,14 @@
   min-height: 100vh;
   background-color: #000000;
   overflow: hidden;
-  padding: 32px 300px 0;
+  padding: 35px 300px 75px;
   display: flex;
   flex-direction: column;
   cursor: none;
+}
+
+.error404 * {
+  cursor: none !important;
 }
 
 /* Navigation */
@@ -82,7 +86,7 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  cursor: pointer;
+  cursor: none;
   opacity: 0.6;
 }
 
@@ -100,7 +104,7 @@
   width: 40px;
   height: 40px;
   border: none;
-  cursor: pointer;
+  cursor: none;
   padding: 11px 10px;
   z-index: 100;
 }
@@ -245,6 +249,22 @@
 }
 
 /* Responsive Design */
+
+/* 1540x746 */
+@media (max-width: 1540px) {
+  .error404 {
+    padding: 24px 238px 75px;
+  }
+}
+
+/* 1280x631 */
+@media (max-width: 1280px) {
+  .error404 {
+    padding: 21px 257px 44px;
+  }
+}
+
+/* 744x1130 (Mobile Portrait) */
 @media (max-width: 900px) {
   .error404 {
     padding: 0;
@@ -252,7 +272,7 @@
   }
 
   .nav {
-    padding: 20px 20px 0;
+    padding: 30px 30px 0;
   }
 
   .logoImage {
@@ -319,6 +339,17 @@
     grid-column: span 2;
   }
 
+  .errorText,
+  .errorCode,
+  .errorTime {
+    font-size: 10px;
+  }
+
+  .errorIndicator {
+    height: 15px;
+    width: 8px;
+  }
+
   .cursorButton {
     width: 250px;
     height: 280px;
@@ -327,5 +358,78 @@
   .mainButtonText {
     font-size: 32px;
     width: 200px;
+  }
+}
+
+/* 480x716 (Small Mobile) */
+@media (max-width: 480px) {
+  .error404 {
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  .nav {
+    padding: 16px 10px 0;
+  }
+
+  .logoImage {
+    width: 47.43px;
+    height: 51px;
+  }
+
+  .burgerButton {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 11px 10px;
+  }
+
+  .burgerLine {
+    height: 2px;
+    border-radius: 0;
+  }
+
+  .burgerButtonActive .burgerLine:first-child {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .burgerButtonActive .burgerLine:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .navLinks {
+    padding: 80px 20px 30px;
+    gap: 16px;
+  }
+
+  .navRight {
+    gap: 12px;
+  }
+
+  .errorBlocksContainer {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    padding: 30px 10px;
+  }
+
+  .errorText,
+  .errorCode,
+  .errorTime {
+    font-size: 10px;
+  }
+
+  .errorIndicator {
+    height: 15px;
+    width: 8px;
+  }
+
+  .cursorButton {
+    width: 200px;
+    height: 220px;
+  }
+
+  .mainButtonText {
+    font-size: 24px;
+    width: 160px;
   }
 }

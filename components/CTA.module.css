@@ -1,7 +1,12 @@
 .cta {
   position: relative;
   background-color: #000000;
-  padding: 151px 302px;
+  background-image: url("/cta/backgroundGlass.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* padding: 151px 302px; */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,14 +20,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("/cta/elipse.svg");
-  /* background-size: 600px 600px; */
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 1px solid #59ff0042;
-  border-radius: 5px;
-  backdrop-filter: blur(5.199999809265137px);
-  box-shadow: 0 0 28.3px 13px rgba(89, 255, 0, 0.08) inset;
 }
 
 .ctaContent {
@@ -112,17 +109,23 @@
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .ctaButtonSecondary:hover {
-  opacity: 0.8;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.ctaButtonSecondary:hover svg {
+  stroke: #000000;
 }
 
 .ctaButtonSecondary svg {
   width: 16px;
   height: 16px;
   transform: rotate(90deg);
+  transition: stroke 0.3s ease;
 }
 
 /* Responsive Design */
@@ -136,7 +139,6 @@
   .ctaSection {
     width: 100%;
     height: 565.018px;
-    background-image: url("/cta/elipse1540.svg");
   }
 
   .ctaContent {
@@ -230,7 +232,6 @@
     height: auto;
     min-height: 792px;
     padding: 40px 20px;
-    background-image: url("/cta/elipse744.svg");
   }
 
   .ctaContent {
@@ -255,6 +256,7 @@
     gap: 24px;
     padding: 10px;
     width: 100%;
+    justify-content: center;
   }
 
   .ctaButtonPrimary,
@@ -283,13 +285,6 @@
     height: auto;
     min-height: 318px;
     padding: 10px;
-    border: 1px solid #59ff0030;
-    border-radius: 9px;
-    background-image: url("/cta/elipse1.svg");
-    /* background: rgba(27, 27, 27, 0.1); */
-
-    /* box-shadow: 0 0 6.498px 2.985px rgba(42, 194, 147, 0.08) inset; */
-    /* backdrop-filter: blur(1.1940189599990845px); */
   }
 
   .ctaContent {

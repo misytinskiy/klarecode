@@ -113,8 +113,12 @@ export default function Error404() {
 
     window.addEventListener("mousemove", handleMouseMove);
 
+    // Hide cursor on body
+    document.body.style.cursor = "none";
+
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      document.body.style.cursor = "";
     };
   }, []);
 

@@ -10,7 +10,7 @@
 
 /* Navigation */
 .nav {
-  z-index: 50;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,11 +38,10 @@
 }
 
 .navLinks {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
-  margin-right: 10px;
 }
 
 .navLink {
@@ -91,16 +90,27 @@
   background: transparent;
   cursor: pointer;
   opacity: 0.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.discussButton:hover {
+  background-color: #ffffff;
+  opacity: 1;
+}
+
+.discussButton:hover .discussButtonText {
+  color: #000000;
 }
 
 .discussButtonText {
   color: #ffffff;
   font-size: 14px;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .burgerButton {
-  background-color: #59ff00;
+  background-color: transparent;
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -109,7 +119,47 @@
   border: none;
   cursor: pointer;
   padding: 11px 10px;
-  z-index: 100;
+  z-index: 102;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.burgerButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #59ff00 0%, #4de600 50%, #59ff00 100%);
+  background-size: 200% 200%;
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: -1;
+}
+
+.burgerButton:not(.burgerButtonActive)::before {
+  transform: scale(1);
+  animation: gradientShift 2s ease infinite;
+}
+
+.burgerButtonActive::before {
+  transform: scale(0);
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .burgerLine {
@@ -119,6 +169,14 @@
   border-radius: 2px;
   transition: all 0.3s ease;
   transform-origin: center;
+}
+
+.burgerButtonActive {
+  background-color: transparent;
+}
+
+.burgerButtonActive .burgerLine {
+  background-color: #ffffff;
 }
 
 .burgerButtonActive .burgerLine:nth-child(1) {
@@ -235,15 +293,21 @@
   background: transparent;
   border: 1px solid #ffffff;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .ctaButtonSecondary:hover {
-  opacity: 0.8;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.ctaButtonSecondary:hover svg {
+  stroke: #000000;
 }
 
 .ctaButtonSecondary svg {
   margin-top: 3px;
+  transition: stroke 0.3s ease;
 }
 .arrowIcon {
   width: 20px;
@@ -489,38 +553,182 @@
   }
 
   .logoImage {
-    width: 56.547px;
-    height: 56.766px;
+    width: 134px;
+    height: 144.086px;
   }
 
   .logo {
     font-size: 16px;
   }
 
-  .navLinks {
+  .menuOverlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 98;
+  }
+
+  .navLinks {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.98);
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    transform: translateX(-100%);
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0;
+    transform: translateX(100%);
     transition: transform 0.3s ease;
-    z-index: 99;
-    padding: 80px 20px;
+    z-index: 101;
+    padding: 51px 40px;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+    pointer-events: auto;
+  }
+
+  .menuHeader {
+    position: absolute;
+    top: 85px;
+    right: calc(30px + 40px + 50px);
+    z-index: 103;
+  }
+
+  .menuContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
   }
 
   .navLinksOpen {
     transform: translateX(0);
   }
 
+  .menuLogoContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 56px;
+    width: 100%;
+  }
+
+  .menuLogoImage {
+    width: 94px;
+    height: 94px;
+  }
+
   .navLink {
-    font-size: 18px;
+    font-size: 36px;
     color: #ffffff;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: opacity 0.2s, padding-left 0.2s;
+    cursor: pointer;
+
+    pointer-events: auto;
+    text-decoration: none;
+  }
+
+  .navLink:hover {
+    opacity: 0.8;
+    /* padding-left: 8px; */
+  }
+
+  .navLink:last-of-type {
+    border-bottom: none;
+  }
+
+  .menuLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .menuFooter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    margin-top: auto;
+    align-items: flex-start;
+  }
+
+  .menuLanguageSwitcher {
+    display: flex;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 24px;
+  }
+
+  .menuLanguageActive {
+    font-weight: normal;
+  }
+
+  .menuLanguageInactive {
+    font-weight: normal;
+    opacity: 0.3;
+  }
+
+  .menuDiscussButton {
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 0;
+    width: 364px;
+    height: 67px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    align-self: flex-start;
+  }
+
+  .menuDiscussButton:hover {
+    opacity: 1;
+  }
+
+  .menuDiscussButtonText {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .menuFooterText {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .menuCopyright {
+    color: #666;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    margin: 0;
+  }
+
+  .menuFooterLink {
+    color: #666;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .menuFooterLink:hover {
+    opacity: 0.8;
   }
 
   .navRight {
@@ -543,6 +751,9 @@
     width: 40px;
     height: 40px;
     padding: 11px;
+    z-index: 102;
+    position: relative;
+    overflow: hidden;
   }
 
   .burgerLine {
@@ -550,8 +761,17 @@
     border-radius: 0;
   }
 
+  .burgerButtonActive {
+    background-color: transparent;
+    padding: 9px;
+  }
+
+  .burgerButtonActive .burgerLine {
+    background-color: #ffffff;
+  }
+
   .burgerButtonActive .burgerLine:first-child {
-    transform: translateY(9px) rotate(45deg);
+    transform: translateY(13px) rotate(45deg);
   }
 
   .burgerButtonActive .burgerLine:nth-child(3) {
@@ -692,6 +912,14 @@
     border-radius: 0;
   }
 
+  .burgerButtonActive {
+    background-color: transparent;
+  }
+
+  .burgerButtonActive .burgerLine {
+    background-color: #ffffff;
+  }
+
   .burgerButtonActive .burgerLine:first-child {
     transform: translateY(9px) rotate(45deg);
   }
@@ -714,12 +942,57 @@
   }
 
   .navLinks {
-    gap: 16px;
-    margin-top: 12px;
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .menuHeader {
+    top: 34px;
+    right: 73px;
+  }
+
+  .menuLogoContainer {
+    margin-bottom: 40px;
+  }
+
+  .menuLogoImage {
+    width: 70px;
+    height: 70px;
   }
 
   .navLink {
-    font-size: 11px;
+    font-size: 20px;
+  }
+
+  .menuFooter {
+    padding-top: 24px;
+    gap: 19px;
+  }
+
+  .menuLanguageSwitcher {
+    font-size: 12px;
+  }
+
+  .menuDiscussButton {
+    width: 207.426px;
+    height: 38.18px;
+    padding: 0;
+  }
+
+  .menuDiscussButtonText {
+    font-size: 12px;
+  }
+
+  .menuFooterText {
+    gap: 7px;
+  }
+
+  .menuCopyright {
+    font-size: 12px;
+  }
+
+  .menuFooterLink {
+    font-size: 12px;
   }
 
   .navRight {
@@ -742,6 +1015,9 @@
     width: 40px;
     height: 40px;
     padding: 11px 10px;
+    z-index: 102;
+    position: relative;
+    overflow: hidden;
   }
 
   .heroContent {

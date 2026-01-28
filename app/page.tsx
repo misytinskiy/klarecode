@@ -19,13 +19,14 @@ export default function Home() {
       <TrustedBy />
       <DecorativeBlock />
       <AboutUs />
+      <Marquee />
       <WhatCanWeDo />
       <CTASection />
       <Numbers />
       <SelectedWork />
       <DevelopmentProcess />
       <Testimonials />
-      <Marquee />
+
       <CTA />
       <Footer />
     </>

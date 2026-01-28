@@ -89,6 +89,7 @@
   border: 1px solid #ffffff;
   background-color: #000000;
   backdrop-filter: blur(5.2px);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .card1 {
@@ -97,13 +98,56 @@
 }
 
 .card2 {
-  background-color: #c900b5;
-  border: none;
+  background-color: #000000;
+  border: 1px solid #ffffff;
 }
 
 .card3 {
   background-color: #000000;
   border: 1px solid #ffffff;
+}
+
+/* Motion overlays (hover fills) */
+.fillOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fillWave {
+  background-color: #a60000;
+}
+
+.card2 .fillWave {
+  background-color: #c900b5;
+}
+
+.card3 .fillWave {
+  background-color: #d0a107;
+}
+
+.fillSweep {
+  background-color: #c900b5;
+}
+
+.fillCursor {
+  /* color comes from radial-gradient in inline style */
+  background: transparent;
+}
+
+.sweepInner {
+  position: absolute;
+  inset: -30%;
+  background: linear-gradient(
+    90deg,
+    rgba(201, 0, 181, 0) 0%,
+    rgba(201, 0, 181, 0.95) 45%,
+    rgba(201, 0, 181, 1) 50%,
+    rgba(201, 0, 181, 0.95) 55%,
+    rgba(201, 0, 181, 0) 100%
+  );
 }
 
 .cardShadow {

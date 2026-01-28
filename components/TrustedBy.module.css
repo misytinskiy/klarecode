@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 25px;
+  margin-bottom: 41px;
 }
 
 .line {
@@ -38,24 +38,23 @@
   border-radius: 50000px;
   border: 1px solid #fff;
   opacity: 0.8;
-  padding: 10px;
+  padding: 7px 18px;
 }
 
 .logos {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 92px;
 }
 
 .logoPlaceholder {
   border-radius: 10px;
-  width: 112px;
-  height: 48px;
+  width: 123px;
+  height: 94px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
   box-sizing: border-box;
 }
 
@@ -68,19 +67,19 @@
 }
 
 .logoImage1 {
-  height: 24px;
+  height: 40px;
 }
 
 .logoImage2 {
-  height: 33px;
+  height: 68px;
 }
 
 .logoImage3 {
-  height: 9px;
+  height: 20px;
 }
 
 .logoImage4 {
-  height: 10px;
+  height: 20px;
 }
 
 /* Responsive Design */
@@ -88,7 +87,7 @@
 /* 1540x746 */
 @media (max-width: 1540px) {
   .trustedBy {
-    padding: 50px 0 50px;
+    padding: 56px 0;
   }
 
   .header {
@@ -98,8 +97,8 @@
   .label {
     font-size: 10px;
     padding: 0;
-    width: 181px;
-    height: 24px;
+    width: 207px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,18 +110,26 @@
   }
 
   .logos {
-    gap: 23px;
+    gap: 49px;
   }
 
   .logoPlaceholder {
     height: 54px;
   }
 
+  .logoImage1 {
+    height: 34px;
+  }
+
   .logoImage2 {
-    height: 39px;
+    height: 61px;
   }
   .logoImage3 {
     height: 11px;
+  }
+
+  .logoImage4 {
+    height: 10px;
   }
 }
 

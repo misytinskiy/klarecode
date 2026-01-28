@@ -158,16 +158,22 @@
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .ctaButtonSecondary:hover {
-  opacity: 0.8;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.ctaButtonSecondary:hover svg {
+  stroke: #000000;
 }
 
 .ctaButtonSecondary svg {
   width: 20px;
   height: 20px;
+  transition: stroke 0.3s ease;
 }
 
 /* Responsive Design */
