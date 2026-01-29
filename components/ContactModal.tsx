@@ -10,6 +10,7 @@ export default function ContactModal() {
   const { isOpen, closeModal } = useContactModal();
   const [activeTab, setActiveTab] = useState<"message" | "call">("message");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isCalendlyLoading, setIsCalendlyLoading] = useState(true);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -42,6 +43,13 @@ export default function ContactModal() {
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
+
+  const handleTabChange = (tab: "message" | "call") => {
+    setActiveTab(tab);
+    if (tab === "call") {
+      setIsCalendlyLoading(true);
+    }
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -178,7 +186,7 @@ export default function ContactModal() {
                     className={`${styles.tab} ${
                       activeTab === "message" ? styles.tabActive : ""
                     }`}
-                    onClick={() => setActiveTab("message")}
+                    onClick={() => handleTabChange("message")}
                   >
                     Send message
                   </button>
@@ -186,124 +194,190 @@ export default function ContactModal() {
                     className={`${styles.tab} ${
                       activeTab === "call" ? styles.tabActive : ""
                     }`}
-                    onClick={() => setActiveTab("call")}
+                    onClick={() => handleTabChange("call")}
                   >
                     Book a call
                   </button>
                 </div>
 
-                {/* Form */}
-                <form className={styles.form}>
-                  <input
-                    type="text"
-                    placeholder="John Doe"
-                    className={styles.input}
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                  />
-                  <input
-                    type="text"
-                    placeholder="Company Name"
-                    className={styles.input}
-                    value={formData.company}
-                    onChange={(e) =>
-                      setFormData({ ...formData, company: e.target.value })
-                    }
-                  />
-                  <input
-                    type="email"
-                    placeholder="john@company.com"
-                    className={styles.input}
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                  />
-                  <div className={styles.selectWrapper}>
-                    <button
-                      type="button"
-                      className={`${styles.customSelect} ${
-                        formData.projectType ? styles.selectFilled : ""
-                      } ${isDropdownOpen ? styles.selectOpen : ""}`}
-                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    >
-                      <span>
-                        {selectedProjectType
-                          ? selectedProjectType.label
-                          : "Project Type"}
-                      </span>
-                      <svg
-                        width="12"
-                        height="8"
-                        viewBox="0 0 12 8"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={styles.selectArrow}
-                      >
-                        <path
-                          d="M1 1.5L6 6.5L11 1.5"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    {isDropdownOpen && (
-                      <motion.div
-                        className={styles.dropdown}
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {projectTypes.map((type) => (
-                          <button
-                            key={type.value}
-                            type="button"
-                            className={`${styles.dropdownOption} ${
-                              formData.projectType === type.value
-                                ? styles.dropdownOptionActive
-                                : ""
-                            }`}
-                            onClick={() => {
-                              setFormData({
-                                ...formData,
-                                projectType: type.value,
-                              });
-                              setIsDropdownOpen(false);
-                            }}
-                          >
-                            {type.label}
-                          </button>
-                        ))}
-                      </motion.div>
-                    )}
-                  </div>
-                  <div className={styles.textareaWrapper}>
-                    <textarea
-                      placeholder="Project Details"
-                      className={styles.textarea}
-                      value={formData.details}
-                      onChange={handleDetailsChange}
-                      rows={5}
+                {/* Form or Calendly */}
+                {activeTab === "message" ? (
+                  <form className={styles.form}>
+                    <input
+                      type="text"
+                      placeholder="John Doe"
+                      className={styles.input}
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                     />
-                    <span className={styles.charCount}>{remainingChars}</span>
+                    <input
+                      type="text"
+                      placeholder="Company Name"
+                      className={styles.input}
+                      value={formData.company}
+                      onChange={(e) =>
+                        setFormData({ ...formData, company: e.target.value })
+                      }
+                    />
+                    <input
+                      type="email"
+                      placeholder="john@company.com"
+                      className={styles.input}
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                    />
+                    <div className={styles.selectWrapper}>
+                      <button
+                        type="button"
+                        className={`${styles.customSelect} ${
+                          formData.projectType ? styles.selectFilled : ""
+                        } ${isDropdownOpen ? styles.selectOpen : ""}`}
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      >
+                        <span>
+                          {selectedProjectType
+                            ? selectedProjectType.label
+                            : "Project Type"}
+                        </span>
+                        <svg
+                          width="12"
+                          height="8"
+                          viewBox="0 0 12 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={styles.selectArrow}
+                        >
+                          <path
+                            d="M1 1.5L6 6.5L11 1.5"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      {isDropdownOpen && (
+                        <motion.div
+                          className={styles.dropdown}
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {projectTypes.map((type) => (
+                            <button
+                              key={type.value}
+                              type="button"
+                              className={`${styles.dropdownOption} ${
+                                formData.projectType === type.value
+                                  ? styles.dropdownOptionActive
+                                  : ""
+                              }`}
+                              onClick={() => {
+                                setFormData({
+                                  ...formData,
+                                  projectType: type.value,
+                                });
+                                setIsDropdownOpen(false);
+                              }}
+                            >
+                              {type.label}
+                            </button>
+                          ))}
+                        </motion.div>
+                      )}
+                    </div>
+                    <div className={styles.textareaWrapper}>
+                      <textarea
+                        placeholder="Project Details"
+                        className={styles.textarea}
+                        value={formData.details}
+                        onChange={handleDetailsChange}
+                        rows={5}
+                      />
+                      <span className={styles.charCount}>{remainingChars}</span>
+                    </div>
+
+                    <button type="submit" className={styles.submitButton}>
+                      Send Request
+                    </button>
+
+                    <p className={styles.privacyText}>
+                      By clicking &quot;Send Request&quot; you agree to our{" "}
+                      <a href="#" className={styles.privacyLink}>
+                        Privacy Policy.
+                      </a>
+                    </p>
+                  </form>
+                ) : (
+                  <div className={styles.calendlyContainer}>
+                    {isCalendlyLoading && (
+                      <div className={styles.calendlySkeleton}>
+                        <div className={styles.skeletonHeader}>
+                          <div
+                            className={styles.skeletonLine}
+                            style={{ width: "60%", height: "24px" }}
+                          />
+                          <div
+                            className={styles.skeletonLine}
+                            style={{ width: "40%", height: "16px" }}
+                          />
+                        </div>
+                        <div className={styles.skeletonContent}>
+                          <div
+                            className={styles.skeletonLine}
+                            style={{
+                              width: "100%",
+                              height: "12px",
+                              marginBottom: "12px",
+                            }}
+                          />
+                          <div
+                            className={styles.skeletonLine}
+                            style={{
+                              width: "90%",
+                              height: "12px",
+                              marginBottom: "12px",
+                            }}
+                          />
+                          <div
+                            className={styles.skeletonLine}
+                            style={{
+                              width: "85%",
+                              height: "12px",
+                              marginBottom: "12px",
+                            }}
+                          />
+                          <div
+                            className={styles.skeletonLine}
+                            style={{
+                              width: "95%",
+                              height: "12px",
+                              marginBottom: "24px",
+                            }}
+                          />
+                          <div className={styles.skeletonCard} />
+                          <div className={styles.skeletonCard} />
+                          <div className={styles.skeletonCard} />
+                        </div>
+                      </div>
+                    )}
+                    <iframe
+                      src="https://calendly.com/s2d_mm?embed=true"
+                      width="100%"
+                      height="100%"
+                      frameBorder="0"
+                      className={styles.calendlyIframe}
+                      title="Calendly Scheduling"
+                      onLoad={() => setIsCalendlyLoading(false)}
+                      style={{ display: isCalendlyLoading ? "none" : "block" }}
+                    />
                   </div>
-
-                  <button type="submit" className={styles.submitButton}>
-                    Send Request
-                  </button>
-
-                  <p className={styles.privacyText}>
-                    By clicking &quot;Send Request&quot; you agree to our{" "}
-                    <a href="#" className={styles.privacyLink}>
-                      Privacy Policy.
-                    </a>
-                  </p>
-                </form>
+                )}
               </div>
             </div>
           </motion.div>
