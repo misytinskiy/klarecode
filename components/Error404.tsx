@@ -192,7 +192,10 @@ export default function Error404() {
               <span className={styles.languageActive}>EN</span>
               <span className={styles.languageInactive}>DE</span>
             </div>
-            <button className={styles.discussButton} onClick={openModal}>
+            <button
+              className={styles.discussButton}
+              onClick={() => openModal("message")}
+            >
               <span className={styles.discussButtonText}>Discuss</span>
             </button>
             <button
