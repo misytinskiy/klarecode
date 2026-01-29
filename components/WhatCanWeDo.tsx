@@ -68,10 +68,17 @@ export default function WhatCanWeDo() {
     <section className={styles.whatCanWeDo}>
       {/* Header */}
       <div className={styles.header}>
-        <h2 className={styles.title}>What we can do</h2>
-        <p className={styles.subtitle}>
-          We handle the complexity so you can enjoy the clarity.
-        </p>
+        <div className={styles.headerTop}>
+          <div className={styles.tag}>
+            <span className={styles.tagText}>Our Expertise</span>
+          </div>
+          <div className={styles.headerContent}>
+            <h2 className={styles.title}>What we can do</h2>
+            <p className={styles.subtitle}>
+              We handle the complexity so you can enjoy the clarity.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Services List */}

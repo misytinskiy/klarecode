@@ -14,7 +14,35 @@
   flex-direction: column;
   gap: 24px;
   margin-bottom: 40px;
-  width: 532px;
+  width: 100%;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tag {
+  border: 1px solid #ffffff;
+  border-radius: 50000px;
+  padding: 10px;
+  height: 32px;
+  width: 138px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.tagText {
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .title {
@@ -25,7 +53,8 @@
   text-align: left;
   color: #ffffff;
   margin: 0;
-  width: 100%;
+  width: auto;
+  flex: 1;
 }
 
 .subtitle {
@@ -166,10 +195,21 @@
   }
 
   .header {
-    width: 480px;
+    width: 100%;
     gap: 19px;
     margin-bottom: 32px;
-    left: calc(20.83% + 150px);
+  }
+
+  .tag {
+    padding: 0;
+    width: 109px;
+    height: 25px;
+    border-width: 0.756px;
+    border-radius: 37795.28px;
+  }
+
+  .tagText {
+    font-size: 10px;
   }
 
   .title {
@@ -218,10 +258,21 @@
   }
 
   .header {
-    width: 420px;
+    width: 100%;
     gap: 16px;
     margin-bottom: 43px;
-    left: calc(20.83% + 120px);
+  }
+
+  .tag {
+    width: 92px;
+    height: 21px;
+    padding: 0;
+    border-width: 0.756px;
+    border-radius: 37795.28px;
+  }
+
+  .tagText {
+    font-size: 9px;
   }
 
   .title {
@@ -274,8 +325,27 @@
     align-items: flex-start;
   }
 
+  .headerTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .tag {
+    width: 159px;
+    height: 43px;
+    padding: 6px 12px;
+    order: 1;
+  }
+
+  .tagText {
+    font-size: 14px;
+  }
+
   .title {
     font-size: 44px;
+    text-align: left;
+    order: 2;
   }
 
   .subtitle {
@@ -358,8 +428,27 @@
     margin-bottom: 40px;
   }
 
+  .headerTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .tag {
+    width: 138px;
+    height: 32px;
+    padding: 4px 8px;
+    order: 1;
+  }
+
+  .tagText {
+    font-size: 12px;
+  }
+
   .title {
     font-size: 30px;
+    text-align: left;
+    order: 2;
   }
 
   .subtitle {

@@ -5,7 +5,12 @@ export default function SelectedWork() {
   return (
     <section id="cases" className={styles.selectedWork}>
       <div className={styles.header}>
-      <h2 className={styles.title}>Selected Work</h2>
+        <div className={styles.headerTop}>
+          <h2 className={styles.title}>Selected Work</h2>
+          <div className={styles.tag}>
+            <span className={styles.tagText}>PORTFOLIO</span>
+          </div>
+        </div>
         <p className={styles.subtitle}>
           We handle the complexity so you can enjoy the clarity.
         </p>
