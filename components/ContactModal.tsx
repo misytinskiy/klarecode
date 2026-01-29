@@ -419,7 +419,11 @@ export default function ContactModal() {
 
                       <p className={styles.privacyText}>
                         By clicking &quot;Send Request&quot; you agree to our{" "}
-                        <a href="#" className={styles.privacyLink}>
+                        <a
+                          href="/PRIVACY POLICY (EN).pdf"
+                          download
+                          className={styles.privacyLink}
+                        >
                           Privacy Policy.
                         </a>
                       </p>
