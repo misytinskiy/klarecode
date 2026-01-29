@@ -150,7 +150,10 @@ export default function Footer() {
       {/* Footer Bottom */}
       <div className={styles.footerBottom}>
         <div className={styles.footerBottomLeft}>
-          <button className={styles.footerButton} onClick={openModal}>
+          <button
+            className={styles.footerButton}
+            onClick={() => openModal("message")}
+          >
             Discuss Project
           </button>
           <p className={styles.copyright}>
