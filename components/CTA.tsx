@@ -18,10 +18,10 @@ export default function CTA() {
             product for scaling.
           </p>
           <div className={styles.ctaButtons}>
-            <button className={styles.ctaButtonPrimary} onClick={openModal}>
+            <button className={styles.ctaButtonPrimary} onClick={() => openModal("message")}>
               Discuss Project
             </button>
-            <button className={styles.ctaButtonSecondary}>
+            <button className={styles.ctaButtonSecondary} onClick={() => openModal("call")}>
               Schedule a Call
               <svg
                 width="16"

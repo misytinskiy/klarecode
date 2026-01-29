@@ -65,7 +65,7 @@ export default function WhatCanWeDo() {
   }, []);
 
   return (
-    <section className={styles.whatCanWeDo}>
+    <section id="services" className={styles.whatCanWeDo}>
       {/* Header */}
       <div className={styles.header}>
         <div className={styles.headerTop}>

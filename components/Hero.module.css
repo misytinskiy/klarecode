@@ -60,21 +60,23 @@
   gap: 50px;
 }
 
-.languageSwitcher {
+.desktopNavLinks {
   display: flex;
-
+  flex-direction: column;
   gap: 8px;
+}
+
+.desktopNavLink {
   color: #ffffff;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: normal;
+  transition: opacity 0.2s;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.languageActive {
-  font-weight: normal;
-}
-
-.languageInactive {
-  font-weight: normal;
-  opacity: 0.3;
+.desktopNavLink:hover {
+  opacity: 0.8;
 }
 
 .discussButton {
@@ -370,11 +372,6 @@
     gap: 37.8px;
   }
 
-  .languageSwitcher {
-    font-size: 10px;
-    gap: 6px;
-  }
-
   .discussButton {
     width: 79px;
     height: 27px;
@@ -444,6 +441,18 @@
     top: -57px;
     left: calc(50% + 18px);
   }
+
+  .navRight {
+    gap: 40px;
+  }
+
+  .desktopNavLinks {
+    gap: 6px;
+  }
+
+  .desktopNavLink {
+    font-size: 10px;
+  }
 }
 
 /* 1280x631 */
@@ -467,11 +476,6 @@
 
   .navRight {
     gap: 37px;
-  }
-
-  .languageSwitcher {
-    font-size: 10px;
-    gap: 6px;
   }
 
   .discussButton {
@@ -534,6 +538,14 @@
     height: 608px;
     top: -57px;
     left: calc(50% + 18px);
+  }
+
+  .navRight {
+    gap: 30px;
+  }
+
+  .desktopNavLinks {
+    gap: 5px;
   }
 }
 
@@ -658,22 +670,6 @@
     align-items: flex-start;
   }
 
-  .menuLanguageSwitcher {
-    display: flex;
-    gap: 8px;
-    color: #ffffff;
-    font-size: 24px;
-  }
-
-  .menuLanguageActive {
-    font-weight: normal;
-  }
-
-  .menuLanguageInactive {
-    font-weight: normal;
-    opacity: 0.3;
-  }
-
   .menuDiscussButton {
     border: 1px solid #ffffff;
     border-radius: 5px;
@@ -731,15 +727,13 @@
     opacity: 0.8;
   }
 
+  .desktopNavLinks {
+    display: none;
+  }
+
   .navRight {
     gap: 16px;
     align-items: center;
-  }
-
-  .languageSwitcher {
-    font-size: 12px;
-    gap: 8px;
-    display: none;
   }
 
   .discussButton {
@@ -969,10 +963,6 @@
     gap: 19px;
   }
 
-  .menuLanguageSwitcher {
-    font-size: 12px;
-  }
-
   .menuDiscussButton {
     width: 207.426px;
     height: 38.18px;
@@ -995,15 +985,13 @@
     font-size: 12px;
   }
 
+  .desktopNavLinks {
+    display: none;
+  }
+
   .navRight {
     gap: 12px;
     align-items: center;
-  }
-
-  .languageSwitcher {
-    font-size: 10px;
-    gap: 8px;
-    display: none;
   }
 
   .discussButton {

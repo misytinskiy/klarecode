@@ -98,19 +98,44 @@ export default function Hero() {
           />
         </div>
 
-        {/* Navigation Links & Language Switcher & CTA */}
+        {/* Navigation Links & CTA */}
         <div className={styles.navRight}>
+          <div className={styles.desktopNavLinks}>
+            <a
+              href="#services"
+              className={styles.desktopNavLink}
+              onClick={(e) => handleNavClick(e, "services")}
+            >
+              Services
+            </a>
+            <a
+              href="#cases"
+              className={styles.desktopNavLink}
+              onClick={(e) => handleNavClick(e, "cases")}
+            >
+              Cases
+            </a>
+            <a
+              href="#process"
+              className={styles.desktopNavLink}
+              onClick={(e) => handleNavClick(e, "process")}
+            >
+              Process
+            </a>
+            <a
+              href="#about"
+              className={styles.desktopNavLink}
+              onClick={(e) => handleNavClick(e, "about")}
+            >
+              About
+            </a>
+          </div>
           <div
             className={`${styles.navLinks} ${
               isMenuOpen ? styles.navLinksOpen : ""
             }`}
           >
-            <div className={styles.menuHeader}>
-              <div className={styles.menuLanguageSwitcher}>
-                <span className={styles.menuLanguageActive}>EN</span>
-                <span className={styles.menuLanguageInactive}>DE</span>
-              </div>
-            </div>
+            <div className={styles.menuHeader}></div>
             <div className={styles.menuContent}>
               <div className={styles.menuLogoContainer}>
                 <Image
@@ -176,11 +201,10 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <div className={styles.languageSwitcher}>
-            <span className={styles.languageActive}>EN</span>
-            <span className={styles.languageInactive}>DE</span>
-          </div>
-          <button className={styles.discussButton} onClick={openModal}>
+          <button
+            className={styles.discussButton}
+            onClick={() => openModal("message")}
+          >
             <span className={styles.discussButtonText}>Discuss</span>
           </button>
           <button
@@ -215,10 +239,16 @@ export default function Hero() {
             </p>
             {/* CTA Buttons - Desktop */}
             <div className={styles.ctaButtons}>
-              <button className={styles.ctaButtonPrimary} onClick={openModal}>
+              <button
+                className={styles.ctaButtonPrimary}
+                onClick={() => openModal("message")}
+              >
                 Discuss Project
               </button>
-              <button className={styles.ctaButtonSecondary}>
+              <button
+                className={styles.ctaButtonSecondary}
+                onClick={() => openModal("call")}
+              >
                 View Cases
                 <svg
                   width="20"
@@ -253,10 +283,16 @@ export default function Hero() {
 
         {/* CTA Buttons - Mobile (under video) */}
         <div className={styles.ctaButtonsMobile}>
-          <button className={styles.ctaButtonPrimary} onClick={openModal}>
+          <button
+            className={styles.ctaButtonPrimary}
+            onClick={() => openModal("message")}
+          >
             Discuss Project
           </button>
-          <button className={styles.ctaButtonSecondary}>
+          <button
+            className={styles.ctaButtonSecondary}
+            onClick={() => openModal("call")}
+          >
             View Cases
             <svg
               width="20"

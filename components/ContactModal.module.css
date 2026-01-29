@@ -359,8 +359,13 @@
   max-height: 40px;
 }
 
-.submitButton:hover {
+.submitButton:hover:not(:disabled) {
   opacity: 0.9;
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .calendlyContainer {
