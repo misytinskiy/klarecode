@@ -202,10 +202,7 @@ export default function PolicyContent() {
                   <Link href="/policy" className={navStyles.menuFooterLink}>
                     Privacy Policy
                   </Link>
-                  <Link
-                    href="/terms"
-                    className={navStyles.menuFooterLink}
-                  >
+                  <Link href="/terms" className={navStyles.menuFooterLink}>
                     Terms of Service
                   </Link>
                 </div>
