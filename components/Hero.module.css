@@ -303,12 +303,16 @@
   color: #000000;
 }
 
-.ctaButtonSecondary:hover svg {
-  stroke: #000000;
-}
-
 .ctaButtonSecondary svg {
   margin-top: 3px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.ctaButtonSecondary:hover svg {
+  transform: translateX(4px);
+}
+
+.ctaButtonSecondary svg path {
   transition: stroke 0.3s ease;
 }
 .arrowIcon {

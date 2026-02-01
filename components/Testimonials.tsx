@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./Testimonials.module.css";
 
 const avatars = [
@@ -40,28 +41,31 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const cardsRef = useRef<HTMLDivElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [dragConstraints, setDragConstraints] = useState({ left: 0, right: 0 });
 
   useEffect(() => {
-    const cardsElement = cardsRef.current;
-    if (!cardsElement) return;
+    if (!viewportRef.current || !trackRef.current) return;
 
-    const handleWheel = (e: WheelEvent) => {
-      // Проверяем, можем ли скроллить горизонтально
-      const canScrollHorizontally =
-        cardsElement.scrollWidth > cardsElement.clientWidth;
-      
-      if (canScrollHorizontally) {
-        // Преобразуем вертикальный скролл в горизонтальный
-        e.preventDefault();
-        cardsElement.scrollLeft += e.deltaY;
-      }
+    const updateConstraints = () => {
+      if (!viewportRef.current || !trackRef.current) return;
+      const viewportWidth = viewportRef.current.offsetWidth;
+      const trackWidth = trackRef.current.scrollWidth;
+      const maxDrag = Math.max(0, trackWidth - viewportWidth);
+      setDragConstraints({ left: -maxDrag, right: 0 });
     };
 
-    cardsElement.addEventListener("wheel", handleWheel, { passive: false });
+    updateConstraints();
+
+    const observer = new ResizeObserver(updateConstraints);
+    observer.observe(viewportRef.current);
+    observer.observe(trackRef.current);
+    window.addEventListener("resize", updateConstraints);
 
     return () => {
-      cardsElement.removeEventListener("wheel", handleWheel);
+      observer.disconnect();
+      window.removeEventListener("resize", updateConstraints);
     };
   }, []);
 
@@ -76,28 +80,43 @@ export default function Testimonials() {
         </p>
       </div>
 
-      <div ref={cardsRef} className={styles.cards}>
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className={styles.card}>
-            <div className={styles.cardHeader}>
-              <div 
-                className={styles.avatar}
-                style={{ backgroundImage: `url(${avatars[index]})` }}
-              />
-              <div className={styles.rating} />
-            </div>
-            <p className={styles.quote}>{testimonial.quote}</p>
-            <div className={styles.author}>
-              <div className={styles.authorLine} />
-              <div className={styles.authorInfo}>
-                <p className={styles.authorName}>{testimonial.name}</p>
-                <p className={styles.authorCompany}>{testimonial.company}</p>
+      <div ref={viewportRef} className={styles.cardsViewport}>
+        <motion.div
+          ref={trackRef}
+          className={styles.cards}
+          drag="x"
+          dragConstraints={dragConstraints}
+          dragElastic={0.2}
+          dragMomentum
+          dragTransition={{
+            power: 0.15,
+            timeConstant: 260,
+            bounceStiffness: 140,
+            bounceDamping: 24,
+          }}
+          whileTap={{ cursor: "grabbing" }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className={styles.card}>
+              <div className={styles.cardHeader}>
+                <div
+                  className={styles.avatar}
+                  style={{ backgroundImage: `url(${avatars[index]})` }}
+                />
+                <div className={styles.rating} />
+              </div>
+              <p className={styles.quote}>{testimonial.quote}</p>
+              <div className={styles.author}>
+                <div className={styles.authorLine} />
+                <div className={styles.authorInfo}>
+                  <p className={styles.authorName}>{testimonial.name}</p>
+                  <p className={styles.authorCompany}>{testimonial.company}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </motion.div>
       </div>
     </section>
   );
 }
-

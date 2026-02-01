@@ -4,6 +4,34 @@ import { motion } from "framer-motion";
 import styles from "./Numbers.module.css";
 
 export default function Numbers() {
+  const fillVariants = {
+    rest: {
+      clipPath: "circle(0% at var(--hover-x, 50%) var(--hover-y, 50%))",
+      opacity: 0.9,
+    },
+    hover: {
+      clipPath: "circle(150% at var(--hover-x, 50%) var(--hover-y, 50%))",
+      opacity: 1,
+    },
+  };
+
+  const setHoverOrigin = (event: React.MouseEvent<HTMLDivElement>) => {
+    const target = event.currentTarget;
+    const rect = target.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    target.style.setProperty("--hover-x", `${x}%`);
+    target.style.setProperty("--hover-y", `${y}%`);
+  };
+
+  const setLeaveOrigin = (event: React.MouseEvent<HTMLDivElement>) => {
+    const target = event.currentTarget;
+    const rect = target.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    target.style.setProperty("--hover-x", `${x}%`);
+    target.style.setProperty("--hover-y", `${y}%`);
+  };
 
   return (
     <section id="about" className={styles.numbers}>
@@ -23,14 +51,13 @@ export default function Numbers() {
           whileHover="hover"
           initial="rest"
           animate="rest"
+          onMouseEnter={setHoverOrigin}
+          onMouseLeave={setLeaveOrigin}
         >
           {/* Wave fill (circle clipPath) */}
           <motion.div
             className={`${styles.fillOverlay} ${styles.fillWave}`}
-            variants={{
-              rest: { clipPath: "circle(0% at 15% 85%)", opacity: 0.9 },
-              hover: { clipPath: "circle(150% at 15% 85%)", opacity: 1 },
-            }}
+            variants={fillVariants}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           />
           <div className={styles.cardContent}>
@@ -50,14 +77,13 @@ export default function Numbers() {
           whileHover="hover"
           initial="rest"
           animate="rest"
+          onMouseEnter={setHoverOrigin}
+          onMouseLeave={setLeaveOrigin}
         >
           {/* Wave fill (circle clipPath) */}
           <motion.div
             className={`${styles.fillOverlay} ${styles.fillWave}`}
-            variants={{
-              rest: { clipPath: "circle(0% at 15% 85%)", opacity: 0.9 },
-              hover: { clipPath: "circle(150% at 15% 85%)", opacity: 1 },
-            }}
+            variants={fillVariants}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           />
           <div className={styles.cardContent}>
@@ -76,14 +102,13 @@ export default function Numbers() {
           whileHover="hover"
           initial="rest"
           animate="rest"
+          onMouseEnter={setHoverOrigin}
+          onMouseLeave={setLeaveOrigin}
         >
           {/* Wave fill (circle clipPath) */}
           <motion.div
             className={`${styles.fillOverlay} ${styles.fillWave}`}
-            variants={{
-              rest: { clipPath: "circle(0% at 15% 85%)", opacity: 0.9 },
-              hover: { clipPath: "circle(150% at 15% 85%)", opacity: 1 },
-            }}
+            variants={fillVariants}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           />
           <div className={styles.cardContent}>

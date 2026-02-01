@@ -1,0 +1,258 @@
+.policyPage {
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 35px 300px 80px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 49px;
+  padding-bottom: 30px;
+  margin-top: 64px;
+}
+
+.title {
+  font-family: "Manrope", sans-serif;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0 0 11px 0;
+}
+
+.lastUpdated {
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #a1a1aa;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 31px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(217, 217, 217, 0.3);
+}
+
+.tableRow:first-child {
+  border-top: 1px solid rgba(217, 217, 217, 0.3);
+}
+
+.tableCellLeft {
+  display: flex;
+  align-items: flex-start;
+}
+
+.sectionTitle {
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.tableCellRight {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.paragraph {
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  color: #ffffff;
+  margin: 0;
+}
+
+.paragraph strong {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.list {
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  color: #ffffff;
+  margin: 0;
+}
+
+.list li {
+  margin-bottom: 12px;
+}
+
+/* Responsive Design */
+
+/* 1540px */
+@media (max-width: 1540px) {
+  .policyPage {
+    padding: 35px 238px 60px;
+  }
+
+  .header {
+    margin-bottom: 53px;
+    margin-top: 56px;
+  }
+
+  .title {
+    font-size: 56px;
+    margin: 0 0 20px;
+  }
+
+  .lastUpdated {
+    font-size: 14px;
+  }
+
+  .tableRow {
+    grid-template-columns: 280px 1fr;
+    gap: 50px;
+    padding: 33px 0;
+  }
+
+  .sectionTitle {
+    font-size: 14px;
+  }
+
+  .paragraph {
+    font-size: 14px;
+  }
+}
+
+/* 1280px */
+@media (max-width: 1280px) {
+  .policyPage {
+    padding: 21px 266px 50px;
+  }
+
+  .title {
+    font-size: 48px;
+    margin: 0 0 10px;
+  }
+
+  .header {
+    margin-top: 44px;
+    margin-bottom: 28px;
+  }
+
+  .tableRow {
+    grid-template-columns: 240px 1fr;
+    gap: 90px;
+    padding: 37px 0;
+  }
+
+  .sectionTitle {
+    font-size: 14px;
+  }
+
+  .paragraph,
+  .list {
+    font-size: 14px;
+  }
+}
+
+/* 900px */
+@media (max-width: 900px) {
+  .policyPage {
+    padding: 0;
+  }
+
+  .container {
+    padding: 0 30px 40px;
+  }
+
+  /* Nav styles matching Hero */
+  .policyPage :global(.nav) {
+    padding: 30px 30px 0 !important;
+  }
+
+  .policyPage :global(.logoImage) {
+    width: 134px !important;
+    height: 144.086px !important;
+  }
+
+  .policyPage :global(.logoContainer) {
+    gap: 12px !important;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .tableRow {
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+    padding: 24px 0;
+  }
+
+  .sectionTitle {
+    font-size: 16px;
+  }
+
+  .paragraph,
+  .list {
+    font-size: 14px;
+  }
+}
+
+/* 480px */
+@media (max-width: 480px) {
+  .policyPage {
+    padding: 0;
+  }
+
+  .container {
+    padding: 0 16px 30px;
+  }
+
+  /* Nav styles matching Hero */
+  .policyPage :global(.nav) {
+    padding: 16px 10px 0 !important;
+  }
+
+  .policyPage :global(.logoImage) {
+    width: 47.43px !important;
+    height: 51px !important;
+  }
+
+  .policyPage :global(.logoContainer) {
+    gap: 10px !important;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .tableRow {
+    padding: 20px 0;
+  }
+
+  .sectionTitle {
+    font-size: 14px;
+  }
+
+  .paragraph,
+  .list {
+    font-size: 12px;
+  }
+}

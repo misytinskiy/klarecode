@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./AboutUs.module.css";
 
 const headingText = `You focus on business growth.
@@ -10,8 +10,41 @@ is stable, secure, and predictable
 — eliminating technical risks
 so you don't have to manage them`;
 
+function HeadingChar({
+  char,
+  className,
+  index,
+  scrollProgress,
+  totalChars,
+}: {
+  char: string;
+  className: string;
+  index: number;
+  scrollProgress: ReturnType<typeof useScroll>["scrollYProgress"];
+  totalChars: number;
+}) {
+  const start = index / Math.max(totalChars, 1);
+  const end = (index + 1) / Math.max(totalChars, 1);
+  const color = useTransform(
+    scrollProgress,
+    [start, end],
+    ["#818181", "#ffffff"]
+  );
+
+  return (
+    <motion.span className={className} style={{ color }}>
+      {char}
+    </motion.span>
+  );
+}
+
 export default function AboutUs() {
   const [isNarrow, setIsNarrow] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start 0.7", "start 0.2"],
+  });
 
   useEffect(() => {
     const checkNarrow = () => {
@@ -22,56 +55,7 @@ export default function AboutUs() {
     return () => window.removeEventListener("resize", checkNarrow);
   }, []);
 
-  const totalChars = headingText.replace(/\n/g, "").length;
-  const letterDelay = 0.04;
-  const letterDuration = 0.15;
-  const pauseDuration = 1.2;
-  const lastLetterWhiteTime = (totalChars - 1) * letterDelay + letterDuration;
-  const cycleDuration =
-    lastLetterWhiteTime + totalChars * letterDelay + pauseDuration;
-
-  const getCharTimes = (index: number) => {
-    const whiteStartTime = index * letterDelay;
-    const whiteEndTime = whiteStartTime + letterDuration;
-    const grayStartTime = lastLetterWhiteTime + index * letterDelay;
-    const grayEndTime = grayStartTime + letterDuration;
-    return [
-      0,
-      whiteStartTime / cycleDuration,
-      whiteEndTime / cycleDuration,
-      grayStartTime / cycleDuration,
-      grayEndTime / cycleDuration,
-      1,
-    ];
-  };
-
-  const renderChar = (char: string, key: string, index: number) => {
-    return (
-      <motion.span
-        key={key}
-        className={styles.headingChar}
-        initial={{ color: "#818181" }}
-        animate={{
-          color: [
-            "#818181",
-            "#818181",
-            "#ffffff",
-            "#ffffff",
-            "#818181",
-            "#818181",
-          ],
-        }}
-        transition={{
-          duration: cycleDuration,
-          times: getCharTimes(index),
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      >
-        {char}
-      </motion.span>
-    );
-  };
+  const totalChars = useMemo(() => headingText.replace(/\n/g, "").length, []);
 
   const headingNodes = headingText.split(/\n/).reduce(
     (lineAcc, line, lineIndex) => {
@@ -82,21 +66,29 @@ export default function AboutUs() {
       return line.split(" ").reduce(
         (wordAcc, word, wordIndex) => {
           const hasSpace = wordIndex > 0;
-          const spaceNode = hasSpace
-            ? renderChar(
-                isNarrow ? " " : "\u00A0",
-                `space-${lineIndex}-${wordIndex}`,
-                wordAcc.charIndex
-              )
-            : null;
+          const spaceNode = hasSpace ? (
+            <HeadingChar
+              key={`space-${lineIndex}-${wordIndex}`}
+              char={isNarrow ? " " : "\u00A0"}
+              className={styles.headingChar}
+              index={wordAcc.charIndex}
+              scrollProgress={scrollYProgress}
+              totalChars={totalChars}
+            />
+          ) : null;
           const charStart = wordAcc.charIndex + (hasSpace ? 1 : 0);
-          const wordNodes = word.split("").map((char, charOffset) =>
-            renderChar(
-              char,
-              `char-${lineIndex}-${wordIndex}-${charStart + charOffset}`,
-              charStart + charOffset
-            )
-          );
+          const wordNodes = word
+            .split("")
+            .map((char, charOffset) => (
+              <HeadingChar
+                key={`char-${lineIndex}-${wordIndex}-${charStart + charOffset}`}
+                char={char}
+                className={styles.headingChar}
+                index={charStart + charOffset}
+                scrollProgress={scrollYProgress}
+                totalChars={totalChars}
+              />
+            ));
           const nextCharIndex = charStart + word.length;
           return {
             nodes: [
@@ -119,7 +111,7 @@ export default function AboutUs() {
   ).nodes;
 
   return (
-    <section className={styles.aboutUs}>
+    <section className={styles.aboutUs} ref={sectionRef}>
       {/* Background Image with Gradient */}
 
       {/* Content */}

@@ -42,18 +42,19 @@
 .cards {
   display: flex;
   gap: 20px;
-  width: 100%;
-  overflow-x: auto;
   padding: 14px 300px 20px;
+  width: max-content;
 }
 
-.cards::-webkit-scrollbar {
-  display: none;
+.cardsViewport {
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
 }
 
-.cards {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.cardsViewport:active {
+  cursor: grabbing;
 }
 
 .card {
@@ -302,6 +303,9 @@
   .cards {
     gap: 19px;
     padding: 10px 20px 16px;
+  }
+
+  .cardsViewport {
     margin-left: -20px;
     margin-right: -20px;
     width: calc(100% + 40px);
@@ -375,6 +379,9 @@
   .cards {
     gap: 12px;
     padding: 0 16px;
+  }
+
+  .cardsViewport {
     margin-left: -16px;
     margin-right: -16px;
     width: calc(100% + 32px);

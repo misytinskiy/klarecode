@@ -259,7 +259,7 @@ export default function Hero() {
                 >
                   <path
                     d="M15.833 8L4.16634 8M15.833 8L10.833 13M15.833 8L10.833 3"
-                    stroke="white"
+                    stroke="currentColor"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
@@ -303,7 +303,7 @@ export default function Hero() {
             >
               <path
                 d="M15.833 8L4.16634 8M15.833 8L10.833 13M15.833 8L10.833 3"
-                stroke="white"
+                stroke="currentColor"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />

@@ -57,6 +57,8 @@
   justify-content: center;
   height: 231.763px;
   width: 436.421px;
+  transition: transform 0.25s ease;
+  will-change: transform;
 }
 
 .cardWrapper:nth-child(1) {
@@ -76,11 +78,21 @@
   transform: rotate(5.795deg);
 }
 
+.cards .cardWrapper:hover {
+  transform: rotate(0deg);
+}
+
+.cards .cardWrapper:hover .card {
+  border-color: transparent;
+}
+
 .card {
   position: relative;
   border-radius: 50000px;
   width: 422px;
   height: 199px;
+  --hover-x: 50%;
+  --hover-y: 50%;
   overflow: hidden;
   flex-shrink: 0;
   display: flex;

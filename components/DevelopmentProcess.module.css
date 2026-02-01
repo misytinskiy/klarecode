@@ -32,20 +32,19 @@
   position: relative;
   border-left: 1px solid #2a2a2a;
   transition: border-left 0.3s ease, background 0.3s ease;
+  cursor: pointer;
 }
 
-.cardHighlighted {
+.card:hover {
   border-left: 7px solid #59ff00;
-  position: relative;
   background: linear-gradient(
     270deg,
     rgba(109, 109, 109, 0) 43.62%,
     rgba(0, 223, 130, 0.1) 97.78%
   );
-  transition: border-left 0.3s ease, background 0.3s ease;
 }
 
-.cardHighlighted::before {
+.card:hover::before {
   content: "";
   position: absolute;
   left: -2px;
@@ -159,7 +158,7 @@
     font-weight: 700;
   }
 
-  .cardHighlighted {
+  .card:hover {
     border-left: 5px solid rgb(89, 255, 0);
   }
 }
@@ -185,7 +184,7 @@
     padding: 13px;
   }
 
-  .cardHighlighted {
+  .card:hover {
     border-left: 3px solid #59ff00;
   }
 
@@ -244,7 +243,7 @@
     margin-right: 0;
   }
 
-  .cardHighlighted {
+  .card:hover {
     border-left: none;
     background: linear-gradient(
       rgba(89, 255, 0, 0.1) 0%,
@@ -253,7 +252,7 @@
     border-top: 1px solid #59ff00;
   }
 
-  .cardHighlighted::before {
+  .card:hover::before {
     content: "";
     position: absolute;
     top: -2px;
@@ -340,7 +339,7 @@
     margin-bottom: 0;
   }
 
-  .cardHighlighted {
+  .card:hover {
     border-left: none;
     background: linear-gradient(
       rgba(89, 255, 0, 0.1) 0%,
@@ -349,7 +348,7 @@
     border-top: 1px solid #59ff00;
   }
 
-  .cardHighlighted::before {
+  .card:hover::before {
     content: "";
     position: absolute;
     top: -2px;

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./Footer.module.css";
 import { useContactModal } from "./ContactModalContext";
@@ -115,18 +116,10 @@ export default function Footer() {
           </div>
 
           <div className={styles.footerColumn}>
-            <h4 className={styles.columnTitle}>Solutions</h4>
-            <ul className={styles.columnList}>
-              <li>
-                <a href="#ai">AI & Automation</a>
-              </li>
-              <li>
-                <a href="#web3">Web3 Development</a>
-              </li>
-              <li>
-                <a href="#web">Web & Telegram Apps</a>
-              </li>
-            </ul>
+            <h4 className={styles.columnTitle}>Support</h4>
+            <p className={styles.supportText}>
+              24/7 monitoring, bug fixing, and iterative feature updates.
+            </p>
           </div>
 
           <div className={styles.footerColumn}>
@@ -136,13 +129,6 @@ export default function Footer() {
               <li>Telegram: @klarecode</li>
               <li>Response time: within 24 hours</li>
             </ul>
-          </div>
-
-          <div className={styles.footerColumn}>
-            <h4 className={styles.columnTitle}>Support</h4>
-            <p className={styles.supportText}>
-              24/7 monitoring, bug fixing, and iterative feature updates.
-            </p>
           </div>
         </div>
       </div>
@@ -161,12 +147,8 @@ export default function Footer() {
           </p>
         </div>
         <div className={styles.footerLinks}>
-          <a href="/PRIVACY POLICY (EN).pdf" download>
-            Privacy Policy
-          </a>
-          <a href="/TERMS & CONDITIONS (EN).pdf" download>
-            Terms of Service
-          </a>
+          <Link href="/policy">Privacy Policy</Link>
+          <Link href="/terms">Terms of Service</Link>
         </div>
       </div>
     </footer>

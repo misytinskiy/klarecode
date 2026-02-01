@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./DevelopmentProcess.module.css";
+import { useContactModal } from "./ContactModalContext";
 
 const steps = [
   {
@@ -37,7 +37,7 @@ const steps = [
 ];
 
 export default function DevelopmentProcess() {
-  const [selectedIndex, setSelectedIndex] = useState(1); // По умолчанию выбрана вторая карточка (Architecture/Design)
+  const { openModal } = useContactModal();
 
   return (
     <section id="process" className={styles.developmentProcess}>
@@ -45,26 +45,15 @@ export default function DevelopmentProcess() {
 
       <div className={styles.cards}>
         {steps.map((step, index) => {
-          const isSelected = selectedIndex === index;
-
           return (
             <motion.div
               key={index}
-              className={`${styles.card} ${
-                isSelected ? styles.cardHighlighted : ""
-              }`}
-              onClick={() => setSelectedIndex(index)}
-              whileHover={{ scale: 1.05 }}
+              className={styles.card}
+              whileHover={{ scale: 1.02 }}
               transition={{
                 type: "spring",
                 stiffness: 300,
                 damping: 20,
-              }}
-              animate={{
-                scale: isSelected ? 1.02 : 1,
-              }}
-              style={{
-                cursor: "pointer",
               }}
             >
               <div className={styles.cardTitleWrapper}>
@@ -77,7 +66,12 @@ export default function DevelopmentProcess() {
         })}
       </div>
 
-      <button className={styles.viewMoreButton}>View more</button>
+      <button
+        className={styles.viewMoreButton}
+        onClick={() => openModal("message")}
+      >
+        Discuss
+      </button>
     </section>
   );
 }
