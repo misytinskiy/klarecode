@@ -234,10 +234,30 @@
     min-height: 203px;
     padding: 18px 0px;
     border-left: none;
-    border-top: 1px solid #2a2a2a;
+    border-top: 1px solid #59ff00;
     margin-right: 20px;
     margin-bottom: 20px;
+    background: linear-gradient(
+      rgba(89, 255, 0, 0.1) 0%,
+      rgba(109, 109, 109, 0) 10.62%
+    );
   }
+  /* 
+  .card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      rgba(42, 194, 147, 1) 0%,
+      rgba(42, 194, 147, 0.6) 50%,
+      rgba(42, 194, 147, 0.3) 100%
+    );
+    z-index: 1;
+  } */
 
   .card:nth-child(2n) {
     margin-right: 0;
@@ -245,11 +265,11 @@
 
   .card:hover {
     border-left: none;
-    background: linear-gradient(
+    /* background: linear-gradient(
       rgba(89, 255, 0, 0.1) 0%,
       rgba(109, 109, 109, 0) 10.62%
-    );
-    border-top: 1px solid #59ff00;
+    ); */
+    /* border-top: 1px solid #59ff00; */
   }
 
   .card:hover::before {
@@ -330,10 +350,26 @@
     min-height: 132px;
     padding: 20px 0;
     border-left: none;
-    border-top: 1px solid #2a2a2a;
+    border-top: 1px solid #59ff00;
     margin-right: 0;
     margin-bottom: 16px;
   }
+
+  /* .card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+      to right,
+      rgba(42, 194, 147, 1) 0%,
+      rgba(42, 194, 147, 0.6) 50%,
+      rgba(42, 194, 147, 0.3) 100%
+    );
+    z-index: 1;
+  } */
 
   .card:last-child {
     margin-bottom: 0;
