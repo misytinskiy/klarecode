@@ -255,7 +255,7 @@
 
 .imagePlaceholder {
   position: relative;
-  width: 422px;
+  width: 356px;
   height: 492px;
   border-radius: 0;
   overflow: hidden;
@@ -360,7 +360,7 @@
   }
 
   .imagePlaceholder {
-    width: 335.828px;
+    width: 285.828px;
     height: 391.534px;
   }
 
@@ -470,7 +470,7 @@
   }
 
   .imagePlaceholder {
-    width: 280px;
+    width: 238px;
     height: 320px;
   }
 
@@ -651,7 +651,7 @@
   }
 
   .imagePlaceholder {
-    width: 369px;
+    width: 293px;
     height: 387px;
     order: 1;
     position: absolute;
@@ -808,10 +808,12 @@
   }
 
   .imagePlaceholder {
-    width: 100%;
+    width: 192px;
     height: 250px;
     order: -1;
     position: relative;
+    align-self: center;
+    top: 0;
   }
 
   .discussButton {

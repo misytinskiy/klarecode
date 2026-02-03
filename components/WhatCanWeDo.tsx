@@ -202,13 +202,10 @@ export default function WhatCanWeDo() {
                           ease: [0.4, 0, 0.2, 1],
                         }}
                       >
-                        <video
-                          src={`/whatCanWeDo/${service.id}.mp4`}
+                        <img
+                          src={`/whatCanWeDo/${service.id}.png`}
+                          alt={service.title}
                           className={styles.image}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
                         />
                       </motion.div>
                     )}
