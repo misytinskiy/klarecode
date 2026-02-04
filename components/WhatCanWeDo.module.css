@@ -718,7 +718,7 @@
     min-height: auto !important;
     align-items: center;
     --collapsed-h: 100px;
-    --expanded-h: 455px;
+    --expanded-h: 466px;
   }
 
   .serviceLeftWrapper {
