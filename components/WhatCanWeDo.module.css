@@ -255,7 +255,7 @@
 
 .imagePlaceholder {
   position: relative;
-  width: 356px;
+  width: 355px;
   height: 492px;
   border-radius: 0;
   overflow: hidden;
@@ -360,7 +360,7 @@
   }
 
   .imagePlaceholder {
-    width: 285.828px;
+    width: 284.828px;
     height: 391.534px;
   }
 
@@ -651,7 +651,7 @@
   }
 
   .imagePlaceholder {
-    width: 293px;
+    width: 280px;
     height: 387px;
     order: 1;
     position: absolute;
